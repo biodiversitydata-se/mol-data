@@ -19,14 +19,14 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'BAS-MOL'
-copyright = u'2019, BAS-MOL'
-author = u'BAS-MOL'
+project = 'The BAS guide to ENA submission'
+copyright = '2019, Biodiversity Atlas Sweden'
+author = 'Biodiversity Atlas Sweden'
 
 # The short X.Y version
-version = u''
+version = ''
 # The full version, including alpha/beta/rc tags
-release = u''
+release = ''
 
 
 # -- General configuration ---------------------------------------------------
@@ -63,7 +63,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
@@ -71,16 +71,34 @@ pygments_style = None
 
 # -- Options for HTML output -------------------------------------------------
 
-# The theme to use for HTML and HTML Help pages.  See the documentation for
+
 # a list of builtin themes.
-#
-html_theme = 'alabaster'
+# MP changed from alabaster, see https://sphinx-rtd-theme.readthedocs.io/en/stable/installing.html#via-python-package
+# html_theme = 'alabaster'
+html_theme = "sphinx_rtd_theme"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
 # html_theme_options = {}
+html_theme_options = {
+    'canonical_url': '',
+#    'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
+    'logo_only': False,
+    'display_version': True,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+#    'vcs_pageview_mode': '',
+#    'style_nav_header_background': 'white',
+    # Toc options
+    # MP changed to false
+    'collapse_navigation': False,
+    'sticky_navigation': True,
+    'navigation_depth': 4,
+    'includehidden': True,
+    'titles_only': False
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -98,10 +116,11 @@ html_static_path = ['_static']
 # html_sidebars = {}
 
 
+
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'BAS-MOLdoc'
+htmlhelp_basename = 'theBASguidetoENAsubmission'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -128,8 +147,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'BAS-MOL.tex', u'BAS-MOL Documentation',
-     u'BAS-MOL', 'manual'),
+    (master_doc, 'theBASguidetoENAsubmission.tex', 'The BAS guide to ENA submission',
+     'Biodiversity Atlas Sweden', 'manual'),
 ]
 
 
@@ -138,7 +157,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'bas-mol', u'BAS-MOL Documentation',
+    (master_doc, 'theBASguidetoENAsubmission', 'The BAS guide to ENA submission',
      [author], 1)
 ]
 
@@ -149,8 +168,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'BAS-MOL', u'BAS-MOL Documentation',
-     author, 'BAS-MOL', 'One line description of project.',
+    (master_doc, 'theBASguidetoENAsubmission', 'The BAS guide to ENA submission',
+     author, 'theBASguidetoENAsubmission', 'One line description of project.',
      'Miscellaneous'),
 ]
 
