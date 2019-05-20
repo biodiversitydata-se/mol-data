@@ -185,7 +185,6 @@
             
   <div class="toctree-wrapper compound">
 </div>
-<p><span class="orange">This page is under construction</span></p>
 <div class="section" id="submitting-metabarcoding-data-to-ena">
 <h1>Submitting metabarcoding data to ENA<a class="headerlink" href="#submitting-metabarcoding-data-to-ena" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="a-guide-from-biodiversity-atlas-sweden-bas">
@@ -211,7 +210,7 @@
 </div>
 <div class="section" id="step-2-register-study">
 <h3>Step 2: Register study<a class="headerlink" href="#step-2-register-study" title="Permalink to this headline">¶</a></h3>
-<p>In the Webin submission portal, select the <em>New Submission | Register study (project) | Next</em> to start filling out the Study form. In ENA, the <em>study</em> object connects related samples and sequence reads (See step 4), and is typically what you cite in publications (using the BioProject accession number). Note that a single release date is set for all data within a study, and that you thus may want to split sequenced batches of samples into multiple ENA studies. After entering the required metadata for a study, click <em>Submit | OK</em>. If successful, you will receive a confirmation message, and should be able to see your study listed in the <em>Studies</em> tab.</p>
+<p>In the Webin submission portal, select the <em>New Submission | Register study (project) | Next</em> to start filling out the Study form. In ENA, the <em>study</em> object connects related samples and sequence reads (See step 4), and is typically what you cite in publications (using the BioProject accession number). For details on specific study attributes, see <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/mod_05.html#study-edits">ENA’s page on Study edits</a> (points 5-7). Note that a single release date is set for all data within a study, and that you thus may want to split sequenced batches of samples into multiple ENA studies. After entering the required metadata for a study, click <em>Submit | OK</em>. If successful, you will receive a confirmation message, and should be able to see your study listed in the <em>Studies</em> tab.</p>
 </div>
 <div class="section" id="step-3-register-samples">
 <h3>Step 3: Register samples<a class="headerlink" href="#step-3-register-samples" title="Permalink to this headline">¶</a></h3>
@@ -711,11 +710,11 @@
 </tr>
 </tbody>
 </table>
-<p>In the linked ontology tree views, click the plus sign next to a blue-shaded branch to show all instances of that term, and continue downwards until you find the most specific term that accurately describes your data.</p>
+<p>In the linked ontology tree views, click the plus sign next to a blue-shaded branch to show all instances of that term, and continue downwards until you find the most specific term that accurately describes your data. It is good practice to then register the term together with ontology acronym and accession, e.g: <em>marine pelagic biome (ENVO:01000023)</em>.</p>
 </li>
 </ul>
 <ul class="simple">
-<li><strong>Environmental attributes of host-associated samples are ambiguous</strong>. As stated above, a spider may in a sense be the environment from which a host-associated sample derives, but as the external environment also may be of interest here, we suggest that you interpret <em>environment (biome)</em> and <em>environment (feature)</em> the same way as for non-host-associated samples, and use <em>organic material</em>, or any instance of this term, for the <em>environment (material)</em> attribute.</li>
+<li><strong>Environmental attributes of host-associated samples are ambiguous</strong>. As stated above, a spider may in a sense be the environment from which a host-associated sample derives, but as the external environment also may be of interest here, we suggest that you interpret <em>environment (biome)</em> and <em>environment (feature)</em> the same way as for non-host-associated samples, and use the most specific instance of <em>organic material (ENVO:01000155)</em> for the <em>environment (material)</em> attribute.</li>
 </ul>
 <ul>
 <li><p class="first"><strong>Geographic positions should be given in decimal degrees (DD)</strong>. If conversion is needed, use an online tool, such as the <a class="reference external" href="https://www.pgc.umn.edu/apps/convert/">PGC Coordinate Converter</a>, or the following formula:</p>
@@ -740,7 +739,7 @@
 </li>
 </ul>
 <ul class="simple">
-<li><strong>Investigation type</strong> should be set to <em>metagenome</em>, also for metabarcoding data.</li>
+<li><strong>Investigation type</strong> should be set to <em>mimarks-survey</em> for metabarcoding data.</li>
 </ul>
 </div>
 <div class="section" id="step-3f-upload-spreadsheet">
@@ -904,16 +903,16 @@
 <td>V3-V4</td>
 <td>341F (CCTACGGGNGGCWGCAG) and 805R (GACTACHVGGGTATCTAATCC)</td>
 <td>Sequencing by synthesis (Illumina)</td>
-<td>metagenome</td>
+<td>mimarks-survey</td>
 <td>2018-07-23</td>
 <td>Baltic Sea</td>
 <td>61.407611</td>
 <td>19.472809</td>
 <td>water</td>
 <td>3</td>
-<td>marine pelagic biome</td>
-<td>brackish water body</td>
-<td>brackish water</td>
+<td>marine pelagic biome (ENVO:01000023)</td>
+<td>brackish water body (ENVO:01001321)</td>
+<td>brackish water (ENVO:00002019)</td>
 <td>A13</td>
 <td>11</td>
 </tr>
@@ -928,16 +927,16 @@
 <td>V3-V4</td>
 <td>341F (CCTACGGGNGGCWGCAG) and 805R (GACTACHVGGGTATCTAATCC)</td>
 <td>Sequencing by synthesis (Illumina)</td>
-<td>metagenome</td>
+<td>mimarks-survey</td>
 <td>2018-07-24</td>
 <td>Baltic Sea</td>
 <td>62.805337</td>
 <td>19.912262</td>
 <td>water</td>
 <td>3</td>
-<td>marine pelagic biome</td>
-<td>brackish water body</td>
-<td>brackish water</td>
+<td>marine pelagic biome (ENVO:01000023)</td>
+<td>brackish water body (ENVO:01001321)</td>
+<td>brackish water (ENVO:00002019)</td>
 <td>A14</td>
 <td>45</td>
 </tr>
@@ -952,16 +951,16 @@
 <td>V3-V4</td>
 <td>341F (CCTACGGGNGGCWGCAG) and 805R (GACTACHVGGGTATCTAATCC)</td>
 <td>Sequencing by synthesis (Illumina)</td>
-<td>metagenome</td>
+<td>mimarks-survey</td>
 <td>2018-07-25</td>
 <td>Baltic Sea</td>
 <td>64.970396</td>
 <td>23.076324</td>
 <td>water</td>
 <td>3</td>
-<td>marine pelagic biome</td>
-<td>brackish water body</td>
-<td>brackish water</td>
+<td>marine pelagic biome (ENVO:01000023)</td>
+<td>brackish water body (ENVO:01001321)</td>
+<td>brackish water (ENVO:00002019)</td>
 <td>A15</td>
 <td>7</td>
 </tr>
@@ -1020,7 +1019,7 @@ gzip -k *.fastq
 </tr>
 </tbody>
 </table>
-<p>The above should also work on a Linux machine, but Windows users may need to install some application to compress files to *.gz format, and refer to the following <a class="reference external" href="https://support.microsoft.com/en-gb/help/889768/how-to-compute-the-md5-or-sha-1-cryptographic-hash-values-for-a-file">Microsoft article on md5 generation</a>.</p>
+<p>The <em>md5sum</em> command should work similarly on a Linux machine, but Windows users may need to install some application to compress files to *.gz format, and refer to the following <a class="reference external" href="https://support.microsoft.com/en-gb/help/889768/how-to-compute-the-md5-or-sha-1-cryptographic-hash-values-for-a-file">Microsoft article on md5 generation</a>.</p>
 </div>
 <div class="section" id="step-4b-upload-read-files-to-ena">
 <h4>Step 4b: Upload read files to ENA<a class="headerlink" href="#step-4b-upload-read-files-to-ena" title="Permalink to this headline">¶</a></h4>
@@ -1158,8 +1157,8 @@ bye
 </div>
 <div class="section" id="step-6-submit-to-production-service">
 <h3>Step 6: Submit to production service<a class="headerlink" href="#step-6-submit-to-production-service" title="Permalink to this headline">¶</a></h3>
-<p>After careful inspection, and possibly <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/mod_05.html">post-submission editing</a>, of data and metadata, you can now repeat the process in the <a class="reference external" href="https://www.ebi.ac.uk/ena/submit/sra/#home">production version of the Webin interface</a>.</p>
-<p>If you run into trouble, contact <a class="reference external" href="mailto:bas-mol-support&#37;&#52;&#48;scilifelab&#46;se">BAS Molecular Data Support</a> or <a class="reference external" href="mailto:datasubs&#37;&#52;&#48;ebi&#46;ac&#46;uk">ENA</a> for further assistance.</p>
+<p>After careful inspection of data and metadata, you can now repeat the process in the <a class="reference external" href="https://www.ebi.ac.uk/ena/submit/sra/#home">production version of the Webin interface</a>.</p>
+<p>ENA’s interactive submission interface also supports some <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/mod_05.html">post-submission editing</a>, but for errors involving taxon attributes or sample aliases, you should <a class="reference external" href="mailto:datasubs&#37;&#52;&#48;ebi&#46;ac&#46;uk">contact ENA</a> and they will help you cancel and resubmit data. You are also welcome to email <a class="reference external" href="mailto:bas-mol-support&#37;&#52;&#48;scilifelab&#46;se">BAS Molecular Data Support</a> for further advice.</p>
 </div>
 </div>
 </div>
