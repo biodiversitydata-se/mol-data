@@ -6,10 +6,7 @@
 .. toctree::
   :maxdepth: 3
 
-.. role:: orange
 .. role:: red
-
-:orange:`This page is under construction`
 
 Submitting metabarcoding data to ENA
 ====================================
@@ -37,7 +34,7 @@ ENA provides two submission services: one for `test submission <https://wwwdev.e
 
 Step 2: Register study
 ----------------------
-In the Webin submission portal, select the *New Submission | Register study (project) | Next* to start filling out the Study form. In ENA, the *study* object connects related samples and sequence reads (See step 4), and is typically what you cite in publications (using the BioProject accession number). Note that a single release date is set for all data within a study, and that you thus may want to split sequenced batches of samples into multiple ENA studies. After entering the required metadata for a study, click *Submit | OK*. If successful, you will receive a confirmation message, and should be able to see your study listed in the *Studies* tab.
+In the Webin submission portal, select the *New Submission | Register study (project) | Next* to start filling out the Study form. In ENA, the *study* object connects related samples and sequence reads (See step 4), and is typically what you cite in publications (using the BioProject accession number). For details on specific study attributes, see `ENA's page on Study edits <https://ena-docs.readthedocs.io/en/latest/mod_05.html#study-edits>`_ (points 5-7). Note that a single release date is set for all data within a study, and that you thus may want to split sequenced batches of samples into multiple ENA studies. After entering the required metadata for a study, click *Submit | OK*. If successful, you will receive a confirmation message, and should be able to see your study listed in the *Studies* tab.
 
 Step 3: Register samples
 ------------------------
@@ -97,13 +94,13 @@ Before adding actual sample metadata to your spreadsheet, take a close look at E
     :file: tables/ontology-fields.csv
     :header-rows: 1
 
-  In the linked ontology tree views, click the plus sign next to a blue-shaded branch to show all instances of that term, and continue downwards until you find the most specific term that accurately describes your data.
+  In the linked ontology tree views, click the plus sign next to a blue-shaded branch to show all instances of that term, and continue downwards until you find the most specific term that accurately describes your data. It is good practice to then register the term together with ontology acronym and accession, e.g: *marine pelagic biome (ENVO:01000023)*.
 
 .. |br2| raw:: html
 
   <br />
 
-- **Environmental attributes of host-associated samples are ambiguous**. As stated above, a spider may in a sense be the environment from which a host-associated sample derives, but as the external environment also may be of interest here, we suggest that you interpret *environment (biome)* and *environment (feature)* the same way as for non-host-associated samples, and use *organic material*, or any instance of this term, for the *environment (material)* attribute.
+- **Environmental attributes of host-associated samples are ambiguous**. As stated above, a spider may in a sense be the environment from which a host-associated sample derives, but as the external environment also may be of interest here, we suggest that you interpret *environment (biome)* and *environment (feature)* the same way as for non-host-associated samples, and use the most specific instance of *organic material (ENVO:01000155)* for the *environment (material)* attribute.
 
 .. |br3| raw:: html
 
@@ -125,7 +122,7 @@ Before adding actual sample metadata to your spreadsheet, take a close look at E
 
   <br />
 
-- **Investigation type** should be set to *metagenome*, also for metabarcoding data.
+- **Investigation type** should be set to *mimarks-survey* for metabarcoding data.
 
 Step 3f: Upload spreadsheet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -175,7 +172,7 @@ The resulting file should look similar to this:
   :file: tables/md5sums.csv
   :header-rows: 0
 
-The above should also work on a Linux machine, but Windows users may need to install some application to compress files to \*.gz format, and refer to the following `Microsoft article on md5 generation <https://support.microsoft.com/en-gb/help/889768/how-to-compute-the-md5-or-sha-1-cryptographic-hash-values-for-a-file>`_.
+The *md5sum* command should work similarly on a Linux machine, but Windows users may need to install some application to compress files to \*.gz format, and refer to the following `Microsoft article on md5 generation <https://support.microsoft.com/en-gb/help/889768/how-to-compute-the-md5-or-sha-1-cryptographic-hash-values-for-a-file>`_.
 
 Step 4b: Upload read files to ENA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -259,9 +256,9 @@ Save your spreadsheet, go back to the Webin form and select *Upload Completed Sp
 
 Step 6: Submit to production service
 ------------------------------------
-After careful inspection, and possibly `post-submission editing <https://ena-docs.readthedocs.io/en/latest/mod_05.html>`_, of data and metadata, you can now repeat the process in the `production version of the Webin interface <https://www.ebi.ac.uk/ena/submit/sra/#home>`_.
+After careful inspection of data and metadata, you can now repeat the process in the `production version of the Webin interface <https://www.ebi.ac.uk/ena/submit/sra/#home>`_.
 
-If you run into trouble, contact `BAS Molecular Data Support`_ or `ENA`_ for further assistance.
+ENA's interactive submission interface also supports some `post-submission editing <https://ena-docs.readthedocs.io/en/latest/mod_05.html>`_, but for errors involving taxon attributes or sample aliases, you should `contact ENA`_ and they will help you cancel and resubmit data. You are also welcome to email `BAS Molecular Data Support`_ for further advice.
 
 .. _BAS Molecular Data Support: bas-mol-support@scilifelab.se
-.. _ENA: datasubs@ebi.ac.uk
+.. _contact ENA: datasubs@ebi.ac.uk
