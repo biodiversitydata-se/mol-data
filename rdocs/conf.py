@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'The BAS guide to ENA submission'
+project = 'Biodiversity Atlas Sweden'
 copyright = '2019, Biodiversity Atlas Sweden'
 author = 'Biodiversity Atlas Sweden'
 
@@ -93,7 +93,7 @@ html_theme_options = {
 #    'style_nav_header_background': 'white',
     # Toc options
     # MP changed to false
-    'collapse_navigation': False,
+    'collapse_navigation': True,
     'sticky_navigation': True,
     'navigation_depth': 4,
     'includehidden': True,
