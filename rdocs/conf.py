@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Biodiversity Atlas Sweden'
+project = 'Biodiversity Atlas Sweden: Molecular Data'
 copyright = '2019, Biodiversity Atlas Sweden'
 author = 'Biodiversity Atlas Sweden'
 
