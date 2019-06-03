@@ -9,14 +9,14 @@
 
 Submitting metabarcoding data to ENA
 ====================================
-This is a guide on how to submit sequence reads from environmental samples to the `European Nucleotide Archive (ENA) <https://www.ebi.ac.uk/ena/>`_, provided by the `Biodiversity Atlas Sweden (BAS) <https://bioatlas.se/>`_ project. Our guide is largely a summary of `ENA's own extensive instructions <https://ena-docs.readthedocs.io/en/latest/index.html>`_, with added pointers on issues specific to submission of metarbarcoding data, as well as on more general matters that may confuse first-time contributors. While ENA provides `three different routes for submission <https://ena-docs.readthedocs.io/en/latest/index.html#ena-guidelines-and-tutorials>`_, we describe interactive submission only.
+This is a guide on how to submit sequence reads from environmental samples to the `European Nucleotide Archive (ENA) <https://www.ebi.ac.uk/ena/>`_, provided by the `Biodiversity Atlas Sweden (BAS) <https://bioatlas.se/>`_ project. Our guide is largely a summary of `ENA's own extensive instructions <https://ena-docs.readthedocs.io/en/latest/index.html>`_, with added pointers on issues specific to submission of metarbarcoding data, as well as on more general matters that may confuse first-time contributors. While ENA provides `three different routes for submission <https://ena-docs.readthedocs.io/en/latest/general-guide.html>`_, we describe interactive submission only.
 
 Preparation for submission
 **************************
 
 Step 1: Prepare data and metadata
 ---------------------------------
-In ENA, raw sequencing output from a next generation platform, including e.g. base calls and per-base quality scores, is called *reads* and is accepted in `FASTQ, CRAM or BAM format <https://ena-docs.readthedocs.io/en/latest/format_01.html>`_. Before submission, make sure that sequencing adapters have been removed (*trimmed*), and that reads have been assigned to their sample of origin (*demultiplexed*). In addition, gather all the information (*metadata*) you have about how, when and where you acquired the samples and generated the reads, as well as any contextual (environmental or clinical) data that was collected during sampling (see `ENA's metadata model <https://ena-docs.readthedocs.io/en/latest/meta_01.html>`_).
+In ENA, raw sequencing output from a next generation platform, including e.g. base calls and per-base quality scores, is called *reads* and is accepted in `FASTQ, CRAM or BAM format <https://ena-docs.readthedocs.io/en/latest/fileprep/reads.html>`_. Before submission, make sure that sequencing adapters have been removed (*trimmed*), and that reads have been assigned to their sample of origin (*demultiplexed*). In addition, gather all the information (*metadata*) you have about how, when and where you acquired the samples and generated the reads, as well as any contextual (environmental or clinical) data that was collected during sampling (see `ENA's metadata model <https://ena-docs.readthedocs.io/en/latest/general-guide/metadata.html>`_).
 
 Step 2: Register with ENA
 -----------------------------------
@@ -31,7 +31,7 @@ ENA provides two submission services: one for `test submission <https://wwwdev.e
 
 Step 2: Register study
 ----------------------
-In the Webin submission portal, select the *New Submission | Register study (project) | Next* to start filling out the Study form. In ENA, the *study* object connects related samples and sequence reads (See step 4), and is typically what you cite in publications (using the BioProject accession number). For details on specific study attributes, see `ENA's page on Study edits <https://ena-docs.readthedocs.io/en/latest/mod_05.html#study-edits>`_ (points 5-7). Note that a single release date is set for all data within a study, and that you thus may want to split sequenced batches of samples into multiple ENA studies. After entering the required metadata for a study, click *Submit | OK*. If successful, you will receive a confirmation message, and should be able to see your study listed in the *Studies* tab.
+In the Webin submission portal, select the *New Submission | Register study (project) | Next* to start filling out the Study form. In ENA, the *study* object connects related samples and sequence reads (See step 4), and is typically what you cite in publications (using the BioProject accession number). For details on specific study attributes, see `ENA's page on Study edits <https://ena-docs.readthedocs.io/en/latest/update/interactive.html>`_ (points 5-7). Note that a single release date is set for all data within a study, and that you thus may want to split sequenced batches of samples into multiple ENA studies. After entering the required metadata for a study, click *Submit | OK*. If successful, you will receive a confirmation message, and should be able to see your study listed in the *Studies* tab.
 
 Step 3: Register samples
 ------------------------
@@ -140,7 +140,7 @@ Before clicking the *Submit* button, have a look through the metadata for each o
 
 Step 4: Prepare and upload read files
 ---------------------------------------------
-Before starting submission of reads and experiment data, you need to prepare and upload read files to your own directory in the Webin file upload area. We assume that you have paired-end reads in FASTQ format, like the example files from the `mothur MiSeq SOP <https://www.mothur.org/wiki/MiSeq_SOP>`_ that we use below, but please refer to `ENA's guidelines on file formats <https://ena-docs.readthedocs.io/en/latest/format_01.html>`_ for other options:
+Before starting submission of reads and experiment data, you need to prepare and upload read files to your own directory in the Webin file upload area. We assume that you have paired-end reads in FASTQ format, like the example files from the `mothur MiSeq SOP <https://www.mothur.org/wiki/MiSeq_SOP>`_ that we use below, but please refer to `ENA's guidelines on file formats <https://ena-docs.readthedocs.io/en/latest/fileprep/reads.html>`_ for other options:
 
 Step 4a: Compress files and calculate checksums
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -173,7 +173,7 @@ The *md5sum* command should work similarly on a Linux machine, but Windows users
 
 Step 4b: Upload read files to ENA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-You can now upload your sequence reads to ENA's transit area, but remember to keep local copies of your data. There are several FTP (File Transfer Protocol) clients available for file transfer. We describe one alternative (`lftp <https://brewinstall.org/Install-lftp-on-Mac-with-Brew/>`_) for Mac users, but please refer to `ENA's guidelines on file upload <https://ena-docs.readthedocs.io/en/latest/upload_02.html#general-instructions-for-uploading-files-using-a-ftp-client>`_ for other options:
+You can now upload your sequence reads to ENA's transit area, but remember to keep local copies of your data. There are several FTP (File Transfer Protocol) clients available for file transfer. We describe one alternative (`lftp <https://brewinstall.org/Install-lftp-on-Mac-with-Brew/>`_) for Mac users, but please refer to `ENA's guidelines on file upload <https://ena-docs.readthedocs.io/en/latest/fileprep/upload.html>`_ for other options:
 
 .. code-block:: bash
 
@@ -207,13 +207,13 @@ Click *Restart Submission* (or *New Submission*, if logged out) | *Submit sequen
 
 Step 5b: Describe experiment and runs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In `the ENA metadata model <https://ena-docs.readthedocs.io/en/latest/meta_01.html#metadata-model>`_, an *experiment* refers to a sequencing event, and contains information on e.g. library construction and instruments, whereas *runs* represent the read files resulting from an experiment. Click the info icon |info-icon| to read ENA's explanation for each attribute in the *Run* form, but enter your metadata into your downloaded spreadsheet. Also note the following, when you describe the experiment:
+In `the ENA metadata model <https://ena-docs.readthedocs.io/en/latest/general-guide/metadata.html>`_, an *experiment* refers to a sequencing event, and contains information on e.g. library construction and instruments, whereas *runs* represent the read files resulting from an experiment. Click the info icon |info-icon| to read ENA's explanation for each attribute in the *Run* form, but enter your metadata into your downloaded spreadsheet. Also note the following, when you describe the experiment:
 
 .. |info-icon| image:: images/info-icon.png
 
 •	**You can use any sample identifier as sample_alias**. Toggle to the *Sample* tab to copy values from *Primary / Secondary Accession* or *Unique Name* (click |reset-icon| *Reset*, if needed).
 
-For metabarcoding, you would typically use the following values to describe sequenced libraries (but see `ENA's guidelines on experiment metadata <https://ena-docs.readthedocs.io/en/latest/cli_06.html?highlight=library%20selection#metadata-validation>`_ for all available options):
+For metabarcoding, you would typically use the following values to describe sequenced libraries (but see `ENA's guidelines on experiment metadata <https://ena-docs.readthedocs.io/en/latest/reads/webin-cli.html>`_ for all available options):
 
 •	**library selection:** PCR
 
@@ -257,6 +257,6 @@ After careful inspection of data and metadata, you can now repeat the process in
 
 Post-submission editing
 ***********************
-ENA's interactive submission interface supports some `post-submission editing <https://ena-docs.readthedocs.io/en/latest/mod_05.html>`_, but for errors involving taxon attributes or sample aliases, you should `contact ENA`_ and they will help you cancel and resubmit data.
+ENA's interactive submission interface supports some `post-submission editing <https://ena-docs.readthedocs.io/en/latest/update/interactive.html>`_, but for errors involving taxon attributes or sample aliases, you should `contact ENA`_ and they will help you cancel and resubmit data.
 
 .. _contact ENA: datasubs@ebi.ac.uk
