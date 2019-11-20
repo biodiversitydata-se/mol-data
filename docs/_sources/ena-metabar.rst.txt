@@ -39,7 +39,7 @@ Samples are the source material from which your sequences derive, and the search
 
 Step 3a: Select sample checklist
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The ENA sample checklists are partly overlapping sets of attributes (or data fields) that can be used to describe samples, and by selecting one of these you enable your sample metadata to be validated for correctness during submission. For environmental and organismal (host-associated) samples, alike, we recommend using one of the *Environmental Checklists* and, among these, to select the alternative from the *Genomic Standards Consortium (GSC) MixS checklists* (described `here <https://press3.mcs.anl.gov/gensc/mixs/>`_ by GSC) that provides the most specific match to your sampled environment, for example:
+The ENA sample checklists are partly overlapping sets of attributes (or data fields) that can be used to describe samples, and by selecting one of these you enable your sample metadata to be validated for correctness during submission. For environmental and organismal (host-associated) samples, alike, we recommend using one of the *Environmental Checklists* and, among these, to select the alternative from the *Genomic Standards Consortium (GSC) MIxS checklists* (described `here <https://www.ebi.ac.uk/ena/submit/checklists>`_ by GSC) that provides the most specific match to your sampled environment, for example:
 
 .. csv-table::
   :file: tables/recommended-checklists.csv
