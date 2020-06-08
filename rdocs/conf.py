@@ -19,9 +19,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Biodiversity Atlas Sweden: Molecular Data'
-copyright = '2019, Biodiversity Atlas Sweden'
-author = 'Biodiversity Atlas Sweden'
+project = 'Swedish Biodiversity Data Infrastructure: Molecular Data'
+copyright = '2019, Swedish Biodiversity Data Infrastructure'
+author = 'Swedish Biodiversity Data Infrastructure'
 
 # The short X.Y version
 version = ''
@@ -148,7 +148,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'theBASguidetoENAsubmission.tex', 'The BAS guide to ENA submission',
-     'Biodiversity Atlas Sweden', 'manual'),
+     'Swedish Biodiversity Data Infrastructure', 'manual'),
 ]
 
 
