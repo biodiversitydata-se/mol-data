@@ -6,6 +6,7 @@
    :hidden:
 
    ena-metabar
+   sbdi-mol-mod
 
 Molecular biodiversity data in SBDI
 ===================================

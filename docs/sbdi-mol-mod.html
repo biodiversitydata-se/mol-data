@@ -1,0 +1,239 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SBDI module for ASV observations (under development) &mdash; Swedish Biodiversity Data Infrastructure: Molecular Data  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Submitting metabarcoding data to ENA" href="ena-metabar.html" />
+<link rel="stylesheet" type="text/css"
+     href="_static/custom.css" />
+
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Swedish Biodiversity Data Infrastructure: Molecular Data
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ena-metabar.html">Submitting metabarcoding data to ENA</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SBDI module for ASV observations (under development)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#main-objectives">Main objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#components">Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-model">Data model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-flow">Data flow</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Swedish Biodiversity Data Infrastructure: Molecular Data</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>SBDI module for ASV observations (under development)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/sbdi-mol-mod.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="toctree-wrapper compound">
+</div>
+<div class="section" id="sbdi-module-for-asv-observations-under-development">
+<h1>SBDI module for ASV observations (under development)<a class="headerlink" href="#sbdi-module-for-asv-observations-under-development" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="https://biodiversitydata.se/">Swedish Biodiversity Data Infrastructure (SBDI)</a> will mobilize sequence-based occurrence data, e.g. Amplicon Sequence Variant (ASV) observations, and make these available for integrative analyses in <a class="reference external" href="https://bioatlas.se/">the BioAtlas portal</a>. SBDI is part of the <a class="reference external" href="https://living-atlases.gbif.org/">Living Atlas Community</a>, and is based on <a class="reference external" href="https://www.gbif.org/darwin-core">standard Darwin core files and extensions</a>, but to make the BioAtlas platform more useful to the research community, we will add a separate atlas module that slightly modifies how molecular data are stored, accessed and presented. We describe this ‘molecular module’ from a functional/technical standpoint below. Once all components are in place, we will provide detailed instructions on how to submit ASV data to SBDI, via the molecular module.</p>
+<div class="section" id="main-objectives">
+<h2>Main objectives<a class="headerlink" href="#main-objectives" title="Permalink to this headline">¶</a></h2>
+<p>By adding the molecular module, we want to make it possible to:</p>
+<ol class="arabic simple">
+<li><p>Store and search for processed barcode sequences, i.e. ASVs, underlying occurrence records in the BioAtlas. Users should be able to use BLAST (Basic Local Alignment Search Tool) to find occurrences related to their own ASVs in the BioAtlas.</p></li>
+<li><p>Store data and metadata on repeated taxonomic annotations of ASVs. Regular re-annotation is important, as reference databases continuously grow and thus enable identification at lower taxonomic levels.</p></li>
+<li><p>Store or seamlessly retrieve metadata from external repositories of raw sequence reads, such as the European Nucleotide Archive (ENA). Central metadata, e.g. on primer sequences or target gene regions, should be stored and made searchable, while other metadata could be retrieved from source databases on request.</p></li>
+</ol>
+</div>
+<div class="section" id="components">
+<h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+<p>The SBDI molecular module will have three main components:</p>
+<ol class="arabic simple">
+<li><p>A database of Swedish Amplicon Sequence Variants (ASVs), their occurrence in environmental samples, and associated metadata.</p></li>
+<li><p>A RESTful API, providing programmatic access to the database.</p></li>
+<li><p>A web application, providing browser access to database, as well as to BLAST and API search functionality.</p></li>
+</ol>
+</div>
+<div class="section" id="data-model">
+<h2>Data model<a class="headerlink" href="#data-model" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="data-flow">
+<h2>Data flow<a class="headerlink" href="#data-flow" title="Permalink to this headline">¶</a></h2>
+<p>Input: User &gt; (Ampliflow &gt;) Molecular module &gt; IPT &gt; BioAtlas</p>
+<p>Access: Molecular module &gt; BioAtlas &gt; …?</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="ena-metabar.html" class="btn btn-neutral float-left" title="Submitting metabarcoding data to ENA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Swedish Biodiversity Data Infrastructure
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
