@@ -1,6 +1,4 @@
-.. Molecular Data - master file.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. Molecular Data - master file
 
 .. toctree::
    :hidden:
@@ -10,7 +8,9 @@
 
 Molecular biodiversity data in SBDI
 ===================================
-The `Swedish Biodiversity Data Infrastructure (SBDI) <https://biodiversitydata.se/>`_ aims to make it easier to publish, access and use molecular biodiversity data, i.e. sequence-based observations derived from metabarcoding or metagenomics studies of environmental samples. We will provide services ranging from step-by-step guides to scripted pipelines, e.g. for `ENA submission of raw reads <ena-metabar.html>`_, or denoising of amplicon sequencing data. Available services are listed in the left-hand sidebar menu.
+The `Swedish Biodiversity Data Infrastructure (SBDI) <https://biodiversitydata.se/>`_ is developed in collaboration with the `Living Atlas Community <https://living-atlases.gbif.org/>`_, and aims to make different types of Swedish biodiversity data accessible for integrative analysis in a single platform. As part of this effort, we want to make it easier to publish, access and use molecular biodiversity data, i.e. sequence-based observations derived from metabarcoding or metagenomics studies of environmental samples.
+
+We will provide services ranging from step-by-step guides to scripted pipelines, e.g. for `ENA submission of raw reads <ena-metabar.html>`_, or denoising of amplicon sequencing data. Currently available services are listed in the sidebar menu. We also present a functional overview of the SBDI system for Amplicon Sequence Variants (ASVs), which is now being developed.
 
 Please email any suggestions or questions to `SBDI Molecular Data Support`_, or take our `online survey for metabarcoders <https://bit.ly/2MGxy4d>`_.
 

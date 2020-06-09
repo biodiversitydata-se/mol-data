@@ -5,7 +5,6 @@
 
 SBDI module for ASV observations
 ================================
-(under development)
 The `Swedish Biodiversity Data Infrastructure (SBDI) <https://biodiversitydata.se/>`_ will mobilize sequence-based occurrence data, e.g. Amplicon Sequence Variant (ASV) observations, and make these available for integrative analyses in `the BioAtlas portal <https://bioatlas.se/>`_. SBDI is part of the `Living Atlas Community <https://living-atlases.gbif.org/>`_, and is based on `standard Darwin core files and extensions <https://www.gbif.org/darwin-core>`_, but to make the BioAtlas platform more useful to the research community, we will add a separate atlas module that slightly modifies how molecular data are stored, accessed and presented. We describe this 'molecular module' from a functional/technical standpoint below. Once all components are in place, we will provide detailed instructions on how to submit ASV data to SBDI, via the molecular module.
 
 Main objectives
