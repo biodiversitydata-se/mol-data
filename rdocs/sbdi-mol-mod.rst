@@ -5,7 +5,7 @@
 
 Atlas module for ASV data
 =========================
-As part of the `Living Atlas Community <https://living-atlases.gbif.org/>`_, the `Swedish Biodiversity Data Infrastructure (SBDI) <https://biodiversitydata.se/>`_ and the `BioAtlas portal <https://bioatlas.se/>`_ is based on `standard Darwin core files and extensions <https://www.gbif.org/darwin-core>`_. To make SBDI more useful to the molecular research community, however, we will add a module that slightly modifies how these data are stored, accessed and presented. We briefly outline this molecular module below. Once all components are in place, we will provide detailed instructions on how to submit and access ASV occurrences, via the molecular module.
+As part of the `Living Atlas Community <https://living-atlases.gbif.org/>`_, the `Swedish Biodiversity Data Infrastructure (SBDI) <https://biodiversitydata.se/>`_ and the `BioAtlas portal <https://bioatlas.se/>`_ is based on `standard Darwin core files and extensions <https://www.gbif.org/darwin-core>`_. To make SBDI more useful to the molecular research community, however, we will add a module that slightly modifies how these data are stored and accessed. We briefly outline this molecular module below. Once all components are in place, we will provide detailed instructions on how to submit and access ASV occurrences, via the molecular module.
 
 Main objectives
 ***************
