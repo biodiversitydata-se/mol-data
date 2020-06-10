@@ -38,7 +38,7 @@ Step 3a: Select sample checklist
 The ENA sample checklists are partly overlapping sets of attributes (or data fields) that can be used to describe samples, and by selecting one of these you enable your sample metadata to be validated for correctness during submission. For environmental and organismal (host-associated) samples, alike, we recommend using one of the *Environmental Checklists* and, among these, to select the alternative from the *Genomic Standards Consortium (GSC) MIxS checklists* (described `here <https://www.ebi.ac.uk/ena/submit/checklists>`_ by GSC) that provides the most specific match to your sampled environment, for example:
 
 .. csv-table::
-  :file: tables/recommended-checklists.csv
+  :file: _static/tables/recommended-checklists.csv
   :header-rows: 1
 
 Note that most GSC MIxS checklists have similar setups of mandatory and recommended attributes, i.e. differ mainly in terms of which optional attributes can be added and validated during submission. The environmental attributes *altitude, elevation* and *depth*, are mandatory only for some lists, however. Furthermore, the GSC MIxS built environment list (not mentioned above) has several unique mandatories.
@@ -48,7 +48,7 @@ Step 3b: Add sample attributes
 Once you have selected a checklist, you can inspect the attributes available in that list. Mandatory and recommended attributes are preselected, and you can add optional ones by ticking their boxes. We suggest that you, at least, tick the following optional attributes for metabarcoding data:
 
 .. csv-table::
-  :file: tables/optional-fields.csv
+  :file: _static/tables/optional-fields.csv
   :header-rows: 1
 
 To ensure that metadata are validated and searchable, you should use existing attributes whenever possible, but you can also add custom attributes to describe your data, if needed. Adding more than a few of these is easier to do in a spreadsheet, though, and we explain how to do that in the next step.
@@ -58,7 +58,7 @@ Step 3c: Create spreadsheet template
 After selecting optional attributes, click the *Download Spreadsheet* button (at the bottom of the form) to download a tab-separated values (\*.tsv) file. Open the file in your spreadsheet application of choice (In MS Excel, click *Data | Text to Columns | Delimited | Delimiter: Tab*, to separate text into columns, if needed). With the added optional attributes from 3b, a template created from the *GSC MIxS water* checklist should look like this:
 
 .. csv-table::
-  :file: tables/sample-template.csv
+  :file: _static/tables/sample-template.csv
   :header-rows: 0
 
 Step 3d: Edit spreadsheet structure
@@ -66,7 +66,7 @@ Step 3d: Edit spreadsheet structure
 In the downloaded spreadsheet, you can add custom attributes (with units, where applicable) to the right of existing columns, and samples below the row starting with *#units*. For instance, if you add two custom attributes (*sampling_station_id* and *current_velocity [cm/s]*), and three samples (*xyz:1:01*, *xyz:1:02* and *xyz:1:03*) to the template from Step 3c, your spreadsheet structure should look like this:
 
 .. csv-table::
-  :file: tables/edited-sample-template.csv
+  :file: _static/tables/edited-sample-template.csv
   :header-rows: 0
 
 Note that *environmental package* refers to the checklist you selected in Step 3a, e.g. if you selected the GSC MixS water list one of your attributes will be called *water environmental package* and the value for that column should be *water* in each of your sample rows.
@@ -84,7 +84,7 @@ Before adding actual sample metadata to your spreadsheet, take a close look at E
 - **Some attributes should be selected from ontologies**. To increase searchability, some attribute values should be selected from designated ontologies, which are formal specifications of terms used in certain contexts, and of how these terms relate to each other. You can browse or search the latest versions of ontologies used in ENA submission using the `EMBL-EBI Ontology Lookup Service <https://www.ebi.ac.uk/ols/index>`_. You can also use the following direct links to find valid terms for mandatory or recommended attributes in a GSC MixS checklists:
 
   .. csv-table::
-    :file: tables/ontology-fields.csv
+    :file: _static/tables/ontology-fields.csv
     :header-rows: 1
 
   In the linked ontology tree views, click the plus sign next to a blue-shaded branch to show all instances of that term, and continue downwards until you find the most specific term that accurately describes your data. It is good practice to then register the term together with ontology acronym and accession, e.g: *marine pelagic biome (ENVO:01000023)*.
@@ -122,7 +122,7 @@ Step 3f: Upload spreadsheet
 With data added, your spreadsheet should look similar to this:
 
 .. csv-table::
-  :file: tables/filled-sample-template.csv
+  :file: _static/tables/filled-sample-template.csv
   :header-rows: 0
 
 If so, go back to the start page of sample submission and click *Submit Completed Spreadsheet* and select your edited \*.tsv file. Given that your spreadsheet structure is correct, you will be directed to a page where you can toggle between samples in the left-hand panel, to inspect attributes for each of these in the right panel. If you find yourself stuck on the same page after uploading, you probably need to go back and review your file structure.
@@ -131,8 +131,8 @@ Step 3g: Review and submit sample data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Before clicking the *Submit* button, have a look through the metadata for each of your samples. Note that a red icon |red-icon| next to a field or sample means that data for a mandatory attribute is either missing or incorrect. Depending on the type of validation used for a particular attribute, a green icon |green-icon| does not always mean that data are correct, however, as you may instead get an error message when submitting, or even get away with using a non-valid term. After successful sample submission, you will receive a confirmation message, and should be able to see your samples listed in the *Samples* tab.
 
-.. |red-icon| image:: images/red-icon.png
-.. |green-icon| image:: images/green-icon.png
+.. |red-icon| image:: _static/images/red-icon.png
+.. |green-icon| image:: _static/images/green-icon.png
 
 Step 4: Prepare and upload read files
 ---------------------------------------------
@@ -162,7 +162,7 @@ To enable verification of file integrity after upload, calculate the md5 checksu
 The resulting file should look similar to this:
 
 .. csv-table::
-  :file: tables/md5sums.csv
+  :file: _static/tables/md5sums.csv
   :header-rows: 0
 
 The *md5sum* command should work similarly on a Linux machine, but Windows users may need to install some application to compress files to \*.gz format, and refer to the following `Microsoft article on md5 generation <https://support.microsoft.com/en-gb/help/889768/how-to-compute-the-md5-or-sha-1-cryptographic-hash-values-for-a-file>`_.
@@ -199,13 +199,13 @@ Step 5a: Select study, and create run template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Click *Restart Submission* (or *New Submission*, if logged out) | *Submit sequence reads and experiments | Next*. In the presented *Study* form, select the study you want to associate with your uploaded reads (click |reset-icon| *Reset*, if needed) and click *Next*. Then skip the *Sample* page, as you have already uploaded sample metadata, and in the *Run* form, select your read file format, here: *Two Fastq files (Paired)*. While you could now add data directly into the resulting form, we recommend that you select *Download Template Spreadsheet* to enter (and save!) metadata in an external application.
 
-.. |reset-icon| image:: images/reset-icon.png
+.. |reset-icon| image:: _static/images/reset-icon.png
 
 Step 5b: Describe experiment and runs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In `the ENA metadata model <https://ena-docs.readthedocs.io/en/latest/general-guide/metadata.html>`_, an *experiment* refers to a sequencing event, and contains information on e.g. library construction and instruments, whereas *runs* represent the read files resulting from an experiment. Click the info icon |info-icon| to read ENA's explanation for each attribute in the *Run* form, but enter your metadata into your downloaded spreadsheet. Also note the following, when you describe the experiment:
 
-.. |info-icon| image:: images/info-icon.png
+.. |info-icon| image:: _static/images/info-icon.png
 
 •	**You can use any sample identifier as sample_alias**. Toggle to the *Sample* tab to copy values from *Primary / Secondary Accession* or *Unique Name* (click |reset-icon| *Reset*, if needed).
 
@@ -242,7 +242,7 @@ Also add the following metadata for read files:
 Your spreadsheet should now look similar to this (but add as much optional metadata as possible):
 
 .. csv-table::
-  :file: tables/runs.csv
+  :file: _static/tables/runs.csv
   :header-rows: 1
 
 Save your spreadsheet, go back to the Webin form and select *Upload Completed Spreadsheet* | *Submit* to finally submit your read files. If successful, you will receive a confirmation message.
