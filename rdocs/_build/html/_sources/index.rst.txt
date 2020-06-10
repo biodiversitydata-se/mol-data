@@ -12,16 +12,10 @@ The `Swedish Biodiversity Data Infrastructure (SBDI) <https://biodiversitydata.s
 
 We provide a step-by-step `guide to ENA submission <ena-metabar.html>`_ of raw reads , and are currently collaborating on a scripted `pipeline for denoising and taxonomic annotation <https://github.com/nf-core/ampliseq>`_ of amplicon sequencing data, from both Illumina and PacBio platforms. For anyone interested in sharing or using ASV occurrence data, we are also developing a `molecular module <sbdi-mol-mod.html>`_ to help integrate ASV occurrences into the `SBDI platform <https://bioatlas.se/>`_.
 
-.. figure:: _static/images/sbdi-data-flow.png
+.. figure:: _static/images/data-flow.png
    :alt: SBDI data flow and services
 
    SBDI data flow and services for amplicon sequence data.
-
-.. figure:: _static/images/sbdi-data-flow.png
-  :alt: ASV data model
-
-  SBDI data model for ASV data and metadata.
-
 
 Our molecular services are under development, but we hope to ingest and display or first ASV data by the end of 2020. Please email any suggestions or questions, e.g. regarding data submission, to `SBDI Molecular Data Support`_.
 
