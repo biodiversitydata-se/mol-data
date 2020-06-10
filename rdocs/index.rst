@@ -17,7 +17,7 @@ We provide a step-by-step `guide to ENA submission <ena-metabar.html>`_ of raw r
 
    SBDI data flow and services for amplicon sequence data.
 
-.. figure:: _static/images/data-model.png
+.. figure:: _static/images/sbdi-data-flow.png
   :alt: ASV data model
 
   SBDI data model for ASV data and metadata.
