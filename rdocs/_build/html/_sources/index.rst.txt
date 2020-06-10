@@ -17,6 +17,12 @@ We provide a step-by-step `guide to ENA submission <ena-metabar.html>`_ of raw r
 
    SBDI data flow and services for amplicon sequence data.
 
+.. figure:: _static/images/data-model.png
+  :alt: ASV data model
+
+  SBDI data model for ASV data and metadata.
+
+
 Our molecular services are under development, but we hope to ingest and display or first ASV data by the end of 2020. Please email any suggestions or questions, e.g. regarding data submission, to `SBDI Molecular Data Support`_.
 
 .. _SBDI Molecular Data Support: sbdi-mol-data-support@scilifelab.se
