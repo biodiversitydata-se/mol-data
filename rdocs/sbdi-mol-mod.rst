@@ -5,7 +5,7 @@
 
 Atlas module for ASV data
 =========================
-As part of the `Living Atlas Community <https://living-atlases.gbif.org/>`_, the `Swedish Biodiversity Data Infrastructure (SBDI) <https://biodiversitydata.se/>`_ and the `BioAtlas portal <https://bioatlas.se/>`_ is based on `standard Darwin core files and extensions <https://www.gbif.org/darwin-core>`_. To make SBDI more useful to the molecular research community, however, we will add a module that slightly modifies how these data are added, stored and accessed. We briefly outline this molecular module, and how it will fit into the overall data flow, below. Please, note that this is an ongoing project, and that information thus is subject to change. Once all components are in place, we will provide detailed instructions on how to submit and access ASV occurrences, via the module.
+As part of the `Living Atlas Community <https://living-atlases.gbif.org/>`_, the `Swedish Biodiversity Data Infrastructure (SBDI) <https://biodiversitydata.se/>`_ and the `BioAtlas portal <https://bioatlas.se/>`_ is based on `standard Darwin core files and extensions <https://www.gbif.org/darwin-core>`_. To make SBDI more useful to the molecular research community, however, we will add a module that slightly modifies how these data are added, stored and accessed. We briefly outline this molecular module, and how it will fit into the overall data flow, below. Please note that this is an ongoing project and that information thus is subject to change. Once all components are in place, we will provide detailed instructions on how to submit and access ASV occurrences via the module.
 
 Main objectives
 ***************
@@ -42,4 +42,4 @@ In a first implementation of the molecular web application, data providers will 
 
 Once we have imported data into the ASV database, SBDI will apply a standard taxonomic re-annotation to each ASV, using current versions of selected classification algorithms and reference databases, for the organism group in question. This will provide the valid and searchable taxonomy of the ASV, although the original, user-provided annotation will also be stored and displayed.
 
-Following processing, ASV occurrence data will be ingested into the BioAtlas. Users will then be able to BLAST for sequences and associated occurrence records in the atlas, as well as search for specific primer sequences or sampling environments. In addition to data download in the atlas, the molecular module will also provide download of BLAST results.
+Following processing, ASV occurrence data will be ingested into the BioAtlas, via `IPT <http://www.gbif.se/ipt/>`_. Users will then be able to BLAST for sequences and associated occurrence records in the atlas, as well as search for specific primer sequences or sampling environments. In addition to data download in the atlas, the molecular module will also provide download of BLAST results.
