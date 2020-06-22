@@ -5,7 +5,7 @@ Currently written as reStructuredText, but could be translated to Markdown at so
 
 *rdocs*: Source and build directories for [Sphinx](http://www.sphinx-doc.org/en/master/).
 
-*docs*: Build output (html) copied from rdocs. Source for GitHub pages.
+*docs*: Sphinx output copied from rdocs to function as GitHub Pages source.
 
 ### Update like this
 1. Edit reStructuredText (rst) files in *rdocs*. 
