@@ -32,7 +32,7 @@ Data model
 .. figure:: _static/images/data-model.png
    :alt: ASV data model
 
-   SBDI data model for ASV data and metadata.
+   SBDI data model for ASV data and metadata (Try: right-click | Open Image in New Tab / View Image, for improved resolution).
 
 In our ASV data model, each dataset includes one or more sampling event(s), each of which are linked to or one more quantified sequence occurrence(s). Events are also associated with metadata on sequencing and bioinformatic processing, either stored in the `'mixs' <https://tools.gbif.org/dwca-validator/extension.do?id=http://gensc.org/ns/mixs/terms/Sample>`_ table (mandatory data), or accessed via hyperlink to an external repository, in the 'associated_sequences' field (additional data). In addition, events can be related to any type of contextual metadata, registered in the `'emof' <https://tools.gbif.org/dwca-validator/extension.do?id=http://rs.iobis.org/obis/terms/ExtendedMeasurementOrFact>`_ table. Finally, while we will store the original taxonomic identification submitted to us by the data provider, we will also apply a 'standard SBDI' annotation, subject to regular updates as new releases of external reference databases, such as `GTDB <https://gtdb.ecogenomic.org/>`_, become available.
 
