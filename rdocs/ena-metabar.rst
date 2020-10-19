@@ -239,11 +239,15 @@ Also add the following metadata for read files:
 
 •	**forward [reverse]_file_md5:** Paste the md5 checksums from Step 4a.
 
-Your spreadsheet should now look similar to this (but add as much optional metadata as possible):
+Your spreadsheet should now look similar to this (but add as much optional metadata as possible).
 
 .. csv-table::
   :file: _static/tables/runs.csv
   :header-rows: 1
+
+Note, however, that if you accidentally downloaded the template without selecting file format, you also need to specify layout:
+
+•	**library layout**: PAIRED
 
 Save your spreadsheet, go back to the Webin form and select *Upload Completed Spreadsheet* | *Submit* to finally submit your read files. If successful, you will receive a confirmation message.
 

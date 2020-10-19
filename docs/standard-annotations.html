@@ -1,0 +1,235 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Standard re-annotations of ASVs in SBDI &mdash; Swedish Biodiversity Data Infrastructure: Molecular Data  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Atlas module for ASV data" href="sbdi-mol-mod.html" />
+<link rel="stylesheet" type="text/css"
+     href="_static/custom.css" />
+
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Swedish Biodiversity Data Infrastructure: Molecular Data
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ena-metabar.html">Guide to ENA submission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sbdi-mol-mod.html">Atlas module for ASV data</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Standard re-annotations of ASVs in SBDI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#archaea-bacteria">Archaea, Bacteria</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fungi">Fungi</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Swedish Biodiversity Data Infrastructure: Molecular Data</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Standard re-annotations of ASVs in SBDI</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/standard-annotations.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="toctree-wrapper compound">
+</div>
+<div class="section" id="standard-re-annotations-of-asvs-in-sbdi">
+<h1>Standard re-annotations of ASVs in SBDI<a class="headerlink" href="#standard-re-annotations-of-asvs-in-sbdi" title="Permalink to this headline">¶</a></h1>
+<p>SBDI will apply standard taxonomic re-annotations to submitted ASV data, using current versions of selected classification algorithms and reference databases. These will provide the valid and searchable taxonomies in our platform, although the original, user-provided annotations will also be stored and displayed (see BioAtlas/DwC field <em>previousIdentifications</em>).</p>
+<p>Current annotation schemes (in our beta version of the ASV module) are, per organism group:</p>
+<div class="section" id="archaea-bacteria">
+<h2>Archaea, Bacteria<a class="headerlink" href="#archaea-bacteria" title="Permalink to this headline">¶</a></h2>
+<p>Algorithm: The Ribosomal Database Project (RDP) Classifier, as implemented in the <a href="#id1"><span class="problematic" id="id2">`DADA2 Pipeline Tutorial (1.16)&lt;https://benjjneb.github.io/dada2/tutorial.html&gt;`_</span></a>.
+Settings: Default settings for assignTaxonomy command.
+Reference Database: <a href="#id3"><span class="problematic" id="id4">`DADA2 formatted version of Genome taxonomy DataBase (GTDB) release 86&lt;https://zenodo.org/record/2541239&gt;`_</span></a>.</p>
+</div>
+<div class="section" id="fungi">
+<h2>Fungi<a class="headerlink" href="#fungi" title="Permalink to this headline">¶</a></h2>
+<p>Algorithm: <a href="#id5"><span class="problematic" id="id6">`VSEARCH&lt;https://github.com/torognes/vsearch&gt;`_</span></a>. Sintax option.
+Settings: Accepting matches with a confidence value of at least 0.8.
+Reference Database: <a href="#id7"><span class="problematic" id="id8">`UNITE&lt;https://unite.ut.ee/&gt;`_</span></a> v8.1.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="sbdi-mol-mod.html" class="btn btn-neutral float-left" title="Atlas module for ASV data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Swedish Biodiversity Data Infrastructure
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

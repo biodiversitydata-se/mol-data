@@ -1,0 +1,22 @@
+.. toctree::
+   :hidden:
+
+.. role:: red
+
+Standard re-annotations of ASVs in SBDI
+=======================================
+SBDI will apply standard taxonomic re-annotations to submitted ASV data, using current versions of selected classification algorithms and reference databases. These will provide the valid and searchable taxonomies in our platform, although the original, user-provided annotations will also be stored and displayed (see BioAtlas/DwC field *previousIdentifications*).
+
+Current annotation schemes (in our beta version of the ASV module) are, per organism group:
+
+Archaea, Bacteria
+*******************************
+Algorithm: The Ribosomal Database Project (RDP) Classifier, as implemented in the `DADA2 Pipeline Tutorial (1.16)<https://benjjneb.github.io/dada2/tutorial.html>`_.
+Settings: Default settings for assignTaxonomy command.
+Reference Database: `DADA2 formatted version of Genome taxonomy DataBase (GTDB) release 86<https://zenodo.org/record/2541239>`_.
+
+Fungi
+*******************************
+Algorithm: `VSEARCH<https://github.com/torognes/vsearch>`_. Sintax option.
+Settings: Accepting matches with a confidence value of at least 0.8.
+Reference Database: `UNITE<https://unite.ut.ee/>`_ v8.1.
