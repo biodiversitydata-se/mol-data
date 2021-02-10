@@ -69,7 +69,7 @@ In the downloaded spreadsheet, you can add custom attributes (with units, where 
   :file: _static/tables/edited-sample-template.csv
   :header-rows: 0
 
-Note that *environmental package* refers to the checklist you selected in Step 3a, e.g. if you selected the GSC MixS water list one of your attributes will be called *water environmental package* and the value for that column should be *water* in each of your sample rows. Also, remember to enter sample names that correspond to what you use in related publications. These names will be stored as *sample aliases* and will enable readers to find sample-specific metadata and read files, even if you only state a top-level Project accession number in your paper.
+Note that *environmental package* refers to the checklist you selected in Step 3a, e.g. if you selected the GSC MixS water list one of your attributes will be called *water environmental package* and the value for that column should be *water* in each of your sample rows. Also, remember to enter sample names that correspond to what you use in related publications. These names will be stored as *sample aliases* and will enable readers to find sample-specific metadata and read files, even if you only state a Project accession number in your paper.
 
 Step 3e: Add sample metadata
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
