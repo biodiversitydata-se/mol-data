@@ -69,7 +69,7 @@ In the downloaded spreadsheet, you can add custom attributes (with units, where 
   :file: _static/tables/edited-sample-template.csv
   :header-rows: 0
 
-Note that *environmental package* refers to the checklist you selected in Step 3a, e.g. if you selected the GSC MixS water list one of your attributes will be called *water environmental package* and the value for that column should be *water* in each of your sample rows.
+Note that *environmental package* refers to the checklist you selected in Step 3a, e.g. if you selected the GSC MixS water list one of your attributes will be called *water environmental package* and the value for that column should be *water* in each of your sample rows. Also, remember to enter sample names that correspond to what you use in related publications. These names will be stored as *sample aliases* and will enable readers to find sample-specific metadata and read files, even if you only state a top-level Project accession number in your paper.
 
 Step 3e: Add sample metadata
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -81,13 +81,14 @@ Before adding actual sample metadata to your spreadsheet, take a close look at E
 
   <br />
 
-- **Some attributes should be selected from ontologies**. To increase searchability, some attribute values should be selected from designated ontologies, which are formal specifications of terms used in certain contexts, and of how these terms relate to each other. You can browse or search the latest versions of ontologies used in ENA submission using the `EMBL-EBI Ontology Lookup Service <https://www.ebi.ac.uk/ols/index>`_. You can also use the following direct links to find valid terms for mandatory or recommended attributes in a GSC MixS checklists:
+- **Some attributes should be selected from ontologies**. To increase searchability, some attribute values should be selected from designated ontologies, which are formal specifications of terms used in certain contexts, and of how these terms relate to each other. You can browse or search the latest versions of ontologies used in ENA submission using the `EMBL-EBI Ontology Lookup Service (OLS) <https://www.ebi.ac.uk/ols/index>`_. You can also use the following direct links as starting points for finding valid terms for some mandatory or recommended attributes in a GSC MixS checklists. Note that the OLS entry for `environmental feature <https://www.ebi.ac.uk/ols/ontologies/envo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00002297>`_ has been flagged as *obsolete*, and we thus tentatively link to a related umbrella term below:
 
   .. csv-table::
     :file: _static/tables/ontology-fields.csv
     :header-rows: 1
 
   In the linked ontology tree views, click the plus sign next to a blue-shaded branch to show all instances of that term, and continue downwards until you find the most specific term that accurately describes your data. It is good practice to then register the term together with ontology acronym and accession, e.g: *marine pelagic biome (ENVO:01000023)*.
+
 
 .. |br2| raw:: html
 
@@ -125,7 +126,7 @@ With data added, your spreadsheet should look similar to this:
   :file: _static/tables/filled-sample-template.csv
   :header-rows: 0
 
-If so, go back to the start page of sample submission and click *Submit Completed Spreadsheet* and select your edited \*.tsv file. Given that your spreadsheet structure is correct, you will be directed to a page where you can toggle between samples in the left-hand panel, to inspect attributes for each of these in the right panel. If you find yourself stuck on the same page after uploading, you probably need to go back and review your file structure.
+If so, go back to the start page of sample submission and click *Submit Completed Spreadsheet* and select your edited \*.tsv file. Given that your spreadsheet structure is correct, you will be directed to a page where you can toggle between samples in the left-hand panel, to inspect attributes for each of these in the right panel. If you find yourself stuck on the same page after uploading, you probably need to go back and review your file structure. Note that ENA accepts tab-delimited text only here (with .tsv or .txt extension).
 
 Step 3g: Review and submit sample data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

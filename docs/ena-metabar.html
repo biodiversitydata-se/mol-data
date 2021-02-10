@@ -679,7 +679,7 @@
 </tr>
 </tbody>
 </table>
-<p>Note that <em>environmental package</em> refers to the checklist you selected in Step 3a, e.g. if you selected the GSC MixS water list one of your attributes will be called <em>water environmental package</em> and the value for that column should be <em>water</em> in each of your sample rows.</p>
+<p>Note that <em>environmental package</em> refers to the checklist you selected in Step 3a, e.g. if you selected the GSC MixS water list one of your attributes will be called <em>water environmental package</em> and the value for that column should be <em>water</em> in each of your sample rows. Also, remember to enter sample names that correspond to what you use in related publications. These names will be stored as <em>sample aliases</em> and will enable readers to find sample-specific metadata and read files, even if you only state a top-level Project accession number in your paper.</p>
 </div>
 <div class="section" id="step-3e-add-sample-metadata">
 <h4>Step 3e: Add sample metadata<a class="headerlink" href="#step-3e-add-sample-metadata" title="Permalink to this headline">¶</a></h4>
@@ -688,7 +688,7 @@
 <li><p><strong>Taxon attributes have unintuitive meaning for environmental samples</strong>. For metabarcoding data, the <em>tax_id</em> &amp; <em>scientific_name</em> attributes do not refer to the sequenced organisms, but instead <em>specify the sampled environment</em>. A <em>spider metagenome</em> is, for example, meant to describe samples for which a spider or spider body part (e.g. gut) is the <em>environment</em>, i.e. not samples from which you have derived spider sequences. The attributes <em>tax_id</em> &amp; <em>scientific_name</em> should thus be selected from the list of <a class="reference external" href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=408169">environmental and organismal metagenomes in NCBI’s taxonomy browser</a>, and <em>common_name</em> should be left empty. For host-associated samples, also differentiate between these generic attributes (i.e. <em>tax_id</em> &amp; <em>scientific_name</em>) and <em>host taxid</em>, which you can also search for in <a class="reference external" href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi">NCBI’s taxonomy browser</a>, and should be as specific as possible.</p></li>
 </ul>
 <ul>
-<li><p><strong>Some attributes should be selected from ontologies</strong>. To increase searchability, some attribute values should be selected from designated ontologies, which are formal specifications of terms used in certain contexts, and of how these terms relate to each other. You can browse or search the latest versions of ontologies used in ENA submission using the <a class="reference external" href="https://www.ebi.ac.uk/ols/index">EMBL-EBI Ontology Lookup Service</a>. You can also use the following direct links to find valid terms for mandatory or recommended attributes in a GSC MixS checklists:</p>
+<li><p><strong>Some attributes should be selected from ontologies</strong>. To increase searchability, some attribute values should be selected from designated ontologies, which are formal specifications of terms used in certain contexts, and of how these terms relate to each other. You can browse or search the latest versions of ontologies used in ENA submission using the <a class="reference external" href="https://www.ebi.ac.uk/ols/index">EMBL-EBI Ontology Lookup Service (OLS)</a>. You can also use the following direct links as starting points for finding valid terms for some mandatory or recommended attributes in a GSC MixS checklists. Note that the OLS entry for <a class="reference external" href="https://www.ebi.ac.uk/ols/ontologies/envo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00002297">environmental feature</a> has been flagged as <em>obsolete</em>, and we thus tentatively link to a related umbrella term below:</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -707,7 +707,7 @@
 <td><p>Broad ecological context, e.g. desert, taiga, deciduous woodland, or coral reef</p></td>
 </tr>
 <tr class="row-odd"><td><p>[ All ]</p></td>
-<td><p><a class="reference external" href="https://www.ebi.ac.uk/ols/ontologies/envo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00002297">environment (feature)</a></p></td>
+<td><p><a class="reference external" href="https://www.ebi.ac.uk/ols/ontologies/envo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000813">environment (feature)</a></p></td>
 <td><p>More local environment, e.g. harbor, cliff, or lake</p></td>
 </tr>
 <tr class="row-even"><td><p>[ All ]</p></td>
@@ -972,7 +972,7 @@
 </tr>
 </tbody>
 </table>
-<p>If so, go back to the start page of sample submission and click <em>Submit Completed Spreadsheet</em> and select your edited *.tsv file. Given that your spreadsheet structure is correct, you will be directed to a page where you can toggle between samples in the left-hand panel, to inspect attributes for each of these in the right panel. If you find yourself stuck on the same page after uploading, you probably need to go back and review your file structure.</p>
+<p>If so, go back to the start page of sample submission and click <em>Submit Completed Spreadsheet</em> and select your edited *.tsv file. Given that your spreadsheet structure is correct, you will be directed to a page where you can toggle between samples in the left-hand panel, to inspect attributes for each of these in the right panel. If you find yourself stuck on the same page after uploading, you probably need to go back and review your file structure. Note that ENA accepts tab-delimited text only here (with .tsv or .txt extension).</p>
 </div>
 <div class="section" id="step-3g-review-and-submit-sample-data">
 <h4>Step 3g: Review and submit sample data<a class="headerlink" href="#step-3g-review-and-submit-sample-data" title="Permalink to this headline">¶</a></h4>
