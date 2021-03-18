@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Molecular biodiversity data in SBDI &mdash; Swedish Biodiversity Data Infrastructure: Molecular Data  documentation</title>
+  <title>Taxonomic annotation of ASVs &mdash; Swedish Biodiversity Data Infrastructure: Molecular Data  documentation</title>
   
 
   
@@ -38,7 +38,6 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Guide to ENA submission" href="ena-metabar.html" />
 <link rel="stylesheet" type="text/css"
      href="_static/custom.css" />
 
@@ -56,7 +55,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> Swedish Biodiversity Data Infrastructure: Molecular Data
+            <a href="index.html" class="icon icon-home"> Swedish Biodiversity Data Infrastructure: Molecular Data
           
 
           
@@ -90,7 +89,6 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="ena-metabar.html">Guide to ENA submission</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sbdi-mol-mod.html">Atlas module for ASV data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="std-taxon-annotation.html">Taxonomic annotation of ASVs</a></li>
 </ul>
 
             
@@ -106,7 +104,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">Swedish Biodiversity Data Infrastructure: Molecular Data</a>
+          <a href="index.html">Swedish Biodiversity Data Infrastructure: Molecular Data</a>
         
       </nav>
 
@@ -137,15 +135,15 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Molecular biodiversity data in SBDI</li>
+      <li>Taxonomic annotation of ASVs</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/std-taxon-annotation.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -160,15 +158,24 @@
             
   <div class="toctree-wrapper compound">
 </div>
-<div class="section" id="molecular-biodiversity-data-in-sbdi">
-<h1>Molecular biodiversity data in SBDI<a class="headerlink" href="#molecular-biodiversity-data-in-sbdi" title="Permalink to this headline">¶</a></h1>
-<p>The <a class="reference external" href="https://biodiversitydata.se/">Swedish Biodiversity Data Infrastructure (SBDI)</a> is developed in collaboration with the <a class="reference external" href="https://living-atlases.gbif.org/">Living Atlas Community</a>, and aims to make Swedish biodiversity data accessible for integrative analysis in a <a class="reference external" href="https://bioatlas.se/">single platform</a>. As part of this effort, we want to make it easier to publish, access and use molecular biodiversity data, i.e. sequence-based observations derived from metabarcoding or metagenomics studies of environmental samples.</p>
-<p>We provide a step-by-step <a class="reference external" href="ena-metabar.html">guide to ENA submission</a> of raw reads , and are currently collaborating on a scripted <a class="reference external" href="https://nf-co.re/ampliseq">pipeline for denoising and taxonomic annotation</a> of amplicon sequencing data, from both Illumina and PacBio platforms. For anyone interested in sharing or using ASV occurrence data, we are also developing a <a class="reference external" href="sbdi-mol-mod.html">molecular module</a> to help integrate ASV occurrences into the <a class="reference external" href="https://bioatlas.se/">BioAtlas portal</a>.</p>
-<div class="figure align-default" id="id1">
-<img alt="SBDI data flow and services" src="_images/data-flow.png" />
-<p class="caption"><span class="caption-text">SBDI data flow and services for amplicon sequence data.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<div class="section" id="taxonomic-annotation-of-asvs">
+<h1>Taxonomic annotation of ASVs<a class="headerlink" href="#taxonomic-annotation-of-asvs" title="Permalink to this headline">¶</a></h1>
+<p>We perform a standard taxonomic annotation of all ASVs submitted to SBDI, using current versions of selected classification algorithms and reference databases. This standard annotation provides the valid and searchable taxonomy of the ASV, although the original, user-provided annotation is also stored and displayed (in the Bioatlas). We also plan to perform regular re-annotations, to enable identification at lower taxonomic levels as reference databases grow and improve. We describe current methods and reference databases below:</p>
+<div class="section" id="fungi">
+<h2>Fungi<a class="headerlink" href="#fungi" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="reference-database">
+<h3>Reference database<a class="headerlink" href="#reference-database" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://doi.org/10.15156/BIO/786345">UNITE USEARCH/UTAX release for Fungi. Version 18.11.2018.</a></p>
 </div>
-<p>Our molecular services are under development, but we hope to ingest and display or first ASV data by the end of 2020. Please email any suggestions or questions, e.g. regarding data submission, to <a class="reference external" href="mailto:sbdi-mol-data-support&#37;&#52;&#48;scilifelab&#46;se">SBDI Molecular Data Support</a>.</p>
+<div class="section" id="algorithm">
+<h3>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline">¶</a></h3>
+<p>The ITSx tool version 1.1-beta [1] is used to extract the ITS2 region, which is then used to predict the taxonomy with the SINTAX classifier [2] as implemented in VSEARCH (version 2.10.4) [3] and the USEARCH/UTAX reference dataset (version 8.0) [4].</p>
+<p>[1] Bengtsson‐Palme, J., Ryberg, M., Hartmann, M., Branco, S., Wang, Z., Godhe, A., De Wit, P., Sánchez‐García, M., Ebersberger, I., &amp; de Sousa, F. (2013). Improved software detection and extraction of ITS1 and ITS 2 from ribosomal ITS sequences of fungi and other eukaryotes for analysis of environmental sequencing data. Methods in ecology and evolution, 4(10), 914-919.</p>
+<p>[2] R.C. Edgar (2016), SINTAX: a simple non-Bayesian taxonomy classifier for 16S and ITS sequences, <a class="reference external" href="https://doi.org/10.1101/074161">https://doi.org/10.1101/074161</a></p>
+<p>[3] Rognes T, Flouri T, Nichols B, Quince C, Mahé F. (2016) VSEARCH: a versatile open source tool for metagenomics. PeerJ 4:e2584. doi: 10.7717/peerj.2584</p>
+<p>[4] UNITE Community (2019): Full UNITE+INSD dataset for Fungi. Version 18.11.2018. UNITE Community. <a class="reference external" href="https://doi.org/10.15156/BIO/786347">https://doi.org/10.15156/BIO/786347</a></p>
+</div>
+</div>
 </div>
 
 
@@ -176,9 +183,6 @@
            
           </div>
           <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="ena-metabar.html" class="btn btn-neutral float-right" title="Guide to ENA submission" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
 
   <hr/>
 

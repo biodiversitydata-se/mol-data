@@ -5,6 +5,7 @@
 
    ena-metabar
    sbdi-mol-mod
+   std-taxon-annotation
 
 Molecular biodiversity data in SBDI
 ===================================
