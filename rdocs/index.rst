@@ -7,6 +7,7 @@
    sbdi-mol-mod
    std-taxon-annotation
 
+
 Molecular biodiversity data in SBDI
 ===================================
 The `Swedish Biodiversity Data Infrastructure (SBDI) <https://biodiversitydata.se/>`_ is developed in collaboration with the `Living Atlas Community <https://living-atlases.gbif.org/>`_, and aims to make Swedish biodiversity data accessible for integrative analysis in a `single platform <https://bioatlas.se/>`_. As part of this effort, we want to make it easier to publish, access and use molecular biodiversity data, i.e. sequence-based observations derived from metabarcoding or metagenomics studies of environmental samples.
