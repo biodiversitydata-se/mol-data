@@ -96,6 +96,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#algorithm">Algorithm</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#prokaryotes">Prokaryotes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Reference database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Algorithm</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -169,7 +174,7 @@
 </div>
 <div class="section" id="taxonomic-annotation-of-asvs">
 <h1>Taxonomic annotation of ASVs<a class="headerlink" href="#taxonomic-annotation-of-asvs" title="Permalink to this headline">¶</a></h1>
-<p>We perform a standard taxonomic annotation of all ASVs submitted to SBDI, using current versions of selected classification algorithms and reference databases. This standard annotation provides the valid and searchable taxonomy of the ASV, although the original, user-provided annotation is also stored and displayed (in the Bioatlas). We also plan to perform regular re-annotations, to enable identification at lower taxonomic levels as reference databases grow and improve. We describe current methods and reference databases below:</p>
+<p>We perform a standard taxonomic annotation of all ASVs submitted to SBDI, using current versions of selected classification algorithms and reference databases. This standard annotation will (eventually) provide the valid and searchable taxonomy of the ASV, although the original, user-provided annotation will also be stored and displayed (under ‘previousIdentifications’ in the Bioatlas). The taxonomy issue is, however, further complicated by the fact that data also need to be indexed against the taxonomy backbone of the Bioatlas (based on the <a class="reference external" href="https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c">GBIF taxonomy backbone</a>), for them to become fully accessible in the atlas. While the current taxonomy covers a huge amount of names, it still has poor coverage of some organism groups, such as prokaryotes and protists. This means that the taxonomy of some ASVs will differ between the ASV database and the Bioatlas. We are working hard to solve this problem. We also plan to perform regular re-annotations, to enable identification at lower taxonomic levels as reference databases grow and improve. We describe current methods and reference databases below:</p>
 <div class="section" id="fungi">
 <h2>Fungi<a class="headerlink" href="#fungi" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="reference-database">
@@ -183,6 +188,17 @@
 <p>[2] R.C. Edgar (2016), SINTAX: a simple non-Bayesian taxonomy classifier for 16S and ITS sequences, <a class="reference external" href="https://doi.org/10.1101/074161">https://doi.org/10.1101/074161</a></p>
 <p>[3] Rognes T, Flouri T, Nichols B, Quince C, Mahé F. (2016) VSEARCH: a versatile open source tool for metagenomics. PeerJ 4:e2584. doi: 10.7717/peerj.2584</p>
 <p>[4] UNITE Community (2019): Full UNITE+INSD dataset for Fungi. Version 18.11.2018. UNITE Community. <a class="reference external" href="https://doi.org/10.15156/BIO/786347">https://doi.org/10.15156/BIO/786347</a></p>
+</div>
+</div>
+<div class="section" id="prokaryotes">
+<h2>Prokaryotes<a class="headerlink" href="#prokaryotes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Reference database<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.arb-silva.de/documentation/release-132">SILVA v132. SSU Ref NR 99</a> (representative 16S sequences with 99% dereplication), trained with primers NNNNCCTACGGGNGGCWGCAG and GACTACHVGGGTATCTAATCC.</p>
+</div>
+<div class="section" id="id2">
+<h3>Algorithm<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>QIIME2 naive Bayes machine-learning classifier, as a part of <a class="reference external" href="https://nf-co.re/ampliseq">the ampliseq pipeline</a> for denoising and taxonomic annotation.</p>
 </div>
 </div>
 </div>
