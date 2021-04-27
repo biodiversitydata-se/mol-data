@@ -19,6 +19,7 @@ We provide a step-by-step `guide to ENA submission <ena-metabar.html>`_ of raw r
 
    SBDI data flow and services for amplicon sequence data.
 
-Our molecular services are under development, but we hope to ingest and display or first ASV data by the end of 2020. Please email any suggestions or questions, e.g. regarding data submission, to `SBDI Molecular Data Support`_.
-
-.. _SBDI Molecular Data Support: sbdi-mol-data-support@scilifelab.se
+Our molecular services are under development,
+but we hope to ingest and display or first ASV data by the end of May 2021.
+Please contact `SBDI support <https://docs.biodiversitydata.se/contact-us/>`_
+if you have any questions or suggestions.
