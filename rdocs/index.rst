@@ -21,5 +21,5 @@ We provide a step-by-step `guide to ENA submission <ena-metabar.html>`_ of raw r
 
 Our molecular services are under development,
 but we hope to ingest and display or first ASV data by the end of May 2021.
-Please contact `SBDI support <https://docs.biodiversitydata.se/contact-us/>`_
+Please contact `SBDI support <https://docs.biodiversitydata.se/support/>`_
 if you have any questions or suggestions.
