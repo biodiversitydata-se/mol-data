@@ -4,6 +4,7 @@
    :hidden:
 
    ena-metabar
+   std-taxon-annotation
 
 
 Molecular biodiversity data in SBDI
