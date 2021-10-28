@@ -55,7 +55,7 @@ To ensure that metadata are validated and searchable, you should use existing at
 
 Step 3c: Create spreadsheet template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-After selecting optional attributes, click the *Download Spreadsheet* button (at the bottom of the form) to download a tab-separated values (\*.tsv) file. Open the file in your spreadsheet application of choice (In MS Excel, click *Data | Text to Columns | Delimited | Delimiter: Tab*, to separate text into columns, if needed). With the added optional attributes from 3b, a template created from the *GSC MIxS water* checklist should look like this:
+After selecting optional attributes, click the *Download Template Spreadsheet* button (at the bottom of the form) to download a tab-separated values (\*.tsv) file. Open the file in your spreadsheet application of choice (In MS Excel, click *Data | Text to Columns | Delimited | Delimiter: Tab*, to separate text into columns, if needed). With the added optional attributes from 3b, a template created from the *GSC MIxS water* checklist should look like this:
 
 .. csv-table::
   :file: _static/tables/sample-template.csv
@@ -81,13 +81,15 @@ Before adding actual sample metadata to your spreadsheet, take a close look at E
 
   <br />
 
-- **Some attributes should be selected from ontologies**. To increase searchability, some attribute values should be selected from designated ontologies, which are formal specifications of terms used in certain contexts, and of how these terms relate to each other. You can browse or search the latest versions of ontologies used in ENA submission using the `EMBL-EBI Ontology Lookup Service (OLS) <https://www.ebi.ac.uk/ols/index>`_. You can also use the following direct links as starting points for finding valid terms for some mandatory or recommended attributes in a GSC MixS checklists. Note that the OLS entry for `environmental feature <https://www.ebi.ac.uk/ols/ontologies/envo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00002297>`_ has been flagged as *obsolete*, and we thus tentatively link to a related umbrella term below:
+- **Some attributes should be selected from ontologies**. To increase searchability, some attribute values should be selected from designated ontologies, which are formal specifications of terms used in certain contexts, and of how these terms relate to each other. You can browse or search the latest versions of ontologies used in ENA submission using the `EMBL-EBI Ontology Lookup Service (OLS) <https://www.ebi.ac.uk/ols/index>`_. You can also use the following direct links as *starting points* for finding valid terms for some mandatory or recommended attributes in a GSC MixS checklists:
 
   .. csv-table::
     :file: _static/tables/ontology-fields.csv
     :header-rows: 1
 
-  In the linked ontology tree views, click the plus sign next to a blue-shaded branch to show all instances of that term, and continue downwards until you find the most specific term that accurately describes your data. It is good practice to then register the term together with ontology acronym and accession, e.g: *marine pelagic biome (ENVO:01000023)*.
+  \* The OLS entry for `environmental feature <https://www.ebi.ac.uk/ols/ontologies/envo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00002297>`_ has been flagged as *obsolete*, and we tentatively link to a related umbrella term here.
+
+  In the linked ontology tree views, click the plus sign next to a highlighted branch to show all instances of that term, and continue downwards until you find the most specific term that accurately describes your data. It is good practice to then register the term together with ontology acronym and accession, e.g: *marine pelagic biome (ENVO:01000023)*.
 
 
 .. |br2| raw:: html
@@ -130,7 +132,7 @@ If so, go back to the start page of sample submission and click *Submit Complete
 
 Step 3g: Review and submit sample data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Before clicking the *Submit* button, have a look through the metadata for each of your samples. Note that a red icon |red-icon| next to a field or sample means that data for a mandatory attribute is either missing or incorrect. Depending on the type of validation used for a particular attribute, a green icon |green-icon| does not always mean that data are correct, however, as you may instead get an error message when submitting, or even get away with using a non-valid term. After successful sample submission, you will receive a confirmation message, and should be able to see your samples listed in the *Samples* tab.
+Before clicking the *Submit* button, have a look through the metadata for each of your samples. Note that a red icon |red-icon| next to a field or sample means that data for a mandatory attribute is either missing or incorrect. Depending on the type of validation used for a particular attribute, a green icon |green-icon| does not always mean that data are correct, however, as you may instead get an error message when submitting, or even get away with using a non-valid term. After successful sample submission, you will receive a confirmation message, and should be able to see your samples listed in the *Samples* tab (you may have to refresh the page first, though).
 
 .. |red-icon| image:: _static/images/red-icon.png
 .. |green-icon| image:: _static/images/green-icon.png

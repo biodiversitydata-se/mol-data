@@ -38,6 +38,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Taxonomic annotation of ASVs" href="std-taxon-annotation.html" />
     <link rel="prev" title="Molecular biodiversity data in SBDI" href="index.html" />
 <link rel="stylesheet" type="text/css"
      href="_static/custom.css" />
@@ -123,6 +124,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#post-submission-editing">Post-submission editing</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="std-taxon-annotation.html">Taxonomic annotation of ASVs</a></li>
 </ul>
 
             
@@ -299,9 +301,10 @@
 </div>
 <div class="section" id="step-3c-create-spreadsheet-template">
 <h4>Step 3c: Create spreadsheet template<a class="headerlink" href="#step-3c-create-spreadsheet-template" title="Permalink to this headline">¶</a></h4>
-<p>After selecting optional attributes, click the <em>Download Spreadsheet</em> button (at the bottom of the form) to download a tab-separated values (*.tsv) file. Open the file in your spreadsheet application of choice (In MS Excel, click <em>Data | Text to Columns | Delimited | Delimiter: Tab</em>, to separate text into columns, if needed). With the added optional attributes from 3b, a template created from the <em>GSC MIxS water</em> checklist should look like this:</p>
+<p>After selecting optional attributes, click the <em>Download Template Spreadsheet</em> button (at the bottom of the form) to download a tab-separated values (*.tsv) file. Open the file in your spreadsheet application of choice (In MS Excel, click <em>Data | Text to Columns | Delimited | Delimiter: Tab</em>, to separate text into columns, if needed). With the added optional attributes from 3b, a template created from the <em>GSC MIxS water</em> checklist should look like this:</p>
 <table class="docutils align-default">
 <colgroup>
+<col style="width: 5%" />
 <col style="width: 5%" />
 <col style="width: 5%" />
 <col style="width: 5%" />
@@ -344,8 +347,10 @@
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p>#unique_name_prefix</p></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -383,6 +388,7 @@
 <td><p>geographic location (latitude)</p></td>
 <td><p>geographic location (longitude)</p></td>
 <td><p>water environmental package</p></td>
+<td><p>geographic location (depth)</p></td>
 <td><p>environment (biome)</p></td>
 <td><p>environment (feature)</p></td>
 <td><p>environment (material)</p></td>
@@ -407,6 +413,7 @@
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><p>#units</p></td>
 <td></td>
@@ -425,27 +432,7 @@
 <td><p>DD</p></td>
 <td><p>DD</p></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>water</p></td>
+<td><p>m</p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -686,7 +673,7 @@
 <li><p><strong>Taxon attributes have unintuitive meaning for environmental samples</strong>. For metabarcoding data, the <em>tax_id</em> &amp; <em>scientific_name</em> attributes do not refer to the sequenced organisms, but instead <em>specify the sampled environment</em>. A <em>spider metagenome</em> is, for example, meant to describe samples for which a spider or spider body part (e.g. gut) is the <em>environment</em>, i.e. not samples from which you have derived spider sequences. The attributes <em>tax_id</em> &amp; <em>scientific_name</em> should thus be selected from the list of <a class="reference external" href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=408169">environmental and organismal metagenomes in NCBI’s taxonomy browser</a>, and <em>common_name</em> should be left empty. For host-associated samples, also differentiate between these generic attributes (i.e. <em>tax_id</em> &amp; <em>scientific_name</em>) and <em>host taxid</em>, which you can also search for in <a class="reference external" href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi">NCBI’s taxonomy browser</a>, and should be as specific as possible.</p></li>
 </ul>
 <ul>
-<li><p><strong>Some attributes should be selected from ontologies</strong>. To increase searchability, some attribute values should be selected from designated ontologies, which are formal specifications of terms used in certain contexts, and of how these terms relate to each other. You can browse or search the latest versions of ontologies used in ENA submission using the <a class="reference external" href="https://www.ebi.ac.uk/ols/index">EMBL-EBI Ontology Lookup Service (OLS)</a>. You can also use the following direct links as starting points for finding valid terms for some mandatory or recommended attributes in a GSC MixS checklists. Note that the OLS entry for <a class="reference external" href="https://www.ebi.ac.uk/ols/ontologies/envo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00002297">environmental feature</a> has been flagged as <em>obsolete</em>, and we thus tentatively link to a related umbrella term below:</p>
+<li><p><strong>Some attributes should be selected from ontologies</strong>. To increase searchability, some attribute values should be selected from designated ontologies, which are formal specifications of terms used in certain contexts, and of how these terms relate to each other. You can browse or search the latest versions of ontologies used in ENA submission using the <a class="reference external" href="https://www.ebi.ac.uk/ols/index">EMBL-EBI Ontology Lookup Service (OLS)</a>. You can also use the following direct links as <em>starting points</em> for finding valid terms for some mandatory or recommended attributes in a GSC MixS checklists:</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -705,7 +692,7 @@
 <td><p>Broad ecological context, e.g. desert, taiga, deciduous woodland, or coral reef</p></td>
 </tr>
 <tr class="row-odd"><td><p>[ All ]</p></td>
-<td><p><a class="reference external" href="https://www.ebi.ac.uk/ols/ontologies/envo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000813">environment (feature)</a></p></td>
+<td><p><a class="reference external" href="https://www.ebi.ac.uk/ols/ontologies/envo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_01000813">environment (feature) *</a></p></td>
 <td><p>More local environment, e.g. harbor, cliff, or lake</p></td>
 </tr>
 <tr class="row-even"><td><p>[ All ]</p></td>
@@ -714,7 +701,8 @@
 </tr>
 </tbody>
 </table>
-<p>In the linked ontology tree views, click the plus sign next to a blue-shaded branch to show all instances of that term, and continue downwards until you find the most specific term that accurately describes your data. It is good practice to then register the term together with ontology acronym and accession, e.g: <em>marine pelagic biome (ENVO:01000023)</em>.</p>
+<p>* The OLS entry for <a class="reference external" href="https://www.ebi.ac.uk/ols/ontologies/envo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00002297">environmental feature</a> has been flagged as <em>obsolete</em>, and we tentatively link to a related umbrella term here.</p>
+<p>In the linked ontology tree views, click the plus sign next to a highlighted branch to show all instances of that term, and continue downwards until you find the most specific term that accurately describes your data. It is good practice to then register the term together with ontology acronym and accession, e.g: <em>marine pelagic biome (ENVO:01000023)</em>.</p>
 </li>
 </ul>
 <ul class="simple">
@@ -974,7 +962,7 @@
 </div>
 <div class="section" id="step-3g-review-and-submit-sample-data">
 <h4>Step 3g: Review and submit sample data<a class="headerlink" href="#step-3g-review-and-submit-sample-data" title="Permalink to this headline">¶</a></h4>
-<p>Before clicking the <em>Submit</em> button, have a look through the metadata for each of your samples. Note that a red icon <img alt="red-icon" src="_images/red-icon.png" /> next to a field or sample means that data for a mandatory attribute is either missing or incorrect. Depending on the type of validation used for a particular attribute, a green icon <img alt="green-icon" src="_images/green-icon.png" /> does not always mean that data are correct, however, as you may instead get an error message when submitting, or even get away with using a non-valid term. After successful sample submission, you will receive a confirmation message, and should be able to see your samples listed in the <em>Samples</em> tab.</p>
+<p>Before clicking the <em>Submit</em> button, have a look through the metadata for each of your samples. Note that a red icon <img alt="red-icon" src="_images/red-icon.png" /> next to a field or sample means that data for a mandatory attribute is either missing or incorrect. Depending on the type of validation used for a particular attribute, a green icon <img alt="green-icon" src="_images/green-icon.png" /> does not always mean that data are correct, however, as you may instead get an error message when submitting, or even get away with using a non-valid term. After successful sample submission, you will receive a confirmation message, and should be able to see your samples listed in the <em>Samples</em> tab (you may have to refresh the page first, though).</p>
 </div>
 </div>
 <div class="section" id="step-4-prepare-and-upload-read-files">
@@ -1180,6 +1168,7 @@ bye
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="std-taxon-annotation.html" class="btn btn-neutral float-right" title="Taxonomic annotation of ASVs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="index.html" class="btn btn-neutral float-left" title="Molecular biodiversity data in SBDI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
