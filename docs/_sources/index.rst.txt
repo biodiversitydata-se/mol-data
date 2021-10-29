@@ -4,6 +4,7 @@
    :hidden:
 
    ena-metabar
+   ena-metabar-old
    std-taxon-annotation
 
 

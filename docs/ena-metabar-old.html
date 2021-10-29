@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Guide to ENA submission (webin) &mdash; Swedish Biodiversity Data Infrastructure: Molecular Data  documentation</title>
+  <title>Guide to ENA submission (old) &mdash; Swedish Biodiversity Data Infrastructure: Molecular Data  documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Guide to ENA submission (old)" href="ena-metabar-old.html" />
-    <link rel="prev" title="Molecular biodiversity data in SBDI" href="index.html" />
+    <link rel="next" title="Taxonomic annotation of ASVs" href="std-taxon-annotation.html" />
+    <link rel="prev" title="Guide to ENA submission (webin)" href="ena-metabar.html" />
 <link rel="stylesheet" type="text/css"
      href="_static/custom.css" />
 
@@ -89,7 +89,8 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Guide to ENA submission (webin)</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="ena-metabar.html">Guide to ENA submission (webin)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Guide to ENA submission (old)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#preparation-for-submission">Preparation for submission</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#step-1-prepare-data-and-metadata">Step 1: Prepare data and metadata</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#step-2-register-with-ena">Step 2: Register with ENA</a></li>
@@ -101,10 +102,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#step-3-register-samples">Step 3: Register samples</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#step-3a-select-sample-checklist">Step 3a: Select sample checklist</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#step-3b-add-sample-attributes">Step 3b: Add sample attributes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#step-3c-download-spreadsheet-template">Step 3c: Download spreadsheet template</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3c-create-spreadsheet-template">Step 3c: Create spreadsheet template</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#step-3d-edit-spreadsheet-structure">Step 3d: Edit spreadsheet structure</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#step-3e-add-sample-metadata">Step 3e: Add sample metadata</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#step-3f-upload-spreadsheet">Step 3f: Upload spreadsheet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3g-review-and-submit-sample-data">Step 3g: Review and submit sample data</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#step-4-prepare-and-upload-read-files">Step 4: Prepare and upload read files</a><ul>
@@ -113,7 +115,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#step-5-submit-sequence-reads">Step 5: Submit sequence reads</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#step-5a-download-the-experiment-run-template">Step 5a: Download the experiment/run template</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-5a-select-study-and-create-run-template">Step 5a: Select study, and create run template</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#step-5b-describe-experiment-and-runs">Step 5b: Describe experiment and runs</a></li>
 </ul>
 </li>
@@ -123,7 +125,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#post-submission-editing">Post-submission editing</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="ena-metabar-old.html">Guide to ENA submission (old)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="std-taxon-annotation.html">Taxonomic annotation of ASVs</a></li>
 </ul>
 
@@ -173,13 +174,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Guide to ENA submission (webin)</li>
+      <li>Guide to ENA submission (old)</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/ena-metabar.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/ena-metabar-old.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -194,12 +195,11 @@
             
   <div class="toctree-wrapper compound">
 </div>
-<p><span class="green">Update Note (29 Oct 2021):
-This is an adaptation to recent changes at ENA, using the Webin Portal for interactive submission.
-Please send bug reports and/or suggestions to</span> <a class="reference external" href="https://docs.biodiversitydata.se/support/">SBDI support</a>.</p>
-<div class="section" id="guide-to-ena-submission-webin">
-<h1>Guide to ENA submission (webin)<a class="headerlink" href="#guide-to-ena-submission-webin" title="Permalink to this headline">¶</a></h1>
-<p>This is a guide on how to submit sequence reads from environmental samples to the <a class="reference external" href="https://www.ebi.ac.uk/ena/">European Nucleotide Archive (ENA)</a>, provided by the <a class="reference external" href="https://biodiversitydata.se/">Swedish Biodiversity Data Infrastructure (SBDI)</a>. Our guide is largely a summary of <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/index.html">ENA’s own extensive instructions</a>, with added pointers on issues specific to submission of metarbarcoding data, as well as on more general matters that may confuse first-time contributors. While ENA provides <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/general-guide.html">three different routes for submission</a>, we describe interactive submission via the Webin portal here.</p>
+<p><span class="red">Update Note (29 Oct 2021):
+This version of the guide is being replaced due to recent changes at ENA. Please see Guide to ENA submission (webin) instead</span>.</p>
+<div class="section" id="guide-to-ena-submission-old">
+<h1>Guide to ENA submission (old)<a class="headerlink" href="#guide-to-ena-submission-old" title="Permalink to this headline">¶</a></h1>
+<p>This is a guide on how to submit sequence reads from environmental samples to the <a class="reference external" href="https://www.ebi.ac.uk/ena/">European Nucleotide Archive (ENA)</a>, provided by the <a class="reference external" href="https://biodiversitydata.se/">Swedish Biodiversity Data Infrastructure (SBDI)</a>. Our guide is largely a summary of <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/index.html">ENA’s own extensive instructions</a>, with added pointers on issues specific to submission of metarbarcoding data, as well as on more general matters that may confuse first-time contributors. While ENA provides <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/general-guide.html">three different routes for submission</a>, we describe interactive submission only.</p>
 <div class="section" id="preparation-for-submission">
 <h2>Preparation for submission<a class="headerlink" href="#preparation-for-submission" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="step-1-prepare-data-and-metadata">
@@ -208,23 +208,22 @@ Please send bug reports and/or suggestions to</span> <a class="reference externa
 </div>
 <div class="section" id="step-2-register-with-ena">
 <h3>Step 2: Register with ENA<a class="headerlink" href="#step-2-register-with-ena" title="Permalink to this headline">¶</a></h3>
-<p>To be able to submit data to ENA, you need to register an account. Go to the <a class="reference external" href="https://wwwdev.ebi.ac.uk/ena/submit/webin/login">Webin submission Portal</a>, select <em>Register</em> to fill out the form, and save your account details. You will receive a confirmation email with your account name.</p>
+<p>To be able to submit data to ENA, you need to register an account. Go to the <a class="reference external" href="https://www.ebi.ac.uk/ena/submit/sra/#home">Interactive Webin submission service page</a>, select <em>Register</em> to fill out the form, and submit your application. You will receive a confirmation email with your account name.</p>
 </div>
 </div>
 <div class="section" id="interactive-submission">
 <h2>Interactive submission<a class="headerlink" href="#interactive-submission" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="step-1-log-in-to-submission-portal">
 <h3>Step 1: Log in to submission portal<a class="headerlink" href="#step-1-log-in-to-submission-portal" title="Permalink to this headline">¶</a></h3>
-<p>ENA provides two submission services: one for <a class="reference external" href="https://wwwdev.ebi.ac.uk/ena/submit/webin/login">test submission</a> and one for (real) <a class="reference external" href="https://www.ebi.ac.uk/ena/submit/webin/login">production submission</a>. Make sure that your data pass validation in the test procedure, before submitting anything to the production environment. All test submissions are removed the following day, but you will save all metadata as tab-separated text (*.tsv) files that you can reuse later.</p>
-<p>After login, you are directed to the Dashboard, which gives you an overview of all available submission activities and reports (i.e. lists of successfully submitted samples etc.). Via the top-left hamburger icon (<img alt="hamburger-icon" src="_images/hamburger-icon.png" />) you can either go back to this Dashboard, or jump directly to some activity or report.</p>
+<p>ENA provides two submission services: one for <a class="reference external" href="https://wwwdev.ebi.ac.uk/ena/submit/sra">test submission</a> and one for (real) <a class="reference external" href="https://www.ebi.ac.uk/ena/submit/sra">production submission</a>. Make sure that your data pass validation in the test procedure, before submitting anything to the production environment. All test submissions are removed the following day, but you will be able to download/upload most of the input metadata as tab-separated text (*.tsv) files, if you want to continue testing at a later time without having to manually re-enter everything (as explained below).</p>
 </div>
 <div class="section" id="step-2-register-study">
 <h3>Step 2: Register study<a class="headerlink" href="#step-2-register-study" title="Permalink to this headline">¶</a></h3>
-<p>Click <em>Studies (Projects) | Register Study</em> to start filling out the Study form. The study object connects related samples and sequence reads (See step 4), and is typically what you cite in publications. For details on specific study attributes, see <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/update/metadata/interactive.html">ENA’s page on Study edits</a> (points 5-7). Note that a single release date is set for all data within a study, and that you thus may want to split sequenced batches of samples into multiple ENA studies. After entering the required metadata for a study, click <em>Submit | OK</em>. If successful, you will receive a confirmation message, and should be able to see your study listed in the <em>Studies (Projects) | Study Report</em> page.</p>
+<p>In the Webin submission portal, select the <em>New Submission | Register study (project) | Next</em> to start filling out the Study form. In ENA, the <em>study</em> object connects related samples and sequence reads (See step 4), and is typically what you cite in publications (using the BioProject accession number). For details on specific study attributes, see <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/update/metadata/interactive.html">ENA’s page on Study edits</a> (points 5-7). Note that a single release date is set for all data within a study, and that you thus may want to split sequenced batches of samples into multiple ENA studies. After entering the required metadata for a study, click <em>Submit | OK</em>. If successful, you will receive a confirmation message, and should be able to see your study listed in the <em>Studies</em> tab.</p>
 </div>
 <div class="section" id="step-3-register-samples">
 <h3>Step 3: Register samples<a class="headerlink" href="#step-3-register-samples" title="Permalink to this headline">¶</a></h3>
-<p>Samples are the source material from which your sequences derive, and the searchability and usability of your submitted data will depend on how well you document these samples. Go to <em>Samples | Register Samples</em> and click <em>Download spreadsheet to register samples</em> to start the process.</p>
+<p>Samples are the source material from which your sequences derive, and the searchability and usability of your submitted data will depend on how well you document these samples. Go back to the <em>New Submission</em> tab and click <em>New Submission | OK | Register Samples | Next</em> to start the process. While it is possible to download and edit metadata at different steps of sample registration, we recommend doing so in step 3c.</p>
 <div class="section" id="step-3a-select-sample-checklist">
 <h4>Step 3a: Select sample checklist<a class="headerlink" href="#step-3a-select-sample-checklist" title="Permalink to this headline">¶</a></h4>
 <p>The ENA sample checklists are partly overlapping sets of attributes (or data fields) that can be used to describe samples, and by selecting one of these you enable your sample metadata to be validated for correctness during submission. For environmental and organismal (host-associated) samples, alike, we recommend using one of the <em>Environmental Checklists</em> and, among these, to select the alternative from the <em>Genomic Standards Consortium (GSC) MIxS checklists</em> (described <a class="reference external" href="https://www.ebi.ac.uk/ena/submit/checklists">here</a> by GSC) that provides the most specific match to your sampled environment, for example:</p>
@@ -269,7 +268,7 @@ Please send bug reports and/or suggestions to</span> <a class="reference externa
 </div>
 <div class="section" id="step-3b-add-sample-attributes">
 <h4>Step 3b: Add sample attributes<a class="headerlink" href="#step-3b-add-sample-attributes" title="Permalink to this headline">¶</a></h4>
-<p>Once you have selected a checklist, you can inspect the attributes available in that list. All <em>Mandatory Fields</em> are preselected, and you can add <em>Optional Fields</em> by ticking their boxes. We suggest that you, at least, tick the following optional attributes for metabarcoding data:</p>
+<p>Once you have selected a checklist, you can inspect the attributes available in that list. Mandatory and recommended attributes are preselected, and you can add optional ones by ticking their boxes. We suggest that you, at least, tick the following optional attributes for metabarcoding data:</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -301,11 +300,11 @@ Please send bug reports and/or suggestions to</span> <a class="reference externa
 </tr>
 </tbody>
 </table>
-<p>To ensure that metadata are validated and searchable, you should use existing attributes whenever possible, but you can also add custom attributes to describe your data, if needed (see <em>Add custom field</em> in top left corner of page. Write your field name <em>before</em> hitting the plus button). Adding more than a few of these is easier to do in a spreadsheet, though, and we explain how to do that in the next step.</p>
+<p>To ensure that metadata are validated and searchable, you should use existing attributes whenever possible, but you can also add custom attributes to describe your data, if needed. Adding more than a few of these is easier to do in a spreadsheet, though, and we explain how to do that in the next step.</p>
 </div>
-<div class="section" id="step-3c-download-spreadsheet-template">
-<h4>Step 3c: Download spreadsheet template<a class="headerlink" href="#step-3c-download-spreadsheet-template" title="Permalink to this headline">¶</a></h4>
-<p>After selecting optional attributes, click <em>Next</em>, and then the <em>Download Template Spreadsheet</em> button to download a tab-separated values (*.tsv) file. Open the file in your spreadsheet application of choice (In MS Excel, click <em>Data | Text to Columns | Delimited | Delimiter: Tab</em>, to separate text into columns, if needed). With the added optional attributes from 3b, a template created from the <em>GSC MIxS water</em> checklist should look like this:</p>
+<div class="section" id="step-3c-create-spreadsheet-template">
+<h4>Step 3c: Create spreadsheet template<a class="headerlink" href="#step-3c-create-spreadsheet-template" title="Permalink to this headline">¶</a></h4>
+<p>After selecting optional attributes, click the <em>Download Template Spreadsheet</em> button (at the bottom of the form) to download a tab-separated values (*.tsv) file. Open the file in your spreadsheet application of choice (In MS Excel, click <em>Data | Text to Columns | Delimited | Delimiter: Tab</em>, to separate text into columns, if needed). With the added optional attributes from 3b, a template created from the <em>GSC MIxS water</em> checklist should look like this:</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 5%" />
@@ -328,11 +327,13 @@ Please send bug reports and/or suggestions to</span> <a class="reference externa
 <col style="width: 5%" />
 <col style="width: 5%" />
 <col style="width: 5%" />
+<col style="width: 5%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Checklist</p></td>
+<tr class="row-odd"><td><p>#checklist_accession</p></td>
 <td><p>ERC000024</p></td>
-<td><p>GSC MIxS water</p></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -351,9 +352,32 @@ Please send bug reports and/or suggestions to</span> <a class="reference externa
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>tax_id</p></td>
+<tr class="row-even"><td><p>#unique_name_prefix</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>sample_alias</p></td>
+<td><p>tax_id</p></td>
 <td><p>scientific_name</p></td>
-<td><p>sample_alias</p></td>
+<td><p>common_name</p></td>
 <td><p>sample_title</p></td>
 <td><p>sample_description</p></td>
 <td><p>project name</p></td>
@@ -372,7 +396,30 @@ Please send bug reports and/or suggestions to</span> <a class="reference externa
 <td><p>environment (feature)</p></td>
 <td><p>environment (material)</p></td>
 </tr>
+<tr class="row-even"><td><p>#template</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>water</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 <tr class="row-odd"><td><p>#units</p></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -398,36 +445,38 @@ Please send bug reports and/or suggestions to</span> <a class="reference externa
 </div>
 <div class="section" id="step-3d-edit-spreadsheet-structure">
 <h4>Step 3d: Edit spreadsheet structure<a class="headerlink" href="#step-3d-edit-spreadsheet-structure" title="Permalink to this headline">¶</a></h4>
-<p>In the downloaded spreadsheet, you can add custom attributes (with units, where applicable) to the right of existing columns, and samples below the row starting with <em>#units</em>. For instance, if you add two custom attributes (<em>sampling_station_id</em> and <em>salinity [psu]</em>), and three samples (<em>xyz:1:01</em>, <em>xyz:1:02</em> and <em>xyz:1:03</em>) to the template from Step 3c, your spreadsheet structure should look like this:</p>
+<p>In the downloaded spreadsheet, you can add custom attributes (with units, where applicable) to the right of existing columns, and samples below the row starting with <em>#units</em>. For instance, if you add two custom attributes (<em>sampling_station_id</em> and <em>current_velocity [cm/s]</em>), and three samples (<em>xyz:1:01</em>, <em>xyz:1:02</em> and <em>xyz:1:03</em>) to the template from Step 3c, your spreadsheet structure should look like this:</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Checklist</p></td>
+<tr class="row-odd"><td><p>#checklist_accession</p></td>
 <td><p>ERC000024</p></td>
-<td><p>GSC MIxS water</p></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -448,9 +497,34 @@ Please send bug reports and/or suggestions to</span> <a class="reference externa
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>tax_id</p></td>
+<tr class="row-even"><td><p>#unique_name_prefix</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>sample_alias</p></td>
+<td><p>tax_id</p></td>
 <td><p>scientific_name</p></td>
-<td><p>sample_alias</p></td>
+<td><p>common_name</p></td>
 <td><p>sample_title</p></td>
 <td><p>sample_description</p></td>
 <td><p>project name</p></td>
@@ -468,10 +542,35 @@ Please send bug reports and/or suggestions to</span> <a class="reference externa
 <td><p>environment (biome)</p></td>
 <td><p>environment (feature)</p></td>
 <td><p>environment (material)</p></td>
-<td><p>salinity</p></td>
 <td><p>sampling_station_id</p></td>
+<td><p>current_velocity</p></td>
+</tr>
+<tr class="row-even"><td><p>#template</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>water</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><p>#units</p></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -491,35 +590,13 @@ Please send bug reports and/or suggestions to</span> <a class="reference externa
 <td></td>
 <td></td>
 <td></td>
-<td><p>psu</p></td>
 <td></td>
+<td><p>cm/s</p></td>
 </tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td><p>xyz:1:01</p></td>
+<tr class="row-even"><td><p>xyz:1:01</p></td>
 <td></td>
 <td></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td></td>
-<td></td>
-<td><p>xyz:1:02</p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -540,9 +617,34 @@ Please send bug reports and/or suggestions to</span> <a class="reference externa
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td></td>
+<tr class="row-odd"><td><p>xyz:1:02</p></td>
 <td></td>
-<td><p>xyz:1:03</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>xyz:1:03</p></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -565,11 +667,11 @@ Please send bug reports and/or suggestions to</span> <a class="reference externa
 </tr>
 </tbody>
 </table>
-<p>Remember to enter sample aliases that correspond to what you use in related publications. This will enable readers to find sample-specific metadata and read files, even if you only state a Project accession number in your paper. Sample aliases can, furthermore, be optionally displayed as <em>Unique name</em> in the <em>Sample report</em>.</p>
+<p>Note that <em>environmental package</em> refers to the checklist you selected in Step 3a, e.g. if you selected the GSC MixS water list one of your attributes will be called <em>water environmental package</em> and the value for that column should be <em>water</em> in each of your sample rows. Also, remember to enter sample names that correspond to what you use in related publications. These names will be stored as <em>sample aliases</em> and will enable readers to find sample-specific metadata and read files, even if you only state a Project accession number in your paper.</p>
 </div>
 <div class="section" id="step-3e-add-sample-metadata">
 <h4>Step 3e: Add sample metadata<a class="headerlink" href="#step-3e-add-sample-metadata" title="Permalink to this headline">¶</a></h4>
-<p>Before adding actual sample metadata to your spreadsheet, take a close look at ENA’s explanations of selected attributes and lists of permitted values. These are available in the <a class="reference external" href="https://www.ebi.ac.uk/ena/browser/checklists">Sample Checklists browser</a>. Also note the following:</p>
+<p>Before adding actual sample metadata to your spreadsheet, take a close look at ENA’s explanations of the selected attributes (provided in the list where you ticked optional attributes), but also note the following:</p>
 <ul class="simple">
 <li><p><strong>Taxon attributes have unintuitive meaning for environmental samples</strong>. For metabarcoding data, the <em>tax_id</em> &amp; <em>scientific_name</em> attributes do not refer to the sequenced organisms, but instead <em>specify the sampled environment</em>. A <em>spider metagenome</em> is, for example, meant to describe samples for which a spider or spider body part (e.g. gut) is the <em>environment</em>, i.e. not samples from which you have derived spider sequences. The attributes <em>tax_id</em> &amp; <em>scientific_name</em> should thus be selected from the list of <a class="reference external" href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=408169">environmental and organismal metagenomes in NCBI’s taxonomy browser</a>, and <em>common_name</em> should be left empty. For host-associated samples, also differentiate between these generic attributes (i.e. <em>tax_id</em> &amp; <em>scientific_name</em>) and <em>host taxid</em>, which you can also search for in <a class="reference external" href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi">NCBI’s taxonomy browser</a>, and should be as specific as possible.</p></li>
 </ul>
@@ -640,33 +742,35 @@ Please send bug reports and/or suggestions to</span> <a class="reference externa
 <p>With data added, your spreadsheet should look similar to this:</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Checklist</p></td>
+<tr class="row-odd"><td><p>#checklist_accession</p></td>
 <td><p>ERC000024</p></td>
-<td><p>GSC MIxS water</p></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -687,9 +791,34 @@ Please send bug reports and/or suggestions to</span> <a class="reference externa
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>tax_id</p></td>
+<tr class="row-even"><td><p>#unique_name_prefix</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>sample_alias</p></td>
+<td><p>tax_id</p></td>
 <td><p>scientific_name</p></td>
-<td><p>sample_alias</p></td>
+<td><p>common_name</p></td>
 <td><p>sample_title</p></td>
 <td><p>sample_description</p></td>
 <td><p>project name</p></td>
@@ -707,10 +836,35 @@ Please send bug reports and/or suggestions to</span> <a class="reference externa
 <td><p>environment (biome)</p></td>
 <td><p>environment (feature)</p></td>
 <td><p>environment (material)</p></td>
-<td><p>salinity</p></td>
 <td><p>sampling_station_id</p></td>
+<td><p>current_velocity</p></td>
+</tr>
+<tr class="row-even"><td><p>#template</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>water</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><p>#units</p></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -730,12 +884,13 @@ Please send bug reports and/or suggestions to</span> <a class="reference externa
 <td></td>
 <td></td>
 <td></td>
-<td><p>psu</p></td>
 <td></td>
+<td><p>cm/s</p></td>
 </tr>
-<tr class="row-even"><td><p>1874687</p></td>
+<tr class="row-even"><td><p>xyz:1:01</p></td>
+<td><p>1874687</p></td>
 <td><p>marine plankton metagenome</p></td>
-<td><p>xyz:1:01</p></td>
+<td></td>
 <td><p>Microbial plankton sample 1</p></td>
 <td></td>
 <td><p>Microbial plankton diversity along Baltic salinity gradient July 2018</p></td>
@@ -753,12 +908,13 @@ Please send bug reports and/or suggestions to</span> <a class="reference externa
 <td><p>marine pelagic biome (ENVO:01000023)</p></td>
 <td><p>brackish water body (ENVO:01001321)</p></td>
 <td><p>brackish water (ENVO:00002019)</p></td>
-<td><p>3.13</p></td>
 <td><p>A13</p></td>
+<td><p>11</p></td>
 </tr>
-<tr class="row-odd"><td><p>1874687</p></td>
+<tr class="row-odd"><td><p>xyz:1:02</p></td>
+<td><p>1874687</p></td>
 <td><p>marine plankton metagenome</p></td>
-<td><p>xyz:1:02</p></td>
+<td></td>
 <td><p>Microbial plankton sample 2</p></td>
 <td></td>
 <td><p>Microbial plankton diversity along Baltic salinity gradient July 2018</p></td>
@@ -776,12 +932,13 @@ Please send bug reports and/or suggestions to</span> <a class="reference externa
 <td><p>marine pelagic biome (ENVO:01000023)</p></td>
 <td><p>brackish water body (ENVO:01001321)</p></td>
 <td><p>brackish water (ENVO:00002019)</p></td>
-<td><p>5.64</p></td>
 <td><p>A14</p></td>
+<td><p>45</p></td>
 </tr>
-<tr class="row-even"><td><p>1874687</p></td>
+<tr class="row-even"><td><p>xyz:1:03</p></td>
+<td><p>1874687</p></td>
 <td><p>marine plankton metagenome</p></td>
-<td><p>xyz:1:03</p></td>
+<td></td>
 <td><p>Microbial plankton sample 3</p></td>
 <td></td>
 <td><p>Microbial plankton diversity along Baltic salinity gradient July 2018</p></td>
@@ -799,12 +956,16 @@ Please send bug reports and/or suggestions to</span> <a class="reference externa
 <td><p>marine pelagic biome (ENVO:01000023)</p></td>
 <td><p>brackish water body (ENVO:01001321)</p></td>
 <td><p>brackish water (ENVO:00002019)</p></td>
-<td><p>6.1</p></td>
 <td><p>A15</p></td>
+<td><p>7</p></td>
 </tr>
 </tbody>
 </table>
-<p>If so, go back to <em>Samples | Register Samples</em>, click <em>Upload filled spreadsheet to register samples</em>, select your edited *.tsv file, and click <em>Submit Completed Spreadsheet</em>. Given that your spreadsheet structure is correct, you will receive a confirmation message, and your samples should now be listed under <em>Samples | Samples Report</em>. Note that you need to click <em>Show unique name</em> to display sample aliases there.</p>
+<p>If so, go back to the start page of sample submission and click <em>Submit Completed Spreadsheet</em> and select your edited *.tsv file. Given that your spreadsheet structure is correct, you will be directed to a page where you can toggle between samples in the left-hand panel, to inspect attributes for each of these in the right panel. If you find yourself stuck on the same page after uploading, you probably need to go back and review your file structure. Note that ENA accepts tab-delimited text only here (with .tsv or .txt extension).</p>
+</div>
+<div class="section" id="step-3g-review-and-submit-sample-data">
+<h4>Step 3g: Review and submit sample data<a class="headerlink" href="#step-3g-review-and-submit-sample-data" title="Permalink to this headline">¶</a></h4>
+<p>Before clicking the <em>Submit</em> button, have a look through the metadata for each of your samples. Note that a red icon <img alt="red-icon" src="_images/red-icon.png" /> next to a field or sample means that data for a mandatory attribute is either missing or incorrect. Depending on the type of validation used for a particular attribute, a green icon <img alt="green-icon" src="_images/green-icon.png" /> does not always mean that data are correct, however, as you may instead get an error message when submitting, or even get away with using a non-valid term. After successful sample submission, you will receive a confirmation message, and should be able to see your samples listed in the <em>Samples</em> tab (you may have to refresh the page first, though).</p>
 </div>
 </div>
 <div class="section" id="step-4-prepare-and-upload-read-files">
@@ -880,79 +1041,23 @@ bye
 </div>
 <div class="section" id="step-5-submit-sequence-reads">
 <h3>Step 5: Submit sequence reads<a class="headerlink" href="#step-5-submit-sequence-reads" title="Permalink to this headline">¶</a></h3>
-<p>Once you have successfully uploaded your sequence reads, you need to associate them with already submitted sample metadata, as well as describe the sequencing <em>experiment</em> that produced the read files. In <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/general-guide/metadata.html">the ENA metadata model</a>, an <em>experiment</em> refers to a sequencing event, and contains information on e.g. library construction and instruments, whereas <em>runs</em> represent the read files resulting from an experiment.</p>
-<div class="section" id="step-5a-download-the-experiment-run-template">
-<h4>Step 5a: Download the experiment/run template<a class="headerlink" href="#step-5a-download-the-experiment-run-template" title="Permalink to this headline">¶</a></h4>
-<p>Go to <em>Raw Reads (Experiments and Runs) | Submit Reads</em>, click <em>Download spreadsheet template for Read submission</em>, and select your file format. We assume you want to <em>Submit paired reads using two Fastq files</em>, here. Again, <em>Mandatory Fields</em> have been pre-selected for you, but you can also add <em>Optional Fields</em>. Have a look at permitted values before downloading your template (or simply return to this page later).</p>
-<p>Your downloaded spreadsheet template should look something this:</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>FileType</p></th>
-<th class="head"><p>fastq</p></th>
-<th class="head"><p>Read submission file type</p></th>
-<th class="head"></th>
-<th class="head"></th>
-<th class="head"></th>
-<th class="head"></th>
-<th class="head"></th>
-<th class="head"></th>
-<th class="head"></th>
-<th class="head"></th>
-<th class="head"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>sample</p></td>
-<td><p>study</p></td>
-<td><p>instrument_model</p></td>
-<td><p>library_name</p></td>
-<td><p>library_source</p></td>
-<td><p>library_selection</p></td>
-<td><p>library_strategy</p></td>
-<td><p>library_layout</p></td>
-<td><p>forward_file_name</p></td>
-<td><p>forward_file_md5</p></td>
-<td><p>reverse_file_name</p></td>
-<td><p>reverse_file_md5</p></td>
-</tr>
-<tr class="row-odd"><td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>Once you have successfully uploaded your sequence reads, you need to associate them with already submitted study and sample metadata, as well as describe the sequencing experiment that produced the read files.</p>
+<div class="section" id="step-5a-select-study-and-create-run-template">
+<h4>Step 5a: Select study, and create run template<a class="headerlink" href="#step-5a-select-study-and-create-run-template" title="Permalink to this headline">¶</a></h4>
+<p>Click <em>Restart Submission</em> (or <em>New Submission</em>, if logged out) | <em>Submit sequence reads and experiments | Next</em>. In the presented <em>Study</em> form, select the study you want to associate with your uploaded reads (click <img alt="reset-icon" src="_images/reset-icon.png" /> <em>Reset</em>, if needed) and click <em>Next</em>. Then skip the <em>Sample</em> page, as you have already uploaded sample metadata, and in the <em>Run</em> form, select your read file format, here: <em>Two Fastq files (Paired)</em>. While you could now add data directly into the resulting form, we recommend that you select <em>Download Template Spreadsheet</em> to enter (and save!) metadata in an external application.</p>
 </div>
 <div class="section" id="step-5b-describe-experiment-and-runs">
 <h4>Step 5b: Describe experiment and runs<a class="headerlink" href="#step-5b-describe-experiment-and-runs" title="Permalink to this headline">¶</a></h4>
-<p>In your downloaded template, you need to link each experiment/run row to an already submitted sample and study by adding the correct Sample and Study <em>Accession</em> values under the <em>sample</em> and <em>study</em> headers. Then, for metabarcoding data, you would typically use the following values to describe sequenced libraries (but see <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/reads/webin-cli.html">ENA’s guidelines on experiment metadata</a> for all available options):</p>
+<p>In <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/general-guide/metadata.html">the ENA metadata model</a>, an <em>experiment</em> refers to a sequencing event, and contains information on e.g. library construction and instruments, whereas <em>runs</em> represent the read files resulting from an experiment. Click the info icon <img alt="info-icon" src="_images/info-icon.png" /> to read ENA’s explanation for each attribute in the <em>Run</em> form, but enter your metadata into your downloaded spreadsheet. Also note the following, when you describe the experiment:</p>
 <ul class="simple">
-<li><p><strong>library source:</strong> METAGENOMIC</p></li>
+<li><p><strong>You can use any sample identifier as sample_alias</strong>. Toggle to the <em>Sample</em> tab to copy values from <em>Primary / Secondary Accession</em> or <em>Unique Name</em> (click <img alt="reset-icon" src="_images/reset-icon.png" /> <em>Reset</em>, if needed).</p></li>
 </ul>
+<p>For metabarcoding, you would typically use the following values to describe sequenced libraries (but see <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/reads/webin-cli.html">ENA’s guidelines on experiment metadata</a> for all available options):</p>
 <ul class="simple">
 <li><p><strong>library selection:</strong> PCR</p></li>
+</ul>
+<ul class="simple">
+<li><p><strong>library source:</strong> METAGENOMIC</p></li>
 </ul>
 <ul class="simple">
 <li><p><strong>library strategy</strong>: AMPLICON</p></li>
@@ -964,7 +1069,7 @@ bye
 <ul class="simple">
 <li><p><strong>forward [reverse]_file_md5:</strong> Paste the md5 checksums from Step 4a.</p></li>
 </ul>
-<p>Your spreadsheet should now look similar to this (but add as much optional metadata as possible):</p>
+<p>Your spreadsheet should now look similar to this (but add as much optional metadata as possible).</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 8%" />
@@ -979,70 +1084,62 @@ bye
 <col style="width: 8%" />
 <col style="width: 8%" />
 <col style="width: 8%" />
+<col style="width: 8%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>FileType</p></th>
-<th class="head"><p>fastq</p></th>
-<th class="head"><p>Read submission file type</p></th>
-<th class="head"></th>
-<th class="head"></th>
-<th class="head"></th>
-<th class="head"></th>
-<th class="head"></th>
-<th class="head"></th>
-<th class="head"></th>
-<th class="head"></th>
-<th class="head"></th>
+<tr class="row-odd"><th class="head"><p>sample_alias</p></th>
+<th class="head"><p>instrument_model</p></th>
+<th class="head"><p>library_name</p></th>
+<th class="head"><p>library_source</p></th>
+<th class="head"><p>library_selection</p></th>
+<th class="head"><p>library_strategy</p></th>
+<th class="head"><p>design_description</p></th>
+<th class="head"><p>library_construction_protocol</p></th>
+<th class="head"><p>insert_size</p></th>
+<th class="head"><p>forward_file_name</p></th>
+<th class="head"><p>forward_file_md5</p></th>
+<th class="head"><p>reverse_file_name</p></th>
+<th class="head"><p>reverse_file_md5</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>sample</p></td>
-<td><p>study</p></td>
-<td><p>instrument_model</p></td>
-<td><p>library_name</p></td>
-<td><p>library_source</p></td>
-<td><p>library_selection</p></td>
-<td><p>library_strategy</p></td>
-<td><p>library_layout</p></td>
-<td><p>forward_file_name</p></td>
-<td><p>forward_file_md5</p></td>
-<td><p>reverse_file_name</p></td>
-<td><p>reverse_file_md5</p></td>
-</tr>
-<tr class="row-odd"><td><p>ERS8208349</p></td>
-<td><p>PRJEB48461</p></td>
+<tr class="row-even"><td><p>ERS3334814</p></td>
 <td><p>Illumina MiSeq</p></td>
 <td><p>16S rRNA amplicon of Sample 1</p></td>
 <td><p>METAGENOMIC</p></td>
 <td><p>PCR</p></td>
 <td><p>AMPLICON</p></td>
-<td><p>PAIRED</p></td>
+<td></td>
+<td></td>
+<td><p>428</p></td>
 <td><p>F3D148_S214_L001_R1_001.fastq.gz</p></td>
 <td><p>bb8f57f8a94050de3d8ad47d03477e68</p></td>
 <td><p>F3D148_S214_L001_R2_001.fastq.gz</p></td>
 <td><p>d71d368d056b1d4bcf0ea74628f4d63a</p></td>
 </tr>
-<tr class="row-even"><td><p>ERS8208348</p></td>
-<td><p>PRJEB48461</p></td>
+<tr class="row-odd"><td><p>ERS3334815</p></td>
 <td><p>Illumina MiSeq</p></td>
 <td><p>16S rRNA amplicon of Sample 2</p></td>
 <td><p>METAGENOMIC</p></td>
 <td><p>PCR</p></td>
 <td><p>AMPLICON</p></td>
-<td><p>PAIRED</p></td>
+<td></td>
+<td></td>
+<td><p>428</p></td>
 <td><p>F3D149_S215_L001_R1_001.fastq.gz</p></td>
 <td><p>f76e0d9366998f7509a7aaca640cc842</p></td>
 <td><p>F3D149_S215_L001_R2_001.fastq.gz</p></td>
 <td><p>6c9acb1f743d984e07a9ce6b35b0fb6a</p></td>
 </tr>
-<tr class="row-odd"><td><p>ERS8208347</p></td>
-<td><p>PRJEB48461</p></td>
+<tr class="row-even"><td><p>ERS3334816</p></td>
 <td><p>Illumina MiSeq</p></td>
 <td><p>16S rRNA amplicon of Sample 3</p></td>
 <td><p>METAGENOMIC</p></td>
 <td><p>PCR</p></td>
 <td><p>AMPLICON</p></td>
-<td><p>PAIRED</p></td>
+<td></td>
+<td></td>
+<td><p>428</p></td>
 <td><p>F3D150_S216_L001_R1_001.fastq.gz</p></td>
 <td><p>e869e2b2bff6cd6c5dbe8f1b1d22d5bc</p></td>
 <td><p>F3D150_S216_L001_R2_001.fastq.gz</p></td>
@@ -1050,17 +1147,21 @@ bye
 </tr>
 </tbody>
 </table>
-<p>If so, go back to <em>Raw Reads (Experiments and Runs) | Submit reads</em>, click <em>Upload filled spreadsheet template for Read submission</em>, select your edited *.tsv file, and click <em>Submit Completed Spreadsheet</em>. If your submission is confirmed, you should now be able to se your submitted runs in the <em>Raw Reads (Experiments and Runs) | Run Files Report</em>.</p>
+<p>Note, however, that if you accidentally downloaded the template without selecting file format, you also need to specify layout:</p>
+<ul class="simple">
+<li><p><strong>library layout</strong>: PAIRED</p></li>
+</ul>
+<p>Save your spreadsheet, go back to the Webin form and select <em>Upload Completed Spreadsheet</em> | <em>Submit</em> to finally submit your read files. If successful, you will receive a confirmation message.</p>
 </div>
 </div>
 <div class="section" id="step-6-submit-to-production-service">
 <h3>Step 6: Submit to production service<a class="headerlink" href="#step-6-submit-to-production-service" title="Permalink to this headline">¶</a></h3>
-<p>After careful inspection of metadata, you can now repeat the process in the <a class="reference external" href="https://www.ebi.ac.uk/ena/submit/webin/login">production version of the Webin interface</a>.</p>
+<p>After careful inspection of data and metadata, you can now repeat the process in the <a class="reference external" href="https://www.ebi.ac.uk/ena/submit/sra/#home">production version of the Webin interface</a>.</p>
 </div>
 </div>
 <div class="section" id="post-submission-editing">
 <h2>Post-submission editing<a class="headerlink" href="#post-submission-editing" title="Permalink to this headline">¶</a></h2>
-<p>In each row of the above mentioned <em>Reports</em>, you can click the box-arrow icon <img alt="action-icon" src="_images/action-icon.png" /> in the <em>Action</em> column to either show related items, e.g. see runs linked to a certain sample, or inspect/edit the underlying xml of a submitted item. But for more complex edits you likely need to <a class="reference external" href="mailto:datasubs&#37;&#52;&#48;ebi&#46;ac&#46;uk">contact ENA</a> and ask them to help you cancel and resubmit data.</p>
+<p>ENA’s interactive submission interface supports some <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/update/interactive.html">post-submission editing</a>, but for errors involving taxon attributes or sample aliases, you should <a class="reference external" href="mailto:datasubs&#37;&#52;&#48;ebi&#46;ac&#46;uk">contact ENA</a> and they will help you cancel and resubmit data.</p>
 </div>
 </div>
 
@@ -1070,8 +1171,8 @@ bye
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="ena-metabar-old.html" class="btn btn-neutral float-right" title="Guide to ENA submission (old)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="index.html" class="btn btn-neutral float-left" title="Molecular biodiversity data in SBDI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="std-taxon-annotation.html" class="btn btn-neutral float-right" title="Taxonomic annotation of ASVs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ena-metabar.html" class="btn btn-neutral float-left" title="Guide to ENA submission (webin)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

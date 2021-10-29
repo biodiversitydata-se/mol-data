@@ -1,0 +1,3 @@
+﻿Checklist,ERC000024,GSC MIxS water,,,,,,,,,,,,,,,,,
+tax_id,scientific_name,sample_alias,sample_title,sample_description,project name,target gene,target subfragment,pcr primers,sequencing method,investigation type,collection date,geographic location (country and/or sea),geographic location (latitude),geographic location (longitude),water environmental package,geographic location (depth),environment (biome),environment (feature),environment (material)
+#units, , , , , , , , , , , , ,DD,DD, ,m, , , 
