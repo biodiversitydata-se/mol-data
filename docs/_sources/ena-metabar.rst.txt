@@ -3,6 +3,8 @@
 
 .. role:: red
 
+:red:`29 Oct 2021: We are currently adapting our guide to recent changes at ENA. Bear with us...`
+
 Guide to ENA submission
 =======================
 This is a guide on how to submit sequence reads from environmental samples to the `European Nucleotide Archive (ENA) <https://www.ebi.ac.uk/ena/>`_, provided by the `Swedish Biodiversity Data Infrastructure (SBDI) <https://biodiversitydata.se/>`_. Our guide is largely a summary of `ENA's own extensive instructions <https://ena-docs.readthedocs.io/en/latest/index.html>`_, with added pointers on issues specific to submission of metarbarcoding data, as well as on more general matters that may confuse first-time contributors. While ENA provides `three different routes for submission <https://ena-docs.readthedocs.io/en/latest/general-guide.html>`_, we describe interactive submission only.
