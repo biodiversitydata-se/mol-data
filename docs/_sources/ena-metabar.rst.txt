@@ -207,7 +207,7 @@ Your downloaded spreadsheet template should look something this:
 
 .. csv-table::
   :file: _static/tables/run-exp-template.csv
-  :header-rows: 1
+  :header-rows: 0
 
 Step 5b: Describe experiment and runs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -245,7 +245,7 @@ Your spreadsheet should now look similar to this (but add as much optional metad
 
 .. csv-table::
   :file: _static/tables/run-exp-template-filled.csv
-  :header-rows: 1
+  :header-rows: 0
 
 If so, go back to *Raw Reads (Experiments and Runs) | Submit reads*, click *Upload filled spreadsheet template for Read submission*, select your edited \*.tsv file, and click *Submit Completed Spreadsheet*. If your submission is confirmed, you should now be able to se your submitted runs in the *Raw Reads (Experiments and Runs) | Run Files Report*.
 
