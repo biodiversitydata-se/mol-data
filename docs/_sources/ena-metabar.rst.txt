@@ -18,7 +18,7 @@ Preparation for submission
 
 Step 1: Prepare data and metadata
 ---------------------------------
-In ENA, raw sequencing output from a next generation platform, including e.g. base calls and per-base quality scores, is called *reads* and is accepted in `FASTQ, CRAM or BAM format <https://ena-docs.readthedocs.io/en/latest/fileprep/reads.html>`_. Before submission, make sure that sequencing adapters have been removed (*trimmed*), and that reads have been assigned to their sample of origin (*demultiplexed*). In addition, gather all the information (*metadata*) you have about how, when and where you acquired the samples and generated the reads, as well as any contextual (environmental or clinical) data that was collected during sampling (see `ENA's metadata model <https://ena-docs.readthedocs.io/en/latest/general-guide/metadata.html>`_).
+In ENA, raw sequencing output from a next generation platform, including e.g. base calls and per-base quality scores, is accepted in `FASTQ, CRAM or BAM format <https://ena-docs.readthedocs.io/en/latest/fileprep/reads.html>`_. Before submission, make sure that sequencing adapters have been removed (*trimmed*), and that reads have been assigned to their sample of origin (*demultiplexed*). In addition, gather all the information (*metadata*) you have about how, when and where you acquired the samples and generated the reads, as well as any contextual (environmental or clinical) data that was collected during sampling (see `ENA's metadata model <https://ena-docs.readthedocs.io/en/latest/general-guide/metadata.html>`_).
 
 Step 2: Register with ENA
 -----------------------------------
