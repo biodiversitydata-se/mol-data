@@ -1,11 +1,13 @@
 .. toctree::
    :hidden:
 
-.. role:: green
-
-:green:`Update Note (29 Oct 2021):
+*Update Note (29 Oct 2021):
 This is an adaptation to recent changes at ENA, using the Webin Portal for interactive submission.
-Please send bug reports and/or suggestions to` `SBDI support <https://docs.biodiversitydata.se/support/>`_.
+Please send bug reports and/or suggestions to* |text|_.
+
+.. _text: https://docs.biodiversitydata.se/support/
+
+.. |text| replace:: *SBDI support*
 
 Guide to ENA submission (webin)
 ===============================
