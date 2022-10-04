@@ -37,7 +37,7 @@ After login, you are directed to the Dashboard, which gives you an overview of a
 
 Step 2: Register study
 ----------------------
-Click *Studies (Projects) | Register Study* to start filling out the Study form. The study object connects related samples and sequence reads (See step 4), and is typically what you cite in publications. For details on specific study attributes, see `ENA's page on Study edits <https://ena-docs.readthedocs.io/en/latest/update/metadata/interactive.html>`_ (points 5-7). Note that a single release date is set for all data within a study, and that you thus may want to split sequenced batches of samples into multiple ENA studies. After entering the required metadata for a study, click *Submit | OK*. If successful, you will receive a confirmation message, and should be able to see your study listed in the *Studies (Projects) | Study Report* page.
+Click *Studies (Projects) | Register Study* to start filling out the Study form. The study object connects related samples and sequence reads (See step 4), and is typically what you cite in publications. For a few details on specific study attributes, see `ENA's page on Study edits <https://ena-docs.readthedocs.io/en/latest/update/metadata/interactive.html>`_ . Note that a single release date is set for all data within a study, and that you thus may want to split sequenced batches of samples into multiple ENA studies. After entering the required metadata for a study, click *Submit | OK*. If successful, you will receive a confirmation message, and should be able to see your study listed in the *Studies (Projects) | Study Report* page.
 
 Step 3: Register samples
 ------------------------
@@ -45,7 +45,7 @@ Samples are the source material from which your sequences derive, and the search
 
 Step 3a: Select sample checklist
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The ENA sample checklists are partly overlapping sets of attributes (or data fields) that can be used to describe samples, and by selecting one of these you enable your sample metadata to be validated for correctness during submission. For environmental and organismal (host-associated) samples, alike, we recommend using one of the *Environmental Checklists* and, among these, to select the alternative from the *Genomic Standards Consortium (GSC) MIxS checklists* (described `here <https://www.ebi.ac.uk/ena/submit/checklists>`_ by GSC) that provides the most specific match to your sampled environment, for example:
+The `ENA sample checklists <https://www.ebi.ac.uk/ena/submit/checklists>`_ are partly overlapping sets of attributes (or data fields) that can be used to describe samples, and by selecting one of these you enable your sample metadata to be validated for correctness during submission. For environmental and organismal (host-associated) samples, alike, we recommend using one of the *Environmental Checklists* and, among these, to select the alternative from the *Genomic Standards Consortium (GSC) MIxS checklists* that provides the most specific match to your sampled environment, for example:
 
 .. csv-table::
   :file: _static/tables/recommended-checklists.csv
@@ -65,7 +65,7 @@ To ensure that metadata are validated and searchable, you should use existing at
 
 Step 3c: Download spreadsheet template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-After selecting optional attributes, click *Next*, and then the *Download Template Spreadsheet* button to download a tab-separated values (\*.tsv) file. Open the file in your spreadsheet application of choice (In MS Excel, click *Data | Text to Columns | Delimited | Delimiter: Tab*, to separate text into columns, if needed). With the added optional attributes from 3b, a template created from the *GSC MIxS water* checklist should look like this:
+After selecting optional attributes, click *Next*, and then the *Download TSV Template* button to download a tab-separated values (\*.tsv) file. Open the file in your spreadsheet application of choice (In MS Excel, click *Data | Text to Columns | Delimited | Delimiter: Tab*, to separate text into columns, if needed). With the added optional attributes from 3b, a template created from the *GSC MIxS water* checklist should look like this:
 
 .. csv-table::
   :file: _static/tables/mixs-water-template.csv
@@ -73,7 +73,7 @@ After selecting optional attributes, click *Next*, and then the *Download Templa
 
 Step 3d: Edit spreadsheet structure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In the downloaded spreadsheet, you can add custom attributes (with units, where applicable) to the right of existing columns, and samples below the row starting with *#units*. For instance, if you add two custom attributes (*sampling_station_id* and *salinity [psu]*), and three samples (*xyz:1:01*, *xyz:1:02* and *xyz:1:03*) to the template from Step 3c, your spreadsheet structure should look like this:
+In the downloaded spreadsheet, you can add custom attributes (with units, where applicable) to the right of existing columns, and samples below the row starting with *#units*. For instance, if you add two custom attributes (*salinity [psu]* and *sampling_station_id*), and three samples (*xyz:1:01*, *xyz:1:02* and *xyz:1:03*) to the template from Step 3c, your spreadsheet structure should look like this:
 
 .. csv-table::
   :file: _static/tables/mixs-water-template-edited.csv
@@ -85,7 +85,7 @@ Step 3e: Add sample metadata
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Before adding actual sample metadata to your spreadsheet, take a close look at ENA's explanations of selected attributes and lists of permitted values. These are available in the `Sample Checklists browser <https://www.ebi.ac.uk/ena/browser/checklists>`_. Also note the following:
 
-- **Taxon attributes have unintuitive meaning for environmental samples**. For metabarcoding data, the *tax_id* & *scientific_name* attributes do not refer to the sequenced organisms, but instead *specify the sampled environment*. A *spider metagenome* is, for example, meant to describe samples for which a spider or spider body part (e.g. gut) is the *environment*, i.e. not samples from which you have derived spider sequences. The attributes *tax_id* & *scientific_name* should thus be selected from the list of `environmental and organismal metagenomes in NCBI's taxonomy browser <https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=408169>`_, and *common_name* should be left empty. For host-associated samples, also differentiate between these generic attributes (i.e. *tax_id* & *scientific_name*) and *host taxid*, which you can also search for in `NCBI's taxonomy browser <https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi>`_, and should be as specific as possible.
+- **Taxon attributes have unintuitive meaning for environmental samples**. For metabarcoding data, the *tax_id* & *scientific_name* attributes do not refer to the sequenced organisms, but instead *specify the sampled environment*. A *spider metagenome* is, for example, meant to describe samples for which a spider or spider body part (e.g. gut) is the *environment*, i.e. not samples from which you have derived spider sequences. The attributes *tax_id* & *scientific_name* should thus be selected from the list of `environmental and organismal metagenomes in NCBI's taxonomy browser <https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=408169>`_. For host-associated samples, also differentiate between these generic attributes (i.e. *tax_id* & *scientific_name*) and *host taxid*, which you can also search for in `NCBI's taxonomy browser <https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi>`_, and should be as specific as possible.
 
 .. |br1| raw:: html
 
@@ -96,8 +96,6 @@ Before adding actual sample metadata to your spreadsheet, take a close look at E
   .. csv-table::
     :file: _static/tables/ontology-fields.csv
     :header-rows: 1
-
-  \* The OLS entry for `environmental feature <https://www.ebi.ac.uk/ols/ontologies/envo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FENVO_00002297>`_ has been flagged as *obsolete*, and we tentatively link to a related umbrella term here.
 
   In the linked ontology tree views, click the plus sign next to a highlighted branch to show all instances of that term, and continue downwards until you find the most specific term that accurately describes your data. It is good practice to then register the term together with ontology acronym and accession, e.g: *marine pelagic biome (ENVO:01000023)*.
 
@@ -122,17 +120,15 @@ Before adding actual sample metadata to your spreadsheet, take a close look at E
   | *Ex: 58°11.21' = 58 + 11.21/60 = 58.1868°*                   |
   +--------------------------------------------------------------+
 
-  The related *Geographic location (country and/or sea)* attribute should be selected from the `INSDC list for countries and seas <http://insdc.org/country.html>`_.
+  The related *Geographic location (country and/or sea)* attribute should be selected from the `INSDC list for countries and seas <https://www.insdc.org/submitting-standards/country-qualifier-vocabulary/>`_.
 
 .. |br4| raw:: html
 
   <br />
 
-- **Investigation type** should be set to *mimarks-survey* for metabarcoding data.
-
 Step 3f: Upload spreadsheet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-With data added, your spreadsheet should look similar to this:
+With data added, your spreadsheet should look similar to this (admittedly, we have added a manufacturer name to the sequencing method ontology term, as it seemed to be missing from this specific device):
 
 .. csv-table::
   :file: _static/tables/mixs-water-template-filled.csv
@@ -171,11 +167,11 @@ The resulting file should look similar to this:
   :file: _static/tables/md5sums.csv
   :header-rows: 0
 
-The *md5sum* command should work similarly on a Linux machine, but Windows users may need to install some application to compress files to \*.gz format, and refer to the following `Microsoft article on md5 generation <https://support.microsoft.com/en-gb/help/889768/how-to-compute-the-md5-or-sha-1-cryptographic-hash-values-for-a-file>`_.
+The *md5sum* command should work similarly on a Linux machine, but Windows users may need to install some application to compress files to \*.gz format, and do a quick web search for *how to generate MD5 checksum for file on Windows*.
 
 Step 4b: Upload read files to ENA
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-You can now upload your sequence reads to ENA's transit area, but remember to keep local copies of your data. There are several FTP (File Transfer Protocol) clients available for file transfer. We describe one alternative (`lftp <https://brewinstall.org/Install-lftp-on-Mac-with-Brew/>`_) for Mac users, but please refer to `ENA's guidelines on file upload <https://ena-docs.readthedocs.io/en/latest/fileprep/upload.html>`_ for other options:
+You can now upload your sequence reads to ENA's transit area, but remember to keep local copies of your data. There are several FTP (File Transfer Protocol) clients available for file transfer. We describe one alternative (`lftp <https://formulae.brew.sh/formula/lftp>`_) for Mac users, but please refer to `ENA's guidelines on file upload <https://ena-docs.readthedocs.io/en/latest/fileprep/upload.html>`_ for other options:
 
 .. code-block:: bash
 
