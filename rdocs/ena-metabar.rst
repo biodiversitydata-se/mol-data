@@ -37,11 +37,11 @@ After login, you are directed to the Dashboard, which gives you an overview of a
 
 Step 2: Register study
 ----------------------
-Click *Studies (Projects) | Register Study* to start filling out the Study form. The study object connects related samples and sequence reads (See step 4), and is typically what you cite in publications. For a few details on specific study attributes, see `ENA's page on Study edits <https://ena-docs.readthedocs.io/en/latest/update/metadata/interactive.html>`_ . Note that a single release date is set for all data within a study, and that you thus may want to split sequenced batches of samples into multiple ENA studies. After entering the required metadata for a study, click *Submit | OK*. If successful, you will receive a confirmation message, and should be able to see your study listed in the *Studies (Projects) | Study Report* page.
+The *study (project)* object is linked to samples and sequence reads via experiments, and is typically what you cite in publications. Click *Studies (Projects) | Register Study* to start filling out the Study form. Note that a single release date is set for all data within a study, and that you thus may want to split sequenced batches of samples into multiple ENA studies. After entering the required metadata for a study, click *Submit | OK*. If successful, you will receive a confirmation message, and should be able to see your study listed in the *Studies (Projects) | Study Report* page.
 
 Step 3: Register samples
 ------------------------
-Samples are the source material from which your sequences derive, and the searchability and usability of your submitted data will depend on how well you document these samples. Go to *Samples | Register Samples* and click *Download spreadsheet to register samples* to start the process.
+*Samples* are the source material from which your sequences derive, and the searchability and usability of your submitted data will depend on how well you document these samples. Go to *Samples | Register Samples* and click *Download spreadsheet to register samples* to start the process.
 
 Step 3a: Select sample checklist
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -85,7 +85,7 @@ Step 3e: Add sample metadata
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Before adding actual sample metadata to your spreadsheet, take a close look at ENA's explanations of selected attributes and lists of permitted values. These are available in the `Sample Checklists browser <https://www.ebi.ac.uk/ena/browser/checklists>`_. Also note the following:
 
-- **Taxon attributes have unintuitive meaning for environmental samples**. For metabarcoding data, the *tax_id* & *scientific_name* attributes do not refer to the sequenced organisms, but instead *specify the sampled environment*. A *spider metagenome* is, for example, meant to describe samples for which a spider or spider body part (e.g. gut) is the *environment*, i.e. not samples from which you have derived spider sequences. The attributes *tax_id* & *scientific_name* should thus be selected from the list of `environmental and organismal metagenomes in NCBI's taxonomy browser <https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=408169>`_. For host-associated samples, also differentiate between these generic attributes (i.e. *tax_id* & *scientific_name*) and *host taxid*, which you can also search for in `NCBI's taxonomy browser <https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi>`_, and should be as specific as possible.
+- **Taxon attributes for metabarcoding samples may be confusing**. In this context, the *tax_id* & *scientific_name* attributes do not typically refer to *sequenced* organisms, but rather describe *sampled* organisms or environments. The *scientific_name* value *spider metagenome* is, for example, used to describe samples from a spider or spider body part, i.e. not samples from which you have derived spider sequences. The attributes *tax_id* & *scientific_name* should thus be selected from the list of `environmental and organismal metagenomes in NCBI's taxonomy browser <https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=408169>`_. For host-associated samples, also differentiate between these generic attributes (i.e. *tax_id* & *scientific_name*) and *host taxid*, which you can also search for in `NCBI's taxonomy browser <https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi>`_, and should be as specific as possible.
 
 .. |br1| raw:: html
 
@@ -175,15 +175,9 @@ You can now upload your sequence reads to ENA's transit area, but remember to ke
 
 .. code-block:: bash
 
-  # Connect to FTP server
-  lftp webin.ebi.ac.uk
-  # Expected response: lftp webin.ebi.ac.uk:~>
-
-  # Request login to your account
-  login Webin-XXXXX
-  # Supply your password when prompted for it
-  xxxxxxxxxx
-  # Expected response: lftp Webin-XXXXX@webin.ebi.ac.uk:~>
+  # Connect to FTP server [replace X:s, and provide password when prompted]
+  lftp webin2.ebi.ac.uk -u Webin-XXXXX
+  # Expected response: lftp Webin-XXXXX@webin2.ebi.ac.uk:~>
 
   # Transfer your read files
   mput ~/your-read-file-dir/*.fastq.gz

@@ -1,6 +1,6 @@
-Checklist,ERC000024,GSC MIxS water,,,,,,,,,,,,,,,,,,,,,,,,,,,
-tax_id,scientific_name,sample_alias,sample_title,sample_description,project name,target gene,target subfragment,pcr primers,sequencing method,collection date,geographic location (country and/or sea),geographic location (latitude),geographic location (longitude),depth,broad-scale environmental context,local environmental context,environmental medium,salinity,sampling_station_id,,,,,,,,,,
-#units, , , , , , , , , , , ,DD,DD,m, , , ,psu,,,,,,,,,,,
-,,xyz:1:01,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,xyz:1:02,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,xyz:1:03,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Checklist,ERC000024,GSC MIxS water,,,,,,,,,,,,,,,,,
+tax_id,scientific_name,sample_alias,sample_title,sample_description,project name,target gene,target subfragment,pcr primers,sequencing method,collection date,geographic location (country and/or sea),geographic location (latitude),geographic location (longitude),depth,broad-scale environmental context,local environmental context,environmental medium,salinity,sampling_station_id
+#units, , , , , , , , , , , ,DD,DD,m, , , ,psu,
+,,xyz:1:01,,,,,,,,,,,,,,,,,
+,,xyz:1:02,,,,,,,,,,,,,,,,,
+,,xyz:1:03,,,,,,,,,,,,,,,,,

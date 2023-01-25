@@ -219,11 +219,11 @@ Please send bug reports and/or suggestions to</em> <a class="reference external"
 </div>
 <div class="section" id="step-2-register-study">
 <h3>Step 2: Register study<a class="headerlink" href="#step-2-register-study" title="Permalink to this headline">¶</a></h3>
-<p>Click <em>Studies (Projects) | Register Study</em> to start filling out the Study form. The study object connects related samples and sequence reads (See step 4), and is typically what you cite in publications. For a few details on specific study attributes, see <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/update/metadata/interactive.html">ENA’s page on Study edits</a> . Note that a single release date is set for all data within a study, and that you thus may want to split sequenced batches of samples into multiple ENA studies. After entering the required metadata for a study, click <em>Submit | OK</em>. If successful, you will receive a confirmation message, and should be able to see your study listed in the <em>Studies (Projects) | Study Report</em> page.</p>
+<p>The <em>study (project)</em> object is linked to samples and sequence reads via experiments, and is typically what you cite in publications. Click <em>Studies (Projects) | Register Study</em> to start filling out the Study form. Note that a single release date is set for all data within a study, and that you thus may want to split sequenced batches of samples into multiple ENA studies. After entering the required metadata for a study, click <em>Submit | OK</em>. If successful, you will receive a confirmation message, and should be able to see your study listed in the <em>Studies (Projects) | Study Report</em> page.</p>
 </div>
 <div class="section" id="step-3-register-samples">
 <h3>Step 3: Register samples<a class="headerlink" href="#step-3-register-samples" title="Permalink to this headline">¶</a></h3>
-<p>Samples are the source material from which your sequences derive, and the searchability and usability of your submitted data will depend on how well you document these samples. Go to <em>Samples | Register Samples</em> and click <em>Download spreadsheet to register samples</em> to start the process.</p>
+<p><em>Samples</em> are the source material from which your sequences derive, and the searchability and usability of your submitted data will depend on how well you document these samples. Go to <em>Samples | Register Samples</em> and click <em>Download spreadsheet to register samples</em> to start the process.</p>
 <div class="section" id="step-3a-select-sample-checklist">
 <h4>Step 3a: Select sample checklist<a class="headerlink" href="#step-3a-select-sample-checklist" title="Permalink to this headline">¶</a></h4>
 <p>The <a class="reference external" href="https://www.ebi.ac.uk/ena/submit/checklists">ENA sample checklists</a> are partly overlapping sets of attributes (or data fields) that can be used to describe samples, and by selecting one of these you enable your sample metadata to be validated for correctness during submission. For environmental and organismal (host-associated) samples, alike, we recommend using one of the <em>Environmental Checklists</em> and, among these, to select the alternative from the <em>Genomic Standards Consortium (GSC) MIxS checklists</em> that provides the most specific match to your sampled environment, for example:</p>
@@ -289,7 +289,10 @@ Please send bug reports and/or suggestions to</em> <a class="reference external"
 <tr class="row-even"><td><p>[ All ]</p></td>
 <td><p>pcr primers</p></td>
 </tr>
-<tr class="row-odd"><td><p>GSC MIxS host / plant associated</p></td>
+<tr class="row-odd"><td><p>[ All ]</p></td>
+<td><p>sequencing method</p></td>
+</tr>
+<tr class="row-even"><td><p>GSC MIxS host / plant associated</p></td>
 <td><p>host taxid</p></td>
 </tr>
 </tbody>
@@ -386,51 +389,31 @@ Please send bug reports and/or suggestions to</em> <a class="reference external"
 <p>In the downloaded spreadsheet, you can add custom attributes (with units, where applicable) to the right of existing columns, and samples below the row starting with <em>#units</em>. For instance, if you add two custom attributes (<em>salinity [psu]</em> and <em>sampling_station_id</em>), and three samples (<em>xyz:1:01</em>, <em>xyz:1:02</em> and <em>xyz:1:03</em>) to the template from Step 3c, your spreadsheet structure should look like this:</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 3%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Checklist</p></td>
 <td><p>ERC000024</p></td>
 <td><p>GSC MIxS water</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -469,16 +452,6 @@ Please send bug reports and/or suggestions to</em> <a class="reference external"
 <td><p>environmental medium</p></td>
 <td><p>salinity</p></td>
 <td><p>sampling_station_id</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="row-odd"><td><p>#units</p></td>
 <td></td>
@@ -500,30 +473,10 @@ Please send bug reports and/or suggestions to</em> <a class="reference external"
 <td></td>
 <td><p>psu</p></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="row-even"><td></td>
 <td></td>
 <td><p>xyz:1:01</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -562,30 +515,10 @@ Please send bug reports and/or suggestions to</em> <a class="reference external"
 <td></td>
 <td></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr class="row-even"><td></td>
 <td></td>
 <td><p>xyz:1:03</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -612,7 +545,7 @@ Please send bug reports and/or suggestions to</em> <a class="reference external"
 <h4>Step 3e: Add sample metadata<a class="headerlink" href="#step-3e-add-sample-metadata" title="Permalink to this headline">¶</a></h4>
 <p>Before adding actual sample metadata to your spreadsheet, take a close look at ENA’s explanations of selected attributes and lists of permitted values. These are available in the <a class="reference external" href="https://www.ebi.ac.uk/ena/browser/checklists">Sample Checklists browser</a>. Also note the following:</p>
 <ul class="simple">
-<li><p><strong>Taxon attributes have unintuitive meaning for environmental samples</strong>. For metabarcoding data, the <em>tax_id</em> &amp; <em>scientific_name</em> attributes do not refer to the sequenced organisms, but instead <em>specify the sampled environment</em>. A <em>spider metagenome</em> is, for example, meant to describe samples for which a spider or spider body part (e.g. gut) is the <em>environment</em>, i.e. not samples from which you have derived spider sequences. The attributes <em>tax_id</em> &amp; <em>scientific_name</em> should thus be selected from the list of <a class="reference external" href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=408169">environmental and organismal metagenomes in NCBI’s taxonomy browser</a>. For host-associated samples, also differentiate between these generic attributes (i.e. <em>tax_id</em> &amp; <em>scientific_name</em>) and <em>host taxid</em>, which you can also search for in <a class="reference external" href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi">NCBI’s taxonomy browser</a>, and should be as specific as possible.</p></li>
+<li><p><strong>Taxon attributes for metabarcoding samples may be confusing</strong>. In this context, the <em>tax_id</em> &amp; <em>scientific_name</em> attributes do not typically refer to <em>sequenced</em> organisms, but rather describe <em>sampled</em> organisms or environments. The <em>scientific_name</em> value <em>spider metagenome</em> is, for example, used to describe samples from a spider or spider body part, i.e. not samples from which you have derived spider sequences. The attributes <em>tax_id</em> &amp; <em>scientific_name</em> should thus be selected from the list of <a class="reference external" href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=408169">environmental and organismal metagenomes in NCBI’s taxonomy browser</a>. For host-associated samples, also differentiate between these generic attributes (i.e. <em>tax_id</em> &amp; <em>scientific_name</em>) and <em>host taxid</em>, which you can also search for in <a class="reference external" href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi">NCBI’s taxonomy browser</a>, and should be as specific as possible.</p></li>
 </ul>
 <ul>
 <li><p><strong>Some attributes should be selected from ontologies</strong>. To increase searchability, some attribute values should be selected from designated ontologies, which are formal specifications of terms used in certain contexts, and of how these terms relate to each other. You can browse or search the latest versions of ontologies used in ENA submission using the <a class="reference external" href="https://www.ebi.ac.uk/ols/index">EMBL-EBI Ontology Lookup Service (OLS)</a>. You can also use the following direct links as <em>starting points</em> for finding valid terms for some mandatory or recommended attributes in a GSC MixS checklists:</p>
@@ -885,15 +818,9 @@ gzip -k *.fastq
 <div class="section" id="step-4b-upload-read-files-to-ena">
 <h4>Step 4b: Upload read files to ENA<a class="headerlink" href="#step-4b-upload-read-files-to-ena" title="Permalink to this headline">¶</a></h4>
 <p>You can now upload your sequence reads to ENA’s transit area, but remember to keep local copies of your data. There are several FTP (File Transfer Protocol) clients available for file transfer. We describe one alternative (<a class="reference external" href="https://formulae.brew.sh/formula/lftp">lftp</a>) for Mac users, but please refer to <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/fileprep/upload.html">ENA’s guidelines on file upload</a> for other options:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Connect to FTP server</span>
-lftp webin.ebi.ac.uk
-<span class="c1"># Expected response: lftp webin.ebi.ac.uk:~&gt;</span>
-
-<span class="c1"># Request login to your account</span>
-login Webin-XXXXX
-<span class="c1"># Supply your password when prompted for it</span>
-xxxxxxxxxx
-<span class="c1"># Expected response: lftp Webin-XXXXX@webin.ebi.ac.uk:~&gt;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Connect to FTP server [replace X:s, and provide password when prompted]</span>
+lftp webin2.ebi.ac.uk -u Webin-XXXXX
+<span class="c1"># Expected response: lftp Webin-XXXXX@webin2.ebi.ac.uk:~&gt;</span>
 
 <span class="c1"># Transfer your read files</span>
 mput ~/your-read-file-dir/*.fastq.gz
