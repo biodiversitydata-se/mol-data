@@ -104,7 +104,7 @@ Before adding actual sample metadata to your spreadsheet, take a close look at E
 
   <br />
 
-- **Environmental attributes of host-associated samples are ambiguous**. As stated above, a spider may in a sense be the environment from which a host-associated sample derives, but as the external environment also may be of interest here, we suggest that you interpret *environment (biome)* and *environment (feature)* the same way as for non-host-associated samples, and use the most specific instance of *organic material (ENVO:01000155)* for the *environment (material)* attribute.
+- **Environmental attributes of host-associated samples are ambiguous**. For instance, a spider may, in some sense, be the environment from which a host-associated sample derives. But as the external environment also may be of interest here, we tentatively suggest that you interpret *broad-scale* and *local environmental context* the same way as for non-host-associated samples, and use the most specific instance of *material anatomical entity (UBERON:0000465)* or *plant anatomical entity (PO:0025131)* for the *environmental medium* attribute of host- and plant associated samples, respectively.
 
 .. |br3| raw:: html
 
