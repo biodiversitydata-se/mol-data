@@ -55,11 +55,13 @@ Note that most GSC MIxS checklists have similar setups of mandatory and recommen
 
 Step 3b: Add sample attributes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Once you have selected a checklist, you can inspect the attributes available in that list. All *Mandatory Fields* are preselected, and you can add *Optional Fields* by ticking their boxes. We suggest that you, at least, tick the following optional attributes for metabarcoding data:
+Once you have selected a checklist, you can inspect the attributes available in that list. All *Mandatory Fields* are preselected, and you can add *Optional Fields* by ticking their boxes. We suggest that you, at least, tick the following optional attributes for metabarcoding data\*:
 
 .. csv-table::
   :file: _static/tables/optional-fields.csv
   :header-rows: 1
+
+\* *Disclaimer*: While target gene/subfragment and primers are typically associated with the (sequencing) experiment, ENA only lists these fields as optional at sample level. When queried about this, ENA suggests adding the fields to experiments through post-submission XML editing, but we consider this process too complex. Therefore, we still recommend adding them to your samples as outlined above. Please note, however, that if you've sequenced multiple targets (e.g., both 16S and 18S) using the same physical samples, you will then need to submit two sets of digital samples. If you choose this approach, please make it easy for data users to identify sequences originating from the same physical sample by adding sample aliases, such as *[physical_sample_id]_16S* and *[physical_sample_id]_18S*.
 
 To ensure that metadata are validated and searchable, you should use existing attributes whenever possible, but you can also add custom attributes to describe your data, if needed (see *Add custom field* in top left corner of page. Write your field name *before* hitting the plus button). Adding more than a few of these is easier to do in a spreadsheet, though, and we explain how to do that in the next step.
 
