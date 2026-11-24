@@ -59,10 +59,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#step-3-register-samples">Step 3: Register samples</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#step-3a-select-sample-checklist">Step 3a: Select sample checklist</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#step-3b-add-sample-attributes">Step 3b: Add sample attributes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#step-3c-download-spreadsheet-template">Step 3c: Download spreadsheet template</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#step-3d-edit-spreadsheet-structure">Step 3d: Edit spreadsheet structure</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#step-3e-add-sample-metadata">Step 3e: Add sample metadata</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#step-3f-upload-spreadsheet">Step 3f: Upload spreadsheet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3c-download-and-prepare-spreadsheet">Step 3c: Download and prepare spreadsheet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3d-add-sample-metadata">Step 3d: Add sample metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3e-upload-spreadsheet">Step 3e: Upload spreadsheet</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#step-4-prepare-and-upload-read-files">Step 4: Prepare and upload read files</a><ul>
@@ -73,7 +72,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#step-5-submit-sequence-reads">Step 5: Submit sequence reads</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#step-5a-download-the-experiment-run-template">Step 5a: Download the experiment/run template</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#step-5b-describe-experiment-and-runs">Step 5b: Describe experiment and runs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#step-5c-option-2-submit-experiments-and-runs-as-xml">Step 5c (Option 2): Submit experiments and runs as XML</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-5c-submit-experiments-and-runs-as-xml">Step 5c: Submit experiments and runs as XML</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#step-6-submit-to-production-service">Step 6: Submit to production service</a></li>
@@ -207,9 +206,50 @@
 </tr>
 </tbody>
 </table>
+<p>If you have sequenced multiple markers from the same physical sample, see the options below before selecting marker-specific attributes.</p>
+<section id="additional-sample-attributes">
+<h5>Additional sample attributes<a class="headerlink" href="#additional-sample-attributes" title="Link to this heading"></a></h5>
+<p>To facilitate metadata validation, interoperability and discoverability, use existing checklist attributes whenever possible. If no suitable attribute exists, you can add custom attributes to describe your data (see <em>Add custom field</em> in the top left corner of the page). Enter the field name <em>before</em> clicking the plus button.</p>
+<p>If you need to add several custom attributes, it is generally easier to do so in a spreadsheet, as described in the next step.</p>
+<p>If you have sequenced only one marker per physical sample, proceed to Step 3c. Otherwise, choose one of the two approaches below.</p>
+</section>
 <section id="several-markers-from-the-same-physical-sample">
 <h5>Several markers from the same physical sample<a class="headerlink" href="#several-markers-from-the-same-physical-sample" title="Link to this heading"></a></h5>
-<p>The attributes <em>target gene</em>, <em>target subfragment</em> and <em>pcr primers</em> describe the sequencing experiment rather than the physical sample. However, ENA’s checklists and the Webin Portal only provide these structured attributes at the sample level. There are two alternative ways to address this limitation, and you should choose one of them for your whole submission:</p>
+<p>The attributes <em>target gene</em>, <em>target subfragment</em> and <em>pcr primers</em> describe the sequencing experiment rather than the physical sample. However, ENA’s checklists and the Webin Portal only provide these structured attributes at the sample level. There are two alternative ways to address this limitation:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Option 1. Webin Portal</p></th>
+<th class="head"><p>Option 2. XML alternative</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ENA sample records</p></td>
+<td><p>One per marker</p></td>
+<td><p>One per physical sample</p></td>
+</tr>
+<tr class="row-odd"><td><p>BioSample accessions</p></td>
+<td><p>One per marker</p></td>
+<td><p>One per physical sample</p></td>
+</tr>
+<tr class="row-even"><td><p>Marker attributes</p></td>
+<td><p>Sample level</p></td>
+<td><p>Experiment level</p></td>
+</tr>
+<tr class="row-odd"><td><p>Marker checklist validation</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>Follows ENA guidance</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Requires XML submission</p></td>
+<td><p>No</p></td>
+<td><p>Yes, for experiments and runs</p></td>
+</tr>
+</tbody>
+</table>
 <section id="option-1-webin-portal-workaround-one-sample-per-marker">
 <h6>Option 1. Webin Portal workaround: one sample per marker<a class="headerlink" href="#option-1-webin-portal-workaround-one-sample-per-marker" title="Link to this heading"></a></h6>
 <p><em>Note:</em> This workaround addresses limitations in the Webin Portal but deviates from <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/submit/samples.html">ENA’s recommendation</a> to register one sample per physical sample.</p>
@@ -242,220 +282,23 @@
 </section>
 <section id="option-2-xml-alternative-one-sample-per-physical-sample">
 <h6>Option 2. XML alternative: one sample per physical sample<a class="headerlink" href="#option-2-xml-alternative-one-sample-per-physical-sample" title="Link to this heading"></a></h6>
-<p>This approach follows ENA’s recommended data model: register one ENA sample per physical sample, without the marker-specific attributes, and add these attributes to each experiment in Step 5 instead (see <a class="reference internal" href="#step-5c-option-2-submit-experiments-and-runs-as-xml">Step 5c (Option 2): Submit experiments and runs as XML</a>). This preserves a single BioSample accession per physical sample, but requires an XML submission and does not provide checklist-based validation of the marker-specific attributes.</p>
+<p>Register one ENA sample per physical sample, without marker-specific attributes. Add these attributes at the experiment level instead, as described in <a class="reference internal" href="#step-5c-submit-experiments-and-runs-as-xml">Step 5c: Submit experiments and runs as XML</a>.</p>
 </section>
 </section>
-<section id="additional-sample-attributes">
-<h5>Additional sample attributes<a class="headerlink" href="#additional-sample-attributes" title="Link to this heading"></a></h5>
-<p>To facilitate metadata validation, interoperability and discoverability, use existing checklist attributes whenever possible. If no suitable attribute exists, you can add custom attributes to describe your data (see <em>Add custom field</em> in the top left corner of the page). Enter the field name <em>before</em> clicking the plus button.</p>
-<p>If you need to add several custom attributes, it is generally easier to do so in a spreadsheet, as described in the next step.</p>
 </section>
+<section id="step-3c-download-and-prepare-spreadsheet">
+<h4>Step 3c: Download and prepare spreadsheet<a class="headerlink" href="#step-3c-download-and-prepare-spreadsheet" title="Link to this heading"></a></h4>
+<p>Click <em>Next</em> → <em>Download TSV Template</em>, and open the downloaded tab-separated (*.tsv) file in a spreadsheet application (in MS Excel, use <em>Data | Text to Columns | Delimited | Delimiter: Tab</em> if all text ends up in one column).</p>
+<p>The template starts with three rows: the checklist, the attribute names and their units (<em>#units</em>). Then:</p>
+<ul class="simple">
+<li><p>If the <em>#units</em> row lists alternatives, such as <em>mm,m</em> for <em>depth</em>, keep only the unit you use.</p></li>
+<li><p>Add any custom attributes (with units, where applicable) to the right of the existing columns, e.g. <em>sampling_station_id</em>.</p></li>
+<li><p>Add one row per sample below the <em>#units</em> row.</p></li>
+</ul>
+<p>Sample aliases should correspond to the sample IDs used in related publications. Add a marker suffix only if you follow Option 1 for several markers (see <em>Several markers from the same physical sample</em> in Step 3b). Aliases must be unique within your account. This will enable readers to find sample-specific metadata and read files, even if you only state a Project accession number in your paper. Sample aliases can, furthermore, be optionally displayed as <em>Unique name</em> in the <em>Sample report</em>. A filled example spreadsheet is shown in Step 3e.</p>
 </section>
-<section id="step-3c-download-spreadsheet-template">
-<h4>Step 3c: Download spreadsheet template<a class="headerlink" href="#step-3c-download-spreadsheet-template" title="Link to this heading"></a></h4>
-<p>After selecting optional attributes, click <em>Next</em>, and then the <em>Download TSV Template</em> button to download a tab-separated values (*.tsv) file. Open the file in your spreadsheet application of choice (In MS Excel, click <em>Data | Text to Columns | Delimited | Delimiter: Tab</em>, to separate text into columns, if needed). With the added optional attributes from 3b, a template created from the <em>GSC MIxS water</em> checklist should look like this (if the <em>#units</em> row lists alternatives, such as <em>mm,m</em> for <em>depth</em>, keep only the unit you use):</p>
-<table class="docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p>Checklist</p></td>
-<td><p>ERC000024</p></td>
-<td><p>GSC MIxS water</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>tax_id</p></td>
-<td><p>scientific_name</p></td>
-<td><p>sample_alias</p></td>
-<td><p>sample_title</p></td>
-<td><p>sample_description</p></td>
-<td><p>project name</p></td>
-<td><p>target gene</p></td>
-<td><p>target subfragment</p></td>
-<td><p>pcr primers</p></td>
-<td><p>source material identifiers</p></td>
-<td><p>collection date</p></td>
-<td><p>geographic location (country and/or sea)</p></td>
-<td><p>geographic location (latitude)</p></td>
-<td><p>geographic location (longitude)</p></td>
-<td><p>depth</p></td>
-<td><p>broad-scale environmental context</p></td>
-<td><p>local environmental context</p></td>
-<td><p>environmental medium</p></td>
-<td><p>salinity</p></td>
-</tr>
-<tr class="row-odd"><td><p>#units</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>DD</p></td>
-<td><p>DD</p></td>
-<td><p>mm,m</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>psu</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="step-3d-edit-spreadsheet-structure">
-<h4>Step 3d: Edit spreadsheet structure<a class="headerlink" href="#step-3d-edit-spreadsheet-structure" title="Link to this heading"></a></h4>
-<p>In the downloaded spreadsheet, you can add custom attributes (with units, where applicable) to the right of existing columns, and samples below the row starting with <em>#units</em>. For instance, if you add a custom attribute (<em>sampling_station_id</em>), and three samples (<em>xyz:1:01</em>, <em>xyz:1:02</em> and <em>xyz:1:03</em>) to the template from Step 3c, your spreadsheet structure should look like this:</p>
-<table class="docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p>Checklist</p></td>
-<td><p>ERC000024</p></td>
-<td><p>GSC MIxS water</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>tax_id</p></td>
-<td><p>scientific_name</p></td>
-<td><p>sample_alias</p></td>
-<td><p>sample_title</p></td>
-<td><p>sample_description</p></td>
-<td><p>project name</p></td>
-<td><p>target gene</p></td>
-<td><p>target subfragment</p></td>
-<td><p>pcr primers</p></td>
-<td><p>source material identifiers</p></td>
-<td><p>collection date</p></td>
-<td><p>geographic location (country and/or sea)</p></td>
-<td><p>geographic location (latitude)</p></td>
-<td><p>geographic location (longitude)</p></td>
-<td><p>depth</p></td>
-<td><p>broad-scale environmental context</p></td>
-<td><p>local environmental context</p></td>
-<td><p>environmental medium</p></td>
-<td><p>salinity</p></td>
-<td><p>sampling_station_id</p></td>
-</tr>
-<tr class="row-odd"><td><p>#units</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>DD</p></td>
-<td><p>DD</p></td>
-<td><p>m</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>psu</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td><p>xyz:1:01</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>xyz:1:01</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td></td>
-<td></td>
-<td><p>xyz:1:02</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>xyz:1:02</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td><p>xyz:1:03</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>xyz:1:03</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Remember to enter sample aliases that correspond to what you use in related publications (with a marker suffix if you have sequenced several markers, see <em>Several markers from the same physical sample</em> in Step 3b). Aliases must be unique within your account. This will enable readers to find sample-specific metadata and read files, even if you only state a Project accession number in your paper. Sample aliases can, furthermore, be optionally displayed as <em>Unique name</em> in the <em>Sample report</em>.</p>
-</section>
-<section id="step-3e-add-sample-metadata">
-<h4>Step 3e: Add sample metadata<a class="headerlink" href="#step-3e-add-sample-metadata" title="Link to this heading"></a></h4>
+<section id="step-3d-add-sample-metadata">
+<h4>Step 3d: Add sample metadata<a class="headerlink" href="#step-3d-add-sample-metadata" title="Link to this heading"></a></h4>
 <p>Before adding actual sample metadata to your spreadsheet, take a close look at ENA’s explanations of selected attributes and lists of permitted values. These are available in the <a class="reference external" href="https://www.ebi.ac.uk/ena/browser/checklists">Sample Checklists browser</a>. Also note the following:</p>
 <ul class="simple">
 <li><p><strong>Taxon attributes for metabarcoding samples may be confusing</strong>. In this context, the <em>tax_id</em> &amp; <em>scientific_name</em> attributes do not typically refer to <em>sequenced</em> organisms, but rather describe <em>sampled</em> organisms or environments. The <em>scientific_name</em> value <em>spider metagenome</em> is, for example, used to describe samples from a spider or spider body part, i.e. not samples from which you have derived spider sequences. The attributes <em>tax_id</em> &amp; <em>scientific_name</em> should thus be selected from the list of <a class="reference external" href="https://www.ncbi.nlm.nih.gov/datasets/taxonomy/browser/?taxon=408169">environmental and organismal metagenomes in NCBI’s taxonomy browser</a>. For host-associated samples, also differentiate between these generic attributes (i.e. <em>tax_id</em> &amp; <em>scientific_name</em>) and <em>host taxid</em>, which you can also search for in <a class="reference external" href="https://www.ncbi.nlm.nih.gov/datasets/taxonomy/browser/">NCBI’s taxonomy browser</a>, and should be as specific as possible.</p></li>
@@ -516,9 +359,9 @@
 </li>
 </ul>
 </section>
-<section id="step-3f-upload-spreadsheet">
-<h4>Step 3f: Upload spreadsheet<a class="headerlink" href="#step-3f-upload-spreadsheet" title="Link to this heading"></a></h4>
-<p>With data added, your spreadsheet should look similar to this:</p>
+<section id="step-3e-upload-spreadsheet">
+<h4>Step 3e: Upload spreadsheet<a class="headerlink" href="#step-3e-upload-spreadsheet" title="Link to this heading"></a></h4>
+<p>With data added, your spreadsheet should look similar to this example, which follows the Webin Portal approach (Option 1 in Step 3b) with marker attributes at sample level:</p>
 <table class="docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p>Checklist</p></td>
@@ -858,11 +701,24 @@ bye
 </tr>
 </tbody>
 </table>
+<p><em>If you selected Option 2 in Step 3b, proceed to Step 5c without submitting the spreadsheet.</em></p>
 <p>If so, go back to <em>Raw Reads (Experiments and Runs) | Submit reads</em>, click <em>Upload filled spreadsheet template for Read submission</em>, select your edited *.tsv file, and click <em>Submit Completed Spreadsheet</em>. If your submission is confirmed, you should now be able to see your submitted runs in the <em>Raw Reads (Experiments and Runs) | Run Files Report</em>.</p>
 </section>
-<section id="step-5c-option-2-submit-experiments-and-runs-as-xml">
-<h4>Step 5c (Option 2): Submit experiments and runs as XML<a class="headerlink" href="#step-5c-option-2-submit-experiments-and-runs-as-xml" title="Link to this heading"></a></h4>
-<p>If you registered one ENA sample per physical sample (Option 2 in Step 3b), add the marker-specific attributes to each experiment. This is not possible in the Webin Portal, so experiments and runs must be submitted as XML (see <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/submit/reads/programmatic.html">ENA’s guide to programmatic read submission</a>). The experiment for one of the markers could then include:</p>
+<section id="step-5c-submit-experiments-and-runs-as-xml">
+<h4>Step 5c: Submit experiments and runs as XML<a class="headerlink" href="#step-5c-submit-experiments-and-runs-as-xml" title="Link to this heading"></a></h4>
+<p><em>Only follow this step if you selected Option 2 in Step 3b. Otherwise, skip to Step 6.</em></p>
+<p>The Webin Portal cannot add attributes to experiments, so experiments and runs are submitted as XML instead (see <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/submit/reads/programmatic.html">ENA’s guide to programmatic read submission</a>).</p>
+<p><strong>1. Add marker-specific attributes.</strong> In the spreadsheet from Step 5b, add one column for each marker-specific attribute, e.g. <em>target gene</em>, <em>target subfragment</em> and <em>pcr primers</em>, and fill in the values for each experiment. Use the same attribute names as in the checklist, as experiment attributes are not validated against the checklists.</p>
+<p><strong>2. Generate XML files.</strong> Our R script <a class="reference external" href="_static/scripts/runs_to_xml.R">runs_to_xml.R</a> (base R, no extra packages) converts the spreadsheet into <em>experiment.xml</em>, <em>run.xml</em> and <em>submission.xml</em>, in the same folder as the spreadsheet. Run it from a terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Rscript<span class="w"> </span>runs_to_xml.R<span class="w"> </span>your-filled-runs.tsv
+</pre></div>
+</div>
+<p>or from R / RStudio:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">source</span><span class="p">(</span><span class="s">&quot;runs_to_xml.R&quot;</span><span class="p">)</span>
+<span class="nf">runs_to_xml</span><span class="p">(</span><span class="s">&quot;your-filled-runs.tsv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You do not need to edit the XML files. For reference, each extra column becomes an experiment attribute, e.g.:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;EXPERIMENT_ATTRIBUTES&gt;</span>
 <span class="w">  </span><span class="nt">&lt;EXPERIMENT_ATTRIBUTE&gt;&lt;TAG&gt;</span>target<span class="w"> </span>gene<span class="nt">&lt;/TAG&gt;&lt;VALUE&gt;</span>16S<span class="w"> </span>rRNA<span class="nt">&lt;/VALUE&gt;&lt;/EXPERIMENT_ATTRIBUTE&gt;</span>
 <span class="w">  </span><span class="nt">&lt;EXPERIMENT_ATTRIBUTE&gt;&lt;TAG&gt;</span>target<span class="w"> </span>subfragment<span class="nt">&lt;/TAG&gt;&lt;VALUE&gt;</span>V3-V4<span class="nt">&lt;/VALUE&gt;&lt;/EXPERIMENT_ATTRIBUTE&gt;</span>
@@ -870,23 +726,7 @@ bye
 <span class="nt">&lt;/EXPERIMENT_ATTRIBUTES&gt;</span>
 </pre></div>
 </div>
-<p>Experiment attributes are not validated against the checklists, so use the same attribute names as in the checklist.</p>
-<p>To create the XML files, fill in the spreadsheet template from Step 5a as usual, and add one column for each marker-specific attribute (e.g. <em>target gene</em>, <em>target subfragment</em> and <em>pcr primers</em>). Our script <a class="reference external" href="_static/scripts/runs_to_xml.py">runs_to_xml.py</a> (Python 3, no extra packages) converts this spreadsheet into <em>experiment.xml</em> and <em>run.xml</em>, with each extra column written as an experiment attribute:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>runs_to_xml.py<span class="w"> </span>your-filled-runs.tsv
-</pre></div>
-</div>
-<p>Then create a file <em>submission.xml</em> with the following content:</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;SUBMISSION&gt;</span>
-<span class="w">  </span><span class="nt">&lt;ACTIONS&gt;</span>
-<span class="w">    </span><span class="nt">&lt;ACTION&gt;</span>
-<span class="w">      </span><span class="nt">&lt;ADD/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/ACTION&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/ACTIONS&gt;</span>
-<span class="nt">&lt;/SUBMISSION&gt;</span>
-</pre></div>
-</div>
-<p>and submit the three files to the test service [replace X:s, and provide password when prompted]:</p>
+<p><strong>3. Submit XML files.</strong> In the same folder, submit the three files to the test service [replace X:s, and provide password when prompted]:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-u<span class="w"> </span>Webin-XXXXX<span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot;SUBMISSION=@submission.xml&quot;</span><span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot;EXPERIMENT=@experiment.xml&quot;</span><span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot;RUN=@run.xml&quot;</span><span class="w"> </span><span class="s2">&quot;https://wwwdev.ebi.ac.uk/ena/submit/drop-box/submit/&quot;</span><span class="w"> </span>-o<span class="w"> </span>receipt.xml
 </pre></div>
 </div>
