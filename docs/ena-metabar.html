@@ -268,12 +268,12 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>ST13_2018_16S</p></td>
-<td><p>ST13_2018</p></td>
+<tr class="row-even"><td><p>SAMPLE01_16S</p></td>
+<td><p>SAMPLE01</p></td>
 <td><p>16S rRNA</p></td>
 </tr>
-<tr class="row-odd"><td><p>ST13_2018_18S</p></td>
-<td><p>ST13_2018</p></td>
+<tr class="row-odd"><td><p>SAMPLE01_18S</p></td>
+<td><p>SAMPLE01</p></td>
 <td><p>18S rRNA</p></td>
 </tr>
 </tbody>
@@ -429,14 +429,14 @@
 </tr>
 <tr class="row-even"><td><p>1874687</p></td>
 <td><p>marine plankton metagenome</p></td>
-<td><p>xyz:1:01</p></td>
+<td><p>SAMPLE01_16S</p></td>
 <td><p>Microbial plankton sample 1</p></td>
 <td></td>
 <td><p>Microbial plankton diversity along Baltic salinity gradient July 2018</p></td>
 <td><p>16S rRNA</p></td>
 <td><p>V3-V4</p></td>
 <td><p>341F (CCTACGGGNGGCWGCAG) and 805R (GACTACHVGGGTATCTAATCC)</p></td>
-<td><p>xyz:1:01</p></td>
+<td><p>SAMPLE01</p></td>
 <td><p>2018-07-23</p></td>
 <td><p>Baltic Sea</p></td>
 <td><p>61.407611</p></td>
@@ -450,14 +450,14 @@
 </tr>
 <tr class="row-odd"><td><p>1874687</p></td>
 <td><p>marine plankton metagenome</p></td>
-<td><p>xyz:1:02</p></td>
+<td><p>SAMPLE02_16S</p></td>
 <td><p>Microbial plankton sample 2</p></td>
 <td></td>
 <td><p>Microbial plankton diversity along Baltic salinity gradient July 2018</p></td>
 <td><p>16S rRNA</p></td>
 <td><p>V3-V4</p></td>
 <td><p>341F (CCTACGGGNGGCWGCAG) and 805R (GACTACHVGGGTATCTAATCC)</p></td>
-<td><p>xyz:1:02</p></td>
+<td><p>SAMPLE02</p></td>
 <td><p>2018-07-24</p></td>
 <td><p>Baltic Sea</p></td>
 <td><p>62.805337</p></td>
@@ -471,14 +471,14 @@
 </tr>
 <tr class="row-even"><td><p>1874687</p></td>
 <td><p>marine plankton metagenome</p></td>
-<td><p>xyz:1:03</p></td>
+<td><p>SAMPLE03_16S</p></td>
 <td><p>Microbial plankton sample 3</p></td>
 <td></td>
 <td><p>Microbial plankton diversity along Baltic salinity gradient July 2018</p></td>
 <td><p>16S rRNA</p></td>
 <td><p>V3-V4</p></td>
 <td><p>341F (CCTACGGGNGGCWGCAG) and 805R (GACTACHVGGGTATCTAATCC)</p></td>
-<td><p>xyz:1:03</p></td>
+<td><p>SAMPLE03</p></td>
 <td><p>2018-07-25</p></td>
 <td><p>Baltic Sea</p></td>
 <td><p>64.970396</p></td>
@@ -497,7 +497,7 @@
 </section>
 <section id="step-4-prepare-and-upload-read-files">
 <h3>Step 4: Prepare and upload read files<a class="headerlink" href="#step-4-prepare-and-upload-read-files" title="Link to this heading"></a></h3>
-<p>Before starting submission of reads and experiment data, you need to prepare and upload read files to your own directory in the Webin file upload area. We assume that you have paired-end reads in FASTQ format, like the example files from the <a class="reference external" href="https://mothur.org/wiki/MiSeq_SOP">mothur MiSeq SOP</a> that we use below, but please refer to <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/submit/fileprep/reads.html">ENA’s guidelines on file formats</a> for other options:</p>
+<p>Before starting submission of reads and experiment data, you need to prepare and upload read files to your own directory in the Webin file upload area. We assume that you have paired-end reads in FASTQ format, but please refer to <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/submit/fileprep/reads.html">ENA’s guidelines on file formats</a> for other options:</p>
 <section id="step-4a-compress-files-and-calculate-checksums">
 <h4>Step 4a: Compress files and calculate checksums<a class="headerlink" href="#step-4a-compress-files-and-calculate-checksums" title="Link to this heading"></a></h4>
 <p>On a Mac, open the Terminal app (in <em>Applications | Utilities</em>), and do the following:</p>
@@ -517,22 +517,22 @@ gzip<span class="w"> </span>-k<span class="w"> </span>*.fastq
 <p>The resulting file should look similar to this:</p>
 <table class="docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p>F3D148_S214_L001_R1_001.fastq.gz</p></td>
+<tr class="row-odd"><td><p>SAMPLE01_16S_R1.fastq.gz</p></td>
 <td><p>bb8f57f8a94050de3d8ad47d03477e68</p></td>
 </tr>
-<tr class="row-even"><td><p>F3D148_S214_L001_R2_001.fastq.gz</p></td>
+<tr class="row-even"><td><p>SAMPLE01_16S_R2.fastq.gz</p></td>
 <td><p>d71d368d056b1d4bcf0ea74628f4d63a</p></td>
 </tr>
-<tr class="row-odd"><td><p>F3D149_S215_L001_R1_001.fastq.gz</p></td>
+<tr class="row-odd"><td><p>SAMPLE02_16S_R1.fastq.gz</p></td>
 <td><p>f76e0d9366998f7509a7aaca640cc842</p></td>
 </tr>
-<tr class="row-even"><td><p>F3D149_S215_L001_R2_001.fastq.gz</p></td>
+<tr class="row-even"><td><p>SAMPLE02_16S_R2.fastq.gz</p></td>
 <td><p>6c9acb1f743d984e07a9ce6b35b0fb6a</p></td>
 </tr>
-<tr class="row-odd"><td><p>F3D150_S216_L001_R1_001.fastq.gz</p></td>
+<tr class="row-odd"><td><p>SAMPLE03_16S_R1.fastq.gz</p></td>
 <td><p>e869e2b2bff6cd6c5dbe8f1b1d22d5bc</p></td>
 </tr>
-<tr class="row-even"><td><p>F3D150_S216_L001_R2_001.fastq.gz</p></td>
+<tr class="row-even"><td><p>SAMPLE03_16S_R2.fastq.gz</p></td>
 <td><p>f3c6d5a3dae027187ff5f80100d37482</p></td>
 </tr>
 </tbody>
@@ -660,43 +660,43 @@ bye
 <td><p>reverse_file_name</p></td>
 <td><p>reverse_file_md5</p></td>
 </tr>
-<tr class="row-odd"><td><p>ERS8208349</p></td>
+<tr class="row-odd"><td><p>ERS8208347</p></td>
 <td><p>PRJEB48461</p></td>
 <td><p>Illumina MiSeq</p></td>
-<td><p>16S rRNA amplicon of Sample 1</p></td>
+<td><p>SAMPLE01_16S amplicon library</p></td>
 <td><p>METAGENOMIC</p></td>
 <td><p>PCR</p></td>
 <td><p>AMPLICON</p></td>
 <td><p>PAIRED</p></td>
-<td><p>F3D148_S214_L001_R1_001.fastq.gz</p></td>
+<td><p>SAMPLE01_16S_R1.fastq.gz</p></td>
 <td><p>bb8f57f8a94050de3d8ad47d03477e68</p></td>
-<td><p>F3D148_S214_L001_R2_001.fastq.gz</p></td>
+<td><p>SAMPLE01_16S_R2.fastq.gz</p></td>
 <td><p>d71d368d056b1d4bcf0ea74628f4d63a</p></td>
 </tr>
 <tr class="row-even"><td><p>ERS8208348</p></td>
 <td><p>PRJEB48461</p></td>
 <td><p>Illumina MiSeq</p></td>
-<td><p>16S rRNA amplicon of Sample 2</p></td>
+<td><p>SAMPLE02_16S amplicon library</p></td>
 <td><p>METAGENOMIC</p></td>
 <td><p>PCR</p></td>
 <td><p>AMPLICON</p></td>
 <td><p>PAIRED</p></td>
-<td><p>F3D149_S215_L001_R1_001.fastq.gz</p></td>
+<td><p>SAMPLE02_16S_R1.fastq.gz</p></td>
 <td><p>f76e0d9366998f7509a7aaca640cc842</p></td>
-<td><p>F3D149_S215_L001_R2_001.fastq.gz</p></td>
+<td><p>SAMPLE02_16S_R2.fastq.gz</p></td>
 <td><p>6c9acb1f743d984e07a9ce6b35b0fb6a</p></td>
 </tr>
-<tr class="row-odd"><td><p>ERS8208347</p></td>
+<tr class="row-odd"><td><p>ERS8208349</p></td>
 <td><p>PRJEB48461</p></td>
 <td><p>Illumina MiSeq</p></td>
-<td><p>16S rRNA amplicon of Sample 3</p></td>
+<td><p>SAMPLE03_16S amplicon library</p></td>
 <td><p>METAGENOMIC</p></td>
 <td><p>PCR</p></td>
 <td><p>AMPLICON</p></td>
 <td><p>PAIRED</p></td>
-<td><p>F3D150_S216_L001_R1_001.fastq.gz</p></td>
+<td><p>SAMPLE03_16S_R1.fastq.gz</p></td>
 <td><p>e869e2b2bff6cd6c5dbe8f1b1d22d5bc</p></td>
-<td><p>F3D150_S216_L001_R2_001.fastq.gz</p></td>
+<td><p>SAMPLE03_16S_R2.fastq.gz</p></td>
 <td><p>f3c6d5a3dae027187ff5f80100d37482</p></td>
 </tr>
 </tbody>

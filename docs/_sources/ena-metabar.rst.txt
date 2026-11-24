@@ -103,8 +103,8 @@ For example:
 =============  ===========================  ===========
 Sample alias   Source material identifiers  Target gene
 =============  ===========================  ===========
-ST13_2018_16S  ST13_2018                    16S rRNA
-ST13_2018_18S  ST13_2018                    18S rRNA
+SAMPLE01_16S   SAMPLE01                     16S rRNA
+SAMPLE01_18S   SAMPLE01                     18S rRNA
 =============  ===========================  ===========
 
 Each record receives a separate BioSample accession. The shared *source material identifiers* value allows data users to identify records originating from the same physical sample but does not establish a formal relationship between them in ENA.
@@ -182,7 +182,7 @@ If so, go back to *Samples | Register Samples*, click *Upload filled spreadsheet
 
 Step 4: Prepare and upload read files
 ---------------------------------------------
-Before starting submission of reads and experiment data, you need to prepare and upload read files to your own directory in the Webin file upload area. We assume that you have paired-end reads in FASTQ format, like the example files from the `mothur MiSeq SOP <https://mothur.org/wiki/MiSeq_SOP>`_ that we use below, but please refer to `ENA's guidelines on file formats <https://ena-docs.readthedocs.io/en/latest/submit/fileprep/reads.html>`_ for other options:
+Before starting submission of reads and experiment data, you need to prepare and upload read files to your own directory in the Webin file upload area. We assume that you have paired-end reads in FASTQ format, but please refer to `ENA's guidelines on file formats <https://ena-docs.readthedocs.io/en/latest/submit/fileprep/reads.html>`_ for other options:
 
 Step 4a: Compress files and calculate checksums
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
