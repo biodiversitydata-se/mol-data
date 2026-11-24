@@ -55,15 +55,48 @@ Note that most GSC MIxS checklists have similar setups of mandatory and recommen
 
 Step 3b: Add sample attributes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Once you have selected a checklist, you can inspect the attributes available in that list. All *Mandatory Fields* are preselected, and you can add *Optional Fields* by ticking their boxes. We suggest that you, at least, tick the following optional attributes for metabarcoding data\*, as well as any optional attributes that you have measured (e.g. *salinity* in the *GSC MIxS water* example below):
+Once you have selected a checklist, you can inspect the attributes available in that list. All *Mandatory Fields* are preselected, and you can add *Optional Fields* by ticking their boxes.
+
+For metabarcoding data, we recommend including the following optional attributes, where applicable, as well as any additional attributes for which you have data (e.g. *salinity* in the *GSC MIxS water* example below):
 
 .. csv-table::
   :file: _static/tables/optional-fields.csv
   :header-rows: 1
 
-\* *Disclaimer*: While target gene/subfragment and primers are typically associated with the (sequencing) experiment, ENA only lists these fields as optional at sample level. When queried about this, ENA suggests adding the fields to experiments through post-submission XML editing, but we consider this process too complex. Therefore, we still recommend adding them to your samples as outlined above. Please note, however, that if you've sequenced multiple targets (e.g., both 16S and 18S) using the same *physical* samples, you will then need to submit two sets of *digital* samples. If you choose this approach, please make it easy for data users to identify sequences originating from the same physical sample by adding sample aliases, such as *[physical_sample_id]_16S* and *[physical_sample_id]_18S*.
+Several markers from the same physical sample
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The attributes *target gene*, *target subfragment* and *pcr primers* describe the sequencing experiment rather than the physical sample. However, ENA's checklists and the Webin Portal only provide these structured attributes at the sample level. There are two alternative ways to address this limitation, and you should choose one of them for your whole submission:
 
-To ensure that metadata are validated and searchable, you should use existing attributes whenever possible, but you can also add custom attributes to describe your data, if needed (see *Add custom field* in top left corner of page. Write your field name *before* hitting the plus button). Adding more than a few of these is easier to do in a spreadsheet, though, and we explain how to do that in the next step.
+Option 1. Webin Portal workaround: one sample per marker
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+*Note:* This workaround addresses limitations in the Webin Portal but deviates from `ENA's recommendation <https://ena-docs.readthedocs.io/en/latest/submit/samples.html>`_ to register one sample per physical sample.
+
+To record marker-specific metadata using checklist-defined attributes, register one ENA sample record per marker:
+
+- Use the original physical sample ID, as reported in the associated publication or supplementary data, and append the marker to create the *sample alias*.
+- Enter the same, stable physical sample ID, without the marker suffix, in *source material identifiers* for all corresponding records.
+- Keep physical sample metadata consistent across records, while providing marker-specific attributes for each record.
+
+For example:
+
+=============  ===========================  ===========
+Sample alias   Source material identifiers  Target gene
+=============  ===========================  ===========
+ST13_2018_16S  ST13_2018                    16S rRNA
+ST13_2018_18S  ST13_2018                    18S rRNA
+=============  ===========================  ===========
+
+Each record receives a separate BioSample accession. The shared *source material identifiers* value allows data users to identify records originating from the same physical sample but does not establish a formal relationship between them in ENA.
+
+Option 2. XML alternative: one sample per physical sample
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+This approach follows ENA's recommended data model: register one ENA sample per physical sample, without the marker-specific attributes, and add these attributes to each experiment in Step 5 instead (see `Step 5c (Option 2): Submit experiments and runs as XML`_). This preserves a single BioSample accession per physical sample, but requires an XML submission and does not provide checklist-based validation of the marker-specific attributes.
+
+Additional sample attributes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+To facilitate metadata validation, interoperability and discoverability, use existing checklist attributes whenever possible. If no suitable attribute exists, you can add custom attributes to describe your data (see *Add custom field* in the top left corner of the page). Enter the field name *before* clicking the plus button.
+
+If you need to add several custom attributes, it is generally easier to do so in a spreadsheet, as described in the next step.
 
 Step 3c: Download spreadsheet template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -81,7 +114,7 @@ In the downloaded spreadsheet, you can add custom attributes (with units, where 
   :file: _static/tables/mixs-water-template-edited.csv
   :header-rows: 0
 
-Remember to enter sample aliases that correspond to what you use in related publications. This will enable readers to find sample-specific metadata and read files, even if you only state a Project accession number in your paper. Sample aliases can, furthermore, be optionally displayed as *Unique name* in the *Sample report*.
+Remember to enter sample aliases that correspond to what you use in related publications (with a marker suffix if you have sequenced several markers, see *Several markers from the same physical sample* in Step 3b). Aliases must be unique within your account. This will enable readers to find sample-specific metadata and read files, even if you only state a Project accession number in your paper. Sample aliases can, furthermore, be optionally displayed as *Unique name* in the *Sample report*.
 
 Step 3e: Add sample metadata
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -248,6 +281,47 @@ Your spreadsheet should now look similar to this (but add as much optional metad
   :header-rows: 0
 
 If so, go back to *Raw Reads (Experiments and Runs) | Submit reads*, click *Upload filled spreadsheet template for Read submission*, select your edited \*.tsv file, and click *Submit Completed Spreadsheet*. If your submission is confirmed, you should now be able to see your submitted runs in the *Raw Reads (Experiments and Runs) | Run Files Report*.
+
+Step 5c (Option 2): Submit experiments and runs as XML
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If you registered one ENA sample per physical sample (Option 2 in Step 3b), add the marker-specific attributes to each experiment. This is not possible in the Webin Portal, so experiments and runs must be submitted as XML (see `ENA's guide to programmatic read submission <https://ena-docs.readthedocs.io/en/latest/submit/reads/programmatic.html>`_). The experiment for one of the markers could then include:
+
+.. code-block:: xml
+
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE><TAG>target gene</TAG><VALUE>16S rRNA</VALUE></EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE><TAG>target subfragment</TAG><VALUE>V3-V4</VALUE></EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE><TAG>pcr primers</TAG><VALUE>341F (CCTACGGGNGGCWGCAG) and 805R (GACTACHVGGGTATCTAATCC)</VALUE></EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+
+Experiment attributes are not validated against the checklists, so use the same attribute names as in the checklist.
+
+To create the XML files, fill in the spreadsheet template from Step 5a as usual, and add one column for each marker-specific attribute (e.g. *target gene*, *target subfragment* and *pcr primers*). Our script `runs_to_xml.py <_static/scripts/runs_to_xml.py>`_ (Python 3, no extra packages) converts this spreadsheet into *experiment.xml* and *run.xml*, with each extra column written as an experiment attribute:
+
+.. code-block:: bash
+
+  python3 runs_to_xml.py your-filled-runs.tsv
+
+Then create a file *submission.xml* with the following content:
+
+.. code-block:: xml
+
+  <?xml version="1.0" encoding="UTF-8"?>
+  <SUBMISSION>
+    <ACTIONS>
+      <ACTION>
+        <ADD/>
+      </ACTION>
+    </ACTIONS>
+  </SUBMISSION>
+
+and submit the three files to the test service [replace X:s, and provide password when prompted]:
+
+.. code-block:: bash
+
+  curl -u Webin-XXXXX -F "SUBMISSION=@submission.xml" -F "EXPERIMENT=@experiment.xml" -F "RUN=@run.xml" "https://wwwdev.ebi.ac.uk/ena/submit/drop-box/submit/" -o receipt.xml
+
+The file *receipt.xml* shows whether the submission succeeded (*success="true"*), the accessions of your experiments and runs, and any error messages. For the production service, use *https://www.ebi.ac.uk/ena/submit/drop-box/submit/* instead.
 
 Step 6: Submit to production service
 ------------------------------------
