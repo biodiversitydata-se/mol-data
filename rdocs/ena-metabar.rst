@@ -102,7 +102,7 @@ Each record receives a separate BioSample accession. The shared *source material
 
 Option 2. XML alternative: one sample per physical sample
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-For a more advanced approach that follows ENA's data model, register one ENA sample per physical sample and submit marker-specific attributes at the experiment level via XML (see `Step 5c <Step 5c: Submit experiments and runs as XML_>`_).
+For a more advanced approach that follows ENA's data model, register one ENA sample per physical sample. Do not select *target gene*, *target subfragment* or *pcr primers* here; add them at the experiment level instead (see `Step 5c <Step 5c: Submit experiments and runs as XML_>`_).
 
 Step 3c: Download and prepare spreadsheet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -280,7 +280,7 @@ Your spreadsheet should now look similar to this (but add as much optional metad
   :file: _static/tables/run-exp-template-filled.csv
   :header-rows: 0
 
-*If you selected Option 2 in Step 3b, proceed to Step 5c without submitting the spreadsheet.*
+*If you selected Option 2 (Step 3b), save the completed TSV file and proceed to Step 5c without uploading it.*
 
 Otherwise, go back to *Raw Reads (Experiments and Runs) | Submit reads*, click *Upload filled spreadsheet template for Read submission*, select your edited \*.tsv file, and click *Submit Completed Spreadsheet*. If your submission is confirmed, you should now be able to see your submitted runs in the *Raw Reads (Experiments and Runs) | Run Files Report*.
 
@@ -292,15 +292,22 @@ Step 5c: Submit experiments and runs as XML
 
 The read spreadsheet in the Webin Portal does not include marker-specific attributes, so experiments and runs are submitted as XML instead (see `ENA's guide to programmatic read submission <https://ena-docs.readthedocs.io/en/latest/submit/reads/programmatic.html>`_).
 
-**1. Add marker-specific attributes.** In the spreadsheet from Step 5b, add one column for each marker-specific attribute, e.g. *target gene*, *target subfragment* and *pcr primers*, and fill in the values for each experiment. Use the same attribute names as in the checklist, as experiment attributes are not validated against the checklists.
+**1. Add marker-specific attributes.** In the spreadsheet from Step 5b, add one column for each marker-specific attribute, e.g. *target gene*, *target subfragment* and *pcr primers*, and fill in the values for each experiment. Use the same attribute names as in the checklist, as experiment attributes are not validated against the checklists. Use one row per marker, with a unique *library_name*. Rows for markers from the same physical sample share the same sample accession, for example (other columns omitted):
 
-**2. Generate XML files.** Our R script `runs_to_xml.R <_static/scripts/runs_to_xml.R>`_ (base R, no extra packages) converts the spreadsheet into *experiment.xml*, *run.xml* and *submission.xml*, in the same folder as the spreadsheet. Run it from a terminal:
+==========  =============================  ===========  ==================
+sample      library_name                   target gene  target subfragment
+==========  =============================  ===========  ==================
+ERS8208347  SAMPLE01_16S amplicon library  16S rRNA     V3-V4
+ERS8208347  SAMPLE01_18S amplicon library  18S rRNA     V4
+==========  =============================  ===========  ==================
+
+**2. Generate XML files.** Make sure R is installed. Download `runs_to_xml.R <_static/scripts/runs_to_xml.R>`_ (base R, no extra packages) and save it in the same folder as your completed TSV file. The script converts the spreadsheet into *experiment.xml*, *run.xml* and *submission.xml*, in the same folder. Open a terminal in that folder and run:
 
 .. code-block:: bash
 
   Rscript runs_to_xml.R your-filled-runs.tsv
 
-or from R / RStudio:
+or from R / RStudio, with that folder as working directory:
 
 .. code-block:: r
 
@@ -323,11 +330,19 @@ You do not need to edit the XML files. For reference, each extra column becomes 
 
   curl -u Webin-XXXXX -F "SUBMISSION=@submission.xml" -F "EXPERIMENT=@experiment.xml" -F "RUN=@run.xml" "https://wwwdev.ebi.ac.uk/ena/submit/drop-box/submit/" -o receipt.xml
 
-The file *receipt.xml* shows whether the submission succeeded (*success="true"*), the accessions of your experiments and runs, and any error messages. For the production service, use *https://www.ebi.ac.uk/ena/submit/drop-box/submit/* instead.
+The file *receipt.xml* shows whether the submission succeeded (*success="true"*), the accessions of your experiments and runs, and any error messages. Open it in a text editor, or print it in the terminal:
+
+.. code-block:: bash
+
+  cat receipt.xml
+
+For the production service (Step 6), use *https://www.ebi.ac.uk/ena/submit/drop-box/submit/* in the curl command instead.
 
 Step 6: Submit to production service
 ------------------------------------
 After careful inspection of metadata, you can now repeat the process in the `production version of the Webin interface <https://www.ebi.ac.uk/ena/submit/webin/login>`_.
+
+For Option 2, regenerate the XML files using the production sample and study accessions before submitting them to the production service.
 
 Post-submission editing
 ***********************
