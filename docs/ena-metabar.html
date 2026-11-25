@@ -668,40 +668,19 @@ bye
 </tr>
 </tbody>
 </table>
-<p><em>If you selected Option 2 (Step 3b), save the completed TSV file and proceed to Step 5c without uploading it.</em></p>
+<p><em>For Option 2 (Step 3b), use the same sample accession for experiments targeting different markers from the same physical sample. Save the completed TSV file and proceed to Step 5c without submitting it.</em></p>
 <p>Otherwise, go back to <em>Raw Reads (Experiments and Runs) | Submit reads</em>, click <em>Upload filled spreadsheet template for Read submission</em>, select your edited *.tsv file, and click <em>Submit Completed Spreadsheet</em>. If your submission is confirmed, you should now be able to see your submitted runs in the <em>Raw Reads (Experiments and Runs) | Run Files Report</em>.</p>
 </section>
 <section class="detour" id="step-5c-submit-experiments-and-runs-as-xml">
 <h4>Step 5c: Submit experiments and runs as XML<a class="headerlink" href="#step-5c-submit-experiments-and-runs-as-xml" title="Link to this heading"></a></h4>
 <p><em>Only follow this step if you selected Option 2 in Step 3b. Otherwise, skip to Step 6.</em></p>
 <p>The read spreadsheet in the Webin Portal does not include marker-specific attributes, so experiments and runs are submitted as XML instead (see <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/submit/reads/programmatic.html">ENA’s guide to programmatic read submission</a>).</p>
-<p><strong>1. Add marker-specific attributes.</strong> In the spreadsheet from Step 5b, add one column for each marker-specific attribute, e.g. <em>target gene</em>, <em>target subfragment</em> and <em>pcr primers</em>, and fill in the values for each experiment. Use the same attribute names as in the checklist, as experiment attributes are not validated against the checklists. Use one row per marker, with a unique <em>library_name</em>. Rows for markers from the same physical sample share the same sample accession, for example (other columns omitted):</p>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>sample</p></th>
-<th class="head"><p>library_name</p></th>
-<th class="head"><p>target gene</p></th>
-<th class="head"><p>target subfragment</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>ERS8208347</p></td>
-<td><p>SAMPLE01_16S amplicon library</p></td>
-<td><p>16S rRNA</p></td>
-<td><p>V3-V4</p></td>
-</tr>
-<tr class="row-odd"><td><p>ERS8208347</p></td>
-<td><p>SAMPLE01_18S amplicon library</p></td>
-<td><p>18S rRNA</p></td>
-<td><p>V4</p></td>
-</tr>
-</tbody>
-</table>
-<p><strong>2. Generate XML files.</strong> Make sure R is installed. Download <a class="reference external" href="_static/scripts/runs_to_xml.R">runs_to_xml.R</a> (base R, no extra packages) and save it in the same folder as your completed TSV file. The script converts the spreadsheet into <em>experiment.xml</em>, <em>run.xml</em> and <em>submission.xml</em>, in the same folder. Open a terminal in that folder and run:</p>
+<p><strong>1. Add marker-specific attributes.</strong> In the spreadsheet from Step 5b, add one column for each marker-specific attribute, e.g. <em>target gene</em>, <em>target subfragment</em> and <em>pcr primers</em>, and fill in the values for each experiment. Use the same attribute names as in the checklist, as experiment attributes are not validated against the checklists. Use one row per marker, with a unique <em>library_name</em>.</p>
+<p><strong>2. Generate XML files.</strong> Download our script <a class="reference external" href="_static/scripts/runs_to_xml.R">runs_to_xml.R</a> (base R, no extra packages) to the folder containing your completed TSV file. It converts the spreadsheet into <em>experiment.xml</em>, <em>run.xml</em> and <em>submission.xml</em> in the same folder. With R installed, open a terminal in that folder and run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Rscript<span class="w"> </span>runs_to_xml.R<span class="w"> </span>your-filled-runs.tsv
 </pre></div>
 </div>
-<p>or from R / RStudio, with that folder as working directory:</p>
+<p>Or from R / RStudio, with the working directory set to the same folder:</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">source</span><span class="p">(</span><span class="s">&quot;runs_to_xml.R&quot;</span><span class="p">)</span>
 <span class="nf">runs_to_xml</span><span class="p">(</span><span class="s">&quot;your-filled-runs.tsv&quot;</span><span class="p">)</span>
 </pre></div>
@@ -718,7 +697,7 @@ bye
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-u<span class="w"> </span>Webin-XXXXX<span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot;SUBMISSION=@submission.xml&quot;</span><span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot;EXPERIMENT=@experiment.xml&quot;</span><span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot;RUN=@run.xml&quot;</span><span class="w"> </span><span class="s2">&quot;https://wwwdev.ebi.ac.uk/ena/submit/drop-box/submit/&quot;</span><span class="w"> </span>-o<span class="w"> </span>receipt.xml
 </pre></div>
 </div>
-<p>The file <em>receipt.xml</em> shows whether the submission succeeded (<em>success=”true”</em>), the accessions of your experiments and runs, and any error messages. Open it in a text editor, or print it in the terminal:</p>
+<p>The file <em>receipt.xml</em> shows whether the submission succeeded (<code class="docutils literal notranslate"><span class="pre">success=&quot;true&quot;</span></code>), the accessions of your experiments and runs, and any error messages. Open it in a text editor, or print it in the terminal:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>receipt.xml
 </pre></div>
 </div>
@@ -728,7 +707,7 @@ bye
 <section id="step-6-submit-to-production-service">
 <h3>Step 6: Submit to production service<a class="headerlink" href="#step-6-submit-to-production-service" title="Link to this heading"></a></h3>
 <p>After careful inspection of metadata, you can now repeat the process in the <a class="reference external" href="https://www.ebi.ac.uk/ena/submit/webin/login">production version of the Webin interface</a>.</p>
-<p>For Option 2, regenerate the XML files using the production sample and study accessions before submitting them to the production service.</p>
+<p>For Option 2, regenerate the XML files using the production sample and study accessions.</p>
 </section>
 </section>
 <section id="post-submission-editing">
