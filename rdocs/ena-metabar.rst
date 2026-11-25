@@ -317,19 +317,7 @@ You do not need to edit the XML files. For reference, each extra column becomes 
     <EXPERIMENT_ATTRIBUTE><TAG>pcr primers</TAG><VALUE>341F (CCTACGGGNGGCWGCAG) and 805R (GACTACHVGGGTATCTAATCC)</VALUE></EXPERIMENT_ATTRIBUTE>
   </EXPERIMENT_ATTRIBUTES>
 
-**3. Submit XML files.** In the same folder, submit the three files to the test service [replace X:s, and provide password when prompted]:
-
-.. code-block:: bash
-
-  curl -u Webin-XXXXX -F "SUBMISSION=@submission.xml" -F "EXPERIMENT=@experiment.xml" -F "RUN=@run.xml" "https://wwwdev.ebi.ac.uk/ena/submit/drop-box/submit/" -o receipt.xml
-
-The file *receipt.xml* shows whether the submission succeeded (``success="true"``), the accessions of your experiments and runs, and any error messages. Open it in a text editor, or print it in the terminal:
-
-.. code-block:: bash
-
-  cat receipt.xml
-
-For the production service (Step 6), use *https://www.ebi.ac.uk/ena/submit/drop-box/submit/* in the curl command instead.
+**3. Submit XML files.** In the Webin Portal, go to *Raw Reads (Experiments and Runs) | Submit XMLs (advanced)*. Select *submission.xml*, *experiment.xml* and *run.xml* in the corresponding fields, and click *Submit*. If your submission is confirmed, the accessions of your experiments and runs are displayed.
 
 Step 6: Submit to production service
 ------------------------------------

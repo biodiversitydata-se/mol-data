@@ -693,15 +693,7 @@ bye
 <span class="nt">&lt;/EXPERIMENT_ATTRIBUTES&gt;</span>
 </pre></div>
 </div>
-<p><strong>3. Submit XML files.</strong> In the same folder, submit the three files to the test service [replace X:s, and provide password when prompted]:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-u<span class="w"> </span>Webin-XXXXX<span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot;SUBMISSION=@submission.xml&quot;</span><span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot;EXPERIMENT=@experiment.xml&quot;</span><span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot;RUN=@run.xml&quot;</span><span class="w"> </span><span class="s2">&quot;https://wwwdev.ebi.ac.uk/ena/submit/drop-box/submit/&quot;</span><span class="w"> </span>-o<span class="w"> </span>receipt.xml
-</pre></div>
-</div>
-<p>The file <em>receipt.xml</em> shows whether the submission succeeded (<code class="docutils literal notranslate"><span class="pre">success=&quot;true&quot;</span></code>), the accessions of your experiments and runs, and any error messages. Open it in a text editor, or print it in the terminal:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>receipt.xml
-</pre></div>
-</div>
-<p>For the production service (Step 6), use <em>https://www.ebi.ac.uk/ena/submit/drop-box/submit/</em> in the curl command instead.</p>
+<p><strong>3. Submit XML files.</strong> In the Webin Portal, go to <em>Raw Reads (Experiments and Runs) | Submit XMLs (advanced)</em>. Select <em>submission.xml</em>, <em>experiment.xml</em> and <em>run.xml</em> in the corresponding fields, and click <em>Submit</em>. If your submission is confirmed, the accessions of your experiments and runs are displayed.</p>
 </section>
 </section>
 <section id="step-6-submit-to-production-service">
