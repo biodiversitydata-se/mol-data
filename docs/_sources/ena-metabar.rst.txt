@@ -280,7 +280,7 @@ Your spreadsheet should now look similar to this (but add as much optional metad
   :file: _static/tables/run-exp-template-filled.csv
   :header-rows: 0
 
-*For Option 2 (Step 3b), use the same sample accession for experiments targeting different markers from the same physical sample. Save the completed TSV file and proceed to Step 5c without submitting it.*
+*For Option 2 (Step 3b), use one row per experiment, with the same sample accession but a unique library_name for markers from the same physical sample. Save the completed TSV file and proceed to Step 5c without submitting it.*
 
 Otherwise, go back to *Raw Reads (Experiments and Runs) | Submit reads*, click *Upload filled spreadsheet template for Read submission*, select your edited \*.tsv file, and click *Submit Completed Spreadsheet*. If your submission is confirmed, you should now be able to see your submitted runs in the *Raw Reads (Experiments and Runs) | Run Files Report*.
 
@@ -292,7 +292,7 @@ Step 5c: Submit experiments and runs as XML
 
 The read spreadsheet in the Webin Portal does not include marker-specific attributes, so experiments and runs are submitted as XML instead (see `ENA's guide to programmatic read submission <https://ena-docs.readthedocs.io/en/latest/submit/reads/programmatic.html>`_).
 
-**1. Add marker-specific attributes.** In the spreadsheet from Step 5b, add one column for each marker-specific attribute, e.g. *target gene*, *target subfragment* and *pcr primers*, and fill in the values for each experiment. Use the same attribute names as in the checklist, as experiment attributes are not validated against the checklists. Use one row per marker, with a unique *library_name*.
+**1. Add marker-specific attributes.** In the spreadsheet from Step 5b, add one column for each marker-specific attribute, e.g. *target gene*, *target subfragment* and *pcr primers*, and fill in the values for each experiment. Use the same attribute names as in the checklist, as experiment attributes are not validated against the checklists.
 
 **2. Generate XML files.** Download our script `runs_to_xml.R <_static/scripts/runs_to_xml.R>`_ (base R, no extra packages) to the folder containing your completed TSV file. It converts the spreadsheet into *experiment.xml*, *run.xml* and *submission.xml* in the same folder. With R installed, open a terminal in that folder and run:
 

@@ -668,14 +668,14 @@ bye
 </tr>
 </tbody>
 </table>
-<p><em>For Option 2 (Step 3b), use the same sample accession for experiments targeting different markers from the same physical sample. Save the completed TSV file and proceed to Step 5c without submitting it.</em></p>
+<p><em>For Option 2 (Step 3b), use one row per experiment, with the same sample accession but a unique library_name for markers from the same physical sample. Save the completed TSV file and proceed to Step 5c without submitting it.</em></p>
 <p>Otherwise, go back to <em>Raw Reads (Experiments and Runs) | Submit reads</em>, click <em>Upload filled spreadsheet template for Read submission</em>, select your edited *.tsv file, and click <em>Submit Completed Spreadsheet</em>. If your submission is confirmed, you should now be able to see your submitted runs in the <em>Raw Reads (Experiments and Runs) | Run Files Report</em>.</p>
 </section>
 <section class="detour" id="step-5c-submit-experiments-and-runs-as-xml">
 <h4>Step 5c: Submit experiments and runs as XML<a class="headerlink" href="#step-5c-submit-experiments-and-runs-as-xml" title="Link to this heading"></a></h4>
 <p><em>Only follow this step if you selected Option 2 in Step 3b. Otherwise, skip to Step 6.</em></p>
 <p>The read spreadsheet in the Webin Portal does not include marker-specific attributes, so experiments and runs are submitted as XML instead (see <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/submit/reads/programmatic.html">ENA’s guide to programmatic read submission</a>).</p>
-<p><strong>1. Add marker-specific attributes.</strong> In the spreadsheet from Step 5b, add one column for each marker-specific attribute, e.g. <em>target gene</em>, <em>target subfragment</em> and <em>pcr primers</em>, and fill in the values for each experiment. Use the same attribute names as in the checklist, as experiment attributes are not validated against the checklists. Use one row per marker, with a unique <em>library_name</em>.</p>
+<p><strong>1. Add marker-specific attributes.</strong> In the spreadsheet from Step 5b, add one column for each marker-specific attribute, e.g. <em>target gene</em>, <em>target subfragment</em> and <em>pcr primers</em>, and fill in the values for each experiment. Use the same attribute names as in the checklist, as experiment attributes are not validated against the checklists.</p>
 <p><strong>2. Generate XML files.</strong> Download our script <a class="reference external" href="_static/scripts/runs_to_xml.R">runs_to_xml.R</a> (base R, no extra packages) to the folder containing your completed TSV file. It converts the spreadsheet into <em>experiment.xml</em>, <em>run.xml</em> and <em>submission.xml</em> in the same folder. With R installed, open a terminal in that folder and run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Rscript<span class="w"> </span>runs_to_xml.R<span class="w"> </span>your-filled-runs.tsv
 </pre></div>
