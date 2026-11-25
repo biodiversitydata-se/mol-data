@@ -1,7 +1,7 @@
 .. toctree::
    :hidden:
 
-*Please send bug reports and/or suggestions to* |text|_.
+*Last reviewed in November 2026. Please send bug reports and/or suggestions to* |text|_.
 
 .. _text: https://docs.biodiversitydata.se/support/
 
