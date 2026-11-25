@@ -73,6 +73,8 @@ If you need to add several custom attributes, it is generally easier to do so in
 
 *If you have sequenced only one marker per physical sample, proceed to Step 3c. Otherwise, choose one of the two approaches below.*
 
+.. rst-class:: detour
+
 Multiple markers from the same physical sample
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The attributes *target gene*, *target subfragment* and *pcr primers* describe the sequencing experiment rather than the physical sample. However, ENA's checklists and the Webin Portal only provide these structured attributes at the sample level. There are two alternative ways to address this limitation.
@@ -112,7 +114,7 @@ The template starts with three rows: the checklist, the attribute names and thei
 - Add any custom attributes (with units, where applicable) to the right of the existing columns, e.g. *sampling_station_id*.
 - Add one row per sample below the *#units* row.
 
-Sample aliases should correspond to the sample IDs used in related publications. Add a marker suffix only if you follow Option 1 for multiple markers (see *Multiple markers from the same physical sample* in Step 3b). Aliases must be unique within your account. This will enable readers to find sample-specific metadata and read files, even if you only state a Project accession number in your paper. Sample aliases can, furthermore, be optionally displayed as *Unique name* in the *Sample report*. A filled example spreadsheet is shown in Step 3e.
+Sample aliases must be unique within your account and should correspond to the sample IDs used in related publications to help readers locate the associated metadata and read files in ENA. Add a marker suffix if following Option 1 (Step 3b). Sample aliases can be displayed as *Unique name* in the *Sample report*. See Step 3e for a completed example spreadsheet.
 
 Step 3d: Add sample metadata
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

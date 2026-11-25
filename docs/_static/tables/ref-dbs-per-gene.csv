@@ -1,6 +1,0 @@
-﻿Taxa,Gene,Database
-"Archaea and Bacteria","16S rRNA",GTDB-SBDI*
-Eukaryotes,"18S rRNA","PR2"
-Fungi,"ITS",UNITE all eukaryotes**
-Metazoa,"COI",SBDI-COI*
-"Other eukaryotes","ITS",UNITE all eukaryotes

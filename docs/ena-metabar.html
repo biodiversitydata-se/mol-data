@@ -23,6 +23,7 @@
     <link rel="prev" title="Molecular biodiversity data in SBDI" href="index.html" />
 <link rel="stylesheet" type="text/css"
      href="_static/custom.css" />
+<script defer src="_static/external-links.js"></script>
 
 
 </head>
@@ -213,7 +214,7 @@
 <p>If you need to add several custom attributes, it is generally easier to do so in a spreadsheet, as described in the next step.</p>
 <p><em>If you have sequenced only one marker per physical sample, proceed to Step 3c. Otherwise, choose one of the two approaches below.</em></p>
 </section>
-<section id="multiple-markers-from-the-same-physical-sample">
+<section class="detour" id="multiple-markers-from-the-same-physical-sample">
 <h5>Multiple markers from the same physical sample<a class="headerlink" href="#multiple-markers-from-the-same-physical-sample" title="Link to this heading"></a></h5>
 <p>The attributes <em>target gene</em>, <em>target subfragment</em> and <em>pcr primers</em> describe the sequencing experiment rather than the physical sample. However, ENA’s checklists and the Webin Portal only provide these structured attributes at the sample level. There are two alternative ways to address this limitation.</p>
 <section id="option-1-webin-portal-workaround-one-sample-per-marker">
@@ -261,7 +262,7 @@
 <li><p>Add any custom attributes (with units, where applicable) to the right of the existing columns, e.g. <em>sampling_station_id</em>.</p></li>
 <li><p>Add one row per sample below the <em>#units</em> row.</p></li>
 </ul>
-<p>Sample aliases should correspond to the sample IDs used in related publications. Add a marker suffix only if you follow Option 1 for multiple markers (see <em>Multiple markers from the same physical sample</em> in Step 3b). Aliases must be unique within your account. This will enable readers to find sample-specific metadata and read files, even if you only state a Project accession number in your paper. Sample aliases can, furthermore, be optionally displayed as <em>Unique name</em> in the <em>Sample report</em>. A filled example spreadsheet is shown in Step 3e.</p>
+<p>Sample aliases must be unique within your account and should correspond to the sample IDs used in related publications to help readers locate the associated metadata and read files in ENA. Add a marker suffix if following Option 1 (Step 3b). Sample aliases can be displayed as <em>Unique name</em> in the <em>Sample report</em>. See Step 3e for a completed example spreadsheet.</p>
 </section>
 <section id="step-3d-add-sample-metadata">
 <h4>Step 3d: Add sample metadata<a class="headerlink" href="#step-3d-add-sample-metadata" title="Link to this heading"></a></h4>
