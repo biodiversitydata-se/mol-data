@@ -63,7 +63,7 @@ For metabarcoding data, we recommend including the following optional attributes
   :file: _static/tables/optional-fields.csv
   :header-rows: 1
 
-If you have sequenced multiple markers from the same physical sample, see the options below before selecting marker-specific attributes.
+The *source material identifiers* attribute identifies the physical sample (see the `MIxS definition <https://genomicsstandardsconsortium.github.io/mixs/0000026/>`_) and may match the *sample alias* for single-marker datasets. For multiple markers, it can indicate a shared sample origin (see *Multiple markers from the same physical sample* below).
 
 Additional sample attributes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -71,22 +71,11 @@ To facilitate metadata validation, interoperability and discoverability, use exi
 
 If you need to add several custom attributes, it is generally easier to do so in a spreadsheet, as described in the next step.
 
-If you have sequenced only one marker per physical sample, proceed to Step 3c. Otherwise, choose one of the two approaches below.
+*If you have sequenced only one marker per physical sample, proceed to Step 3c. Otherwise, choose one of the two approaches below.*
 
-Several markers from the same physical sample
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The attributes *target gene*, *target subfragment* and *pcr primers* describe the sequencing experiment rather than the physical sample. However, ENA's checklists and the Webin Portal only provide these structured attributes at the sample level. There are two alternative ways to address this limitation:
-
-===========================  ======================  =============================
-\                            Option 1. Webin Portal  Option 2. XML alternative
-===========================  ======================  =============================
-ENA sample records           One per marker          One per physical sample
-BioSample accessions         One per marker          One per physical sample
-Marker attributes            Sample level            Experiment level
-Marker checklist validation  Yes                     No
-Follows ENA guidance         No                      Yes
-Requires XML submission      No                      Yes, for experiments and runs
-===========================  ======================  =============================
+Multiple markers from the same physical sample
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The attributes *target gene*, *target subfragment* and *pcr primers* describe the sequencing experiment rather than the physical sample. However, ENA's checklists and the Webin Portal only provide these structured attributes at the sample level. There are two alternative ways to address this limitation.
 
 Option 1. Webin Portal workaround: one sample per marker
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -111,7 +100,7 @@ Each record receives a separate BioSample accession. The shared *source material
 
 Option 2. XML alternative: one sample per physical sample
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Register one ENA sample per physical sample, without marker-specific attributes. Add these attributes at the experiment level instead, as described in `Step 5c: Submit experiments and runs as XML`_.
+For a more advanced approach that follows ENA's data model, register one ENA sample per physical sample and submit marker-specific attributes at the experiment level via XML (see `Step 5c <Step 5c: Submit experiments and runs as XML_>`_).
 
 Step 3c: Download and prepare spreadsheet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -123,7 +112,7 @@ The template starts with three rows: the checklist, the attribute names and thei
 - Add any custom attributes (with units, where applicable) to the right of the existing columns, e.g. *sampling_station_id*.
 - Add one row per sample below the *#units* row.
 
-Sample aliases should correspond to the sample IDs used in related publications. Add a marker suffix only if you follow Option 1 for several markers (see *Several markers from the same physical sample* in Step 3b). Aliases must be unique within your account. This will enable readers to find sample-specific metadata and read files, even if you only state a Project accession number in your paper. Sample aliases can, furthermore, be optionally displayed as *Unique name* in the *Sample report*. A filled example spreadsheet is shown in Step 3e.
+Sample aliases should correspond to the sample IDs used in related publications. Add a marker suffix only if you follow Option 1 for multiple markers (see *Multiple markers from the same physical sample* in Step 3b). Aliases must be unique within your account. This will enable readers to find sample-specific metadata and read files, even if you only state a Project accession number in your paper. Sample aliases can, furthermore, be optionally displayed as *Unique name* in the *Sample report*. A filled example spreadsheet is shown in Step 3e.
 
 Step 3d: Add sample metadata
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -172,7 +161,7 @@ Before adding actual sample metadata to your spreadsheet, take a close look at E
 
 Step 3e: Upload spreadsheet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-With data added, your spreadsheet should look similar to this example, which follows the Webin Portal approach (Option 1 in Step 3b) with marker attributes at sample level:
+With data added, your spreadsheet should look similar to this example:
 
 .. csv-table::
   :file: _static/tables/mixs-water-template-filled.csv
