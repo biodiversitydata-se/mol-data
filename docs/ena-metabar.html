@@ -671,10 +671,10 @@ bye
 <p><em>If you selected Option 2 in Step 3b, proceed to Step 5c without submitting the spreadsheet.</em></p>
 <p>Otherwise, go back to <em>Raw Reads (Experiments and Runs) | Submit reads</em>, click <em>Upload filled spreadsheet template for Read submission</em>, select your edited *.tsv file, and click <em>Submit Completed Spreadsheet</em>. If your submission is confirmed, you should now be able to see your submitted runs in the <em>Raw Reads (Experiments and Runs) | Run Files Report</em>.</p>
 </section>
-<section id="step-5c-submit-experiments-and-runs-as-xml">
+<section class="detour" id="step-5c-submit-experiments-and-runs-as-xml">
 <h4>Step 5c: Submit experiments and runs as XML<a class="headerlink" href="#step-5c-submit-experiments-and-runs-as-xml" title="Link to this heading"></a></h4>
 <p><em>Only follow this step if you selected Option 2 in Step 3b. Otherwise, skip to Step 6.</em></p>
-<p>The Webin Portal cannot add attributes to experiments, so experiments and runs are submitted as XML instead (see <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/submit/reads/programmatic.html">ENA’s guide to programmatic read submission</a>).</p>
+<p>The read spreadsheet in the Webin Portal does not include marker-specific attributes, so experiments and runs are submitted as XML instead (see <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/submit/reads/programmatic.html">ENA’s guide to programmatic read submission</a>).</p>
 <p><strong>1. Add marker-specific attributes.</strong> In the spreadsheet from Step 5b, add one column for each marker-specific attribute, e.g. <em>target gene</em>, <em>target subfragment</em> and <em>pcr primers</em>, and fill in the values for each experiment. Use the same attribute names as in the checklist, as experiment attributes are not validated against the checklists.</p>
 <p><strong>2. Generate XML files.</strong> Our R script <a class="reference external" href="_static/scripts/runs_to_xml.R">runs_to_xml.R</a> (base R, no extra packages) converts the spreadsheet into <em>experiment.xml</em>, <em>run.xml</em> and <em>submission.xml</em>, in the same folder as the spreadsheet. Run it from a terminal:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Rscript<span class="w"> </span>runs_to_xml.R<span class="w"> </span>your-filled-runs.tsv
